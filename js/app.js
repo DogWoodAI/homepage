@@ -41,31 +41,31 @@
   var SOL_IC = [IC.layers, IC.gauge, IC.chart, IC.sliders, IC.sim, IC.shield, IC.bot, IC.refresh, IC.handshake];
   var nav = {
     about:[
-      ["about.html#company","nav.company","nav.company.d",IC.factory],
-      ["about.html#industries","nav.industries","nav.industries.d",IC.layers],
-      ["about.html#customers","nav.customers","nav.customers.d",IC.handshake],
-      ["news.html","nav.news","nav.news.d",IC.doc]
+      ["about#company","nav.company","nav.company.d",IC.factory],
+      ["about#industries","nav.industries","nav.industries.d",IC.layers],
+      ["about#customers","nav.customers","nav.customers.d",IC.handshake],
+      ["news","nav.news","nav.news.d",IC.doc]
     ],
     approach:[
-      ["approach.html#tailor-made","nav.ap1","nav.ap1.d",IC.target],
-      ["approach.html#real-data","nav.ap2","nav.ap2.d",IC.gauge],
-      ["approach.html#model-based","nav.ap3","nav.ap3.d",IC.flask],
-      ["approach.html#physics-based","nav.ap4","nav.ap4.d",IC.atom]
+      ["approach#tailor-made","nav.ap1","nav.ap1.d",IC.target],
+      ["approach#real-data","nav.ap2","nav.ap2.d",IC.gauge],
+      ["approach#model-based","nav.ap3","nav.ap3.d",IC.flask],
+      ["approach#physics-based","nav.ap4","nav.ap4.d",IC.atom]
     ],
     solution:[
-      ["solution.html#dogwoodpro","nav.sol0","nav.sol0.d",IC.layers],
-      ["solution.html#predipro","nav.sol1","nav.sol1.d",IC.gauge],
-      ["solution.html#analypro","nav.sol2","nav.sol2.d",IC.chart],
-      ["solution.html#optpro","nav.sol3","nav.sol3.d",IC.sliders],
-      ["solution.html#simpro","nav.sol4","nav.sol4.d",IC.sim],
-      ["solution.html#safepro","nav.sol5","nav.sol5.d",IC.shield],
-      ["solution.html#plantbot","nav.sol6","nav.sol6.d",IC.bot],
-      ["solution.html#mlops","nav.sol7","nav.sol7.d",IC.refresh],
-      ["solution.html#consulting","nav.sol8","nav.sol8.d",IC.handshake]
+      ["solution#dogwoodpro","nav.sol0","nav.sol0.d",IC.layers],
+      ["solution#predipro","nav.sol1","nav.sol1.d",IC.gauge],
+      ["solution#analypro","nav.sol2","nav.sol2.d",IC.chart],
+      ["solution#optpro","nav.sol3","nav.sol3.d",IC.sliders],
+      ["solution#simpro","nav.sol4","nav.sol4.d",IC.sim],
+      ["solution#safepro","nav.sol5","nav.sol5.d",IC.shield],
+      ["solution#plantbot","nav.sol6","nav.sol6.d",IC.bot],
+      ["solution#mlops","nav.sol7","nav.sol7.d",IC.refresh],
+      ["solution#consulting","nav.sol8","nav.sol8.d",IC.handshake]
     ],
     ip:[
-      ["ip-papers.html#patent","nav.patents","nav.patents.d",IC.award],
-      ["ip-papers.html#publications","nav.publications","nav.publications.d",IC.doc]
+      ["ip-papers#patent","nav.patents","nav.patents.d",IC.award],
+      ["ip-papers#publications","nav.publications","nav.publications.d",IC.doc]
     ]
   };
 
@@ -79,26 +79,26 @@
   function buildHeader(){
     return '<header class="site-header"><div class="container"><nav class="nav">'+
       '<div class="nav-left">'+
-        '<a class="brand" href="index.html"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI"></a>'+
+        '<a class="brand" href="./"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI"></a>'+
         '<div class="lang-toggle"><button data-lang="ko">KOR</button><button data-lang="en">ENG</button></div>'+
       '</div>'+
       '<ul class="nav-menu">'+
-        navItem("nav.about", nav.about, false, "about.html")+
-        navItem("nav.approach", nav.approach, false, "approach.html")+
-        navItem("nav.solution", nav.solution, true, "solution.html")+
-        '<li class="nav-item"><a class="nav-link" href="rndd.html" data-i18n="nav.rndd"></a></li>'+
-        '<li class="nav-item"><a class="nav-link" href="projects.html" data-i18n="nav.projects"></a></li>'+
-        navItem("nav.ip", nav.ip, false, "ip-papers.html")+
+        navItem("nav.about", nav.about, false, "about")+
+        navItem("nav.approach", nav.approach, false, "approach")+
+        navItem("nav.solution", nav.solution, true, "solution")+
+        '<li class="nav-item"><a class="nav-link" href="rndd" data-i18n="nav.rndd"></a></li>'+
+        '<li class="nav-item"><a class="nav-link" href="projects" data-i18n="nav.projects"></a></li>'+
+        navItem("nav.ip", nav.ip, false, "ip-papers")+
       '</ul>'+
       '<div class="nav-right">'+
-        '<a class="btn nav-cta" href="contact.html" data-i18n="nav.contact"></a>'+
+        '<a class="btn nav-cta" href="contact" data-i18n="nav.contact"></a>'+
         '<button class="hamburger" aria-label="menu"><span></span></button>'+
       '</div>'+
     '</nav></div></header>'+ buildMobile();
   }
   function buildQuick(){
     return '<div class="quick">'+
-      '<a class="q-contact" href="contact.html">'+
+      '<a class="q-contact" href="contact">'+
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>'+
         '<span data-i18n="quick.contact"></span></a>'+
       '<button class="q-top" type="button">'+
@@ -117,10 +117,10 @@
     }
     return '<div class="mobile-nav">'+
       grp("nav.about",nav.about)+grp("nav.approach",nav.approach)+grp("nav.solution",nav.solution)+
-      '<div class="m-group"><div class="m-head"><a href="rndd.html" data-i18n="nav.rndd"></a></div></div>'+
-      '<div class="m-group"><div class="m-head"><a href="projects.html" data-i18n="nav.projects"></a></div></div>'+
+      '<div class="m-group"><div class="m-head"><a href="rndd" data-i18n="nav.rndd"></a></div></div>'+
+      '<div class="m-group"><div class="m-head"><a href="projects" data-i18n="nav.projects"></a></div></div>'+
       grp("nav.ip",nav.ip)+
-      '<div class="m-cta"><a class="btn btn-primary" href="contact.html" data-i18n="nav.contact"></a></div>'+
+      '<div class="m-cta"><a class="btn btn-primary" href="contact" data-i18n="nav.contact"></a></div>'+
     '</div>';
   }
 
@@ -128,7 +128,7 @@
   function buildFooter(){
     return '<footer class="site-footer"><div class="container">'+
       '<div class="footer-grid">'+
-        '<div class="footer-brand"><a class="brand" href="index.html"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI" style="height:34px"></a>'+
+        '<div class="footer-brand"><a class="brand" href="./"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI" style="height:34px"></a>'+
           '<p data-i18n="footer.tagline"></p>'+
           '<div class="social">'+
             '<a href="https://kr.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" aria-label="LinkedIn">'+IC.linkedin+'</a>'+
@@ -136,18 +136,18 @@
           '</div>'+
         '</div>'+
         '<div class="footer-col"><h4 data-i18n="foot.explore"></h4><ul>'+
-          '<li><a href="about.html#company" data-i18n="nav.company"></a></li>'+
-          '<li><a href="about.html#industries" data-i18n="nav.industries"></a></li>'+
-          '<li><a href="about.html#customers" data-i18n="nav.customers"></a></li>'+
-          '<li><a href="news.html" data-i18n="nav.news"></a></li>'+
-          '<li><a href="rndd.html" data-i18n="nav.rndd"></a></li>'+
+          '<li><a href="about#company" data-i18n="nav.company"></a></li>'+
+          '<li><a href="about#industries" data-i18n="nav.industries"></a></li>'+
+          '<li><a href="about#customers" data-i18n="nav.customers"></a></li>'+
+          '<li><a href="news" data-i18n="nav.news"></a></li>'+
+          '<li><a href="rndd" data-i18n="nav.rndd"></a></li>'+
         '</ul></div>'+
         '<div class="footer-col"><h4 data-i18n="foot.solutions"></h4><ul>'+
-          '<li><a href="solution.html#dogwoodpro" data-i18n="nav.sol0"></a></li>'+
-          '<li><a href="solution.html#predipro" data-i18n="nav.sol1"></a></li>'+
-          '<li><a href="solution.html#simpro" data-i18n="nav.sol4"></a></li>'+
-          '<li><a href="ip-papers.html#publications" data-i18n="nav.publications"></a></li>'+
-          '<li><a href="projects.html" data-i18n="nav.projects"></a></li>'+
+          '<li><a href="solution#dogwoodpro" data-i18n="nav.sol0"></a></li>'+
+          '<li><a href="solution#predipro" data-i18n="nav.sol1"></a></li>'+
+          '<li><a href="solution#simpro" data-i18n="nav.sol4"></a></li>'+
+          '<li><a href="ip-papers#publications" data-i18n="nav.publications"></a></li>'+
+          '<li><a href="projects" data-i18n="nav.projects"></a></li>'+
         '</ul></div>'+
         '<div class="footer-col"><h4 data-i18n="foot.contact"></h4>'+
           '<p class="footer-contact"><b data-i18n="contact.addr.v"></b></p>'+
@@ -345,8 +345,8 @@
   function setBanner(){
     var p = (location.pathname.split("/").pop() || "").toLowerCase();
     var b = "0"; // About + default -> s_visual00
-    if(p.indexOf("approach")===0 || p==="solution.html" || p==="rndd.html") b = "2"; // purple waves
-    else if(p==="projects.html") b = "3";                                            // teal mesh
+    if(p.indexOf("approach")===0 || p==="solution.html" || p==="solution" || p==="rndd.html" || p==="rndd") b = "2"; // purple waves
+    else if(p==="projects.html" || p==="projects") b = "3";                          // teal mesh
     else if(p.indexOf("ip-papers")===0) b = "1";                                     // blue rays
     document.body.setAttribute("data-banner", b);
   }

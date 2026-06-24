@@ -3,9 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DogWoodAI — AI solutions for autonomous manufacturing plants</title>
+<title>DogWoodAI</title>
 <meta name="description" content="DogWoodAI builds tailor-made AI for real-time prediction, simulation, optimization and safety analysis of manufacturing plants.">
-<link rel="icon" href="assets/main/visual-logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -127,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function(){
   /* Business Project cards — real thumbnails + real titles (matches the live site) */
   function projCard(i){
     var n = (i < 10 ? "0" : "") + i;
-    return '<a class="proj-box reveal" href="projects.html">'+
+    return '<a class="proj-box reveal" href="projects">'+
       '<div class="pb-img"><img src="assets/main/slider_thumb'+n+'.jpg" alt="" loading="lazy"></div>'+
       '<div class="pb-body"><h3 data-i18n="proj.p'+i+'.t"></h3>'+
       '<span class="pb-more" data-i18n="home.proj.click"></span></div></a>';
