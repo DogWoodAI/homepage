@@ -35,7 +35,7 @@
       current = i;
       dots.forEach(function (d, k) { d.classList.toggle("active", k === i); });
       var header = document.querySelector(".site-header");
-      if (header) header.classList.toggle("over-hero", mq.matches && panels[i].id === "hero");
+      if (header) header.classList.toggle("over-hero", mq.matches);
       revealIn(panels[i]);
       panels.forEach(function (p, k) {
         if (k !== i) { var v = p.querySelector("video[data-globe]"); if (v && !v.paused) v.pause(); }
@@ -62,7 +62,7 @@
       document.body.classList.toggle("fp", on);
       var header = document.querySelector(".site-header");
       if (on && header) {
-        header.classList.toggle("over-hero", current <= 0);
+        header.classList.add("over-hero");
       } else if (window.DW && window.DW._updateHero) {
         window.DW._updateHero();
       }

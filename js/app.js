@@ -63,6 +63,38 @@
       ["solution#mlops","nav.sol7","nav.sol7.d",IC.refresh],
       ["solution#consulting","nav.sol8","nav.sol8.d",IC.handshake]
     ],
+    rndd:[
+      ["rndd#rdd-1","nav.rdd.1","",IC.doc],
+      ["rndd#rdd-2","nav.rdd.2","",IC.doc],
+      ["rndd#rdd-3","nav.rdd.3","",IC.doc],
+      ["rndd#rdd-4","nav.rdd.4","",IC.doc],
+      ["rndd#rdd-5","nav.rdd.5","",IC.doc],
+      ["rndd#rdd-6","nav.rdd.6","",IC.doc],
+      ["rndd#rdd-7","nav.rdd.7","",IC.doc],
+      ["rndd#rdd-8","nav.rdd.8","",IC.doc],
+      ["rndd#rdd-9","nav.rdd.9","",IC.doc],
+      ["rndd#rdd-10","nav.rdd.10","",IC.doc],
+      ["rndd#rdd-11","nav.rdd.11","",IC.doc],
+      ["rndd#rdd-12","nav.rdd.12","",IC.doc],
+      ["rndd#rdd-13","nav.rdd.13","",IC.doc],
+      ["rndd#rdd-14","nav.rdd.14","",IC.doc],
+      ["rndd#rdd-15","nav.rdd.15","",IC.doc],
+      ["rndd#rdd-16","nav.rdd.16","",IC.doc],
+      ["rndd#rdd-17","nav.rdd.17","",IC.doc],
+      ["rndd#rdd-18","nav.rdd.18","",IC.doc],
+      ["rndd#rdd-19","nav.rdd.19","",IC.doc]
+    ],
+    projects:[
+      ["projects#project-1","nav.project.1","",IC.factory],
+      ["projects#project-2","nav.project.2","",IC.sim],
+      ["projects#project-3","nav.project.3","",IC.play],
+      ["projects#project-4","nav.project.4","",IC.atom],
+      ["projects#project-5","nav.project.5","",IC.flask],
+      ["projects#project-6","nav.project.6","",IC.layers],
+      ["projects#project-7","nav.project.7","",IC.cpu],
+      ["projects#project-8","nav.project.8","",IC.target],
+      ["projects#project-9","nav.project.9","",IC.chart]
+    ],
     ip:[
       ["ip-papers#patent","nav.patents","nav.patents.d",IC.award],
       ["ip-papers#publications","nav.publications","nav.publications.d",IC.doc]
@@ -71,7 +103,7 @@
 
   function dropItems(list){
     return list.map(function(i){
-      return '<a class="drop-link" href="'+i[0]+'"><b data-i18n="'+i[1]+'"></b></a>';
+      return '<a class="drop-link" href="'+i[0]+'"><b data-i18n-html="'+i[1]+'"></b></a>';
     }).join("");
   }
 
@@ -86,8 +118,8 @@
         navItem("nav.about", nav.about, false, "about")+
         navItem("nav.approach", nav.approach, false, "approach")+
         navItem("nav.solution", nav.solution, true, "solution")+
-        '<li class="nav-item"><a class="nav-link" href="rndd" data-i18n="nav.rndd"></a></li>'+
-        '<li class="nav-item"><a class="nav-link" href="projects" data-i18n="nav.projects"></a></li>'+
+        navItem("nav.rndd", nav.rndd, true, "rndd")+
+        navItem("nav.projects", nav.projects, true, "projects")+
         navItem("nav.ip", nav.ip, false, "ip-papers")+
       '</ul>'+
       '<div class="nav-right">'+
@@ -107,18 +139,18 @@
     '</div>';
   }
   function navItem(label, list, wide, href){
-    return '<li class="nav-item"><a class="nav-link" href="'+href+'" data-i18n="'+label+'"></a>'+
+    var cls = "nav-item nav-" + href.replace(/[^a-z0-9_-]/gi, "-");
+    return '<li class="'+cls+'"><a class="nav-link" href="'+href+'" data-i18n="'+label+'"></a>'+
       '<div class="dropdown'+(wide?' wide':'')+'"><div class="dropdown-grid">'+dropItems(list)+'</div></div></li>';
   }
   function buildMobile(){
     function grp(label, list){
       return '<div class="m-group"><div class="m-head"><span data-i18n="'+label+'"></span>'+IC.chev+'</div>'+
-        '<div class="m-sub">'+list.map(function(i){return '<a href="'+i[0]+'" data-i18n="'+i[1]+'"></a>';}).join("")+'</div></div>';
+        '<div class="m-sub">'+list.map(function(i){return '<a href="'+i[0]+'" data-i18n-html="'+i[1]+'"></a>';}).join("")+'</div></div>';
     }
     return '<div class="mobile-nav">'+
       grp("nav.about",nav.about)+grp("nav.approach",nav.approach)+grp("nav.solution",nav.solution)+
-      '<div class="m-group"><div class="m-head"><a href="rndd" data-i18n="nav.rndd"></a></div></div>'+
-      '<div class="m-group"><div class="m-head"><a href="projects" data-i18n="nav.projects"></a></div></div>'+
+      grp("nav.rndd",nav.rndd)+grp("nav.projects",nav.projects)+
       grp("nav.ip",nav.ip)+
       '<div class="m-cta"><a class="btn btn-primary" href="contact" data-i18n="nav.contact"></a></div>'+
     '</div>';
@@ -127,35 +159,16 @@
   /* ---------- footer ---------- */
   function buildFooter(){
     return '<footer class="site-footer"><div class="container">'+
-      '<div class="footer-grid">'+
-        '<div class="footer-brand"><a class="brand" href="./"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI" style="height:34px"></a>'+
-          '<p data-i18n="footer.tagline"></p>'+
-          '<div class="social">'+
-            '<a href="https://kr.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" aria-label="LinkedIn">'+IC.linkedin+'</a>'+
-            '<a href="https://www.crunchbase.com/organization/dogwoodai" target="_blank" rel="noopener" aria-label="Crunchbase">'+IC.crunch+'</a>'+
-          '</div>'+
+      '<div class="footer-simple">'+
+        '<div class="footer-info">'+
+          '<p class="footer-contact"><b data-i18n="contact.email.l"></b><span>dogwoodai@dogwoodai.com</span></p>'+
+          '<p class="footer-contact"><b data-i18n="contact.addr.l"></b><span data-i18n="contact.addr.v"></span></p>'+
+          '<p class="footer-copy" data-i18n="footer.rights"></p>'+
         '</div>'+
-        '<div class="footer-col"><h4 data-i18n="foot.explore"></h4><ul>'+
-          '<li><a href="about#company" data-i18n="nav.company"></a></li>'+
-          '<li><a href="about#industries" data-i18n="nav.industries"></a></li>'+
-          '<li><a href="about#customers" data-i18n="nav.customers"></a></li>'+
-          '<li><a href="news" data-i18n="nav.news"></a></li>'+
-          '<li><a href="rndd" data-i18n="nav.rndd"></a></li>'+
-        '</ul></div>'+
-        '<div class="footer-col"><h4 data-i18n="foot.solutions"></h4><ul>'+
-          '<li><a href="solution#dogwoodpro" data-i18n="nav.sol0"></a></li>'+
-          '<li><a href="solution#predipro" data-i18n="nav.sol1"></a></li>'+
-          '<li><a href="solution#simpro" data-i18n="nav.sol4"></a></li>'+
-          '<li><a href="ip-papers#publications" data-i18n="nav.publications"></a></li>'+
-          '<li><a href="projects" data-i18n="nav.projects"></a></li>'+
-        '</ul></div>'+
-        '<div class="footer-col"><h4 data-i18n="foot.contact"></h4>'+
-          '<p class="footer-contact"><b data-i18n="contact.addr.v"></b></p>'+
-          '<p class="footer-contact">+82 10 6278 0184<br>dogwoodai@dogwoodai.com</p>'+
+        '<div class="social">'+
+          '<a href="https://kr.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/main/LinkedIn_icon.png" alt="LinkedIn"></a>'+
+          '<a href="https://www.crunchbase.com/organization/dogwoodai" target="_blank" rel="noopener" aria-label="Crunchbase"><img src="assets/main/cb.png" alt="Crunchbase"></a>'+
         '</div>'+
-      '</div>'+
-      '<div class="footer-bottom"><span data-i18n="footer.rights"></span>'+
-        '<div class="fb-links"><a href="#" data-i18n="footer.privacy"></a><a href="#" data-i18n="footer.terms"></a></div>'+
       '</div>'+
     '</div></footer>';
   }
@@ -216,11 +229,16 @@
     document.querySelectorAll(".lang-toggle button").forEach(function(b){
       b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
     });
-    // header: transparent only while the (homepage) hero covers the top, else solid white
+    // index panels are dark, so keep the header transparent with white text there.
     var header = document.querySelector(".site-header");
     var heroEl = document.querySelector(".hero");
+    var isIndex = document.body.getAttribute("data-page")==="index.html";
     function updateHero(){
       if(!header) return;
+      if(isIndex){
+        header.classList.toggle("over-hero", !document.body.classList.contains("menu-open"));
+        return;
+      }
       if(heroEl){
         var r = heroEl.getBoundingClientRect();
         header.classList.toggle("over-hero", r.bottom > 80);

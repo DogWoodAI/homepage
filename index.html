@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="index.html">
+<body data-page="index.html" data-popup="off"> <!--팝업중단-->
 <div id="site-header"></div>
 
 <div class="fp-wrap" id="fpWrap">
@@ -40,7 +40,6 @@
     <div class="container">
       <div class="section-head reveal" style="margin-bottom:30px">
         <span class="eyebrow" data-i18n="home.proj.eyebrow"></span>
-        <h2 class="h-lg" data-i18n="home.proj.title"></h2>
       </div>
       <div class="proj-grid" id="projGrid1"></div>
     </div>
@@ -51,7 +50,6 @@
     <div class="container">
       <div class="section-head reveal" style="margin-bottom:30px">
         <span class="eyebrow" data-i18n="home.proj.eyebrow"></span>
-        <h2 class="h-lg" data-i18n="home.proj.sub"></h2>
       </div>
       <div class="proj-grid" id="projGrid2"></div>
     </div>
@@ -66,7 +64,7 @@
         <p class="lead" data-i18n="home.video.sub"></p>
       </div>
       <div class="fp-video reveal">
-        <video controls preload="none" data-globe poster="assets/video/mp4_bg.jpg">
+        <video controls preload="metadata" data-globe poster="assets/video/mp4_bg.jpg">
           <source src="assets/video/dogwood_01.mp4" type="video/mp4">
         </video>
       </div>
@@ -94,9 +92,14 @@
             </div>
           </div>
           <form class="contact-form" id="contactForm">
+            <h2 class="h-md" data-i18n="contact.form.t" style="margin-bottom:22px"></h2>
             <div class="form-row">
               <div class="field"><label data-i18n="contact.f.name"></label><input type="text" data-i18n-ph="contact.f.name.ph" required></div>
+              <div class="field"><label data-i18n="contact.f.company"></label><input type="text" data-i18n-ph="contact.f.company.ph"></div>
+            </div>
+            <div class="form-row">
               <div class="field"><label data-i18n="contact.f.email"></label><input type="email" data-i18n-ph="contact.f.email.ph" required></div>
+              <div class="field"><label data-i18n="contact.f.phone"></label><input type="tel" data-i18n-ph="contact.f.phone.ph"></div>
             </div>
             <div class="field">
               <label data-i18n="contact.f.msg"></label>
@@ -112,7 +115,7 @@
   </section>
 
   <!-- PANEL 6 · FOOTER -->
-  <section class="panel panel-foot" id="end">
+  <section class="panel-foot" id="end">
     <div id="site-footer"></div>
   </section>
 
@@ -127,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function(){
   /* Business Project cards — real thumbnails + real titles (matches the live site) */
   function projCard(i){
     var n = (i < 10 ? "0" : "") + i;
-    return '<a class="proj-box reveal" href="projects">'+
+    return '<a class="proj-box reveal" href="projects#project-'+i+'">'+
       '<div class="pb-img"><img src="assets/main/slider_thumb'+n+'.jpg" alt="" loading="lazy"></div>'+
       '<div class="pb-body"><h3 data-i18n="proj.p'+i+'.t"></h3>'+
       '<span class="pb-more" data-i18n="home.proj.click"></span></div></a>';
