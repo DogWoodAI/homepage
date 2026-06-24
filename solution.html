@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Solution — DogWoodAI</title>
+<link rel="icon" href="assets/main/visual-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-popup="off">
+<div id="site-header"></div>
+
+<section class="page-hero"><div class="container"><h1 data-i18n="nav.solution"></h1></div></section>
+
+<div class="container">
+
+  <!-- DogWoodPro: Integrated AI Solution -->
+  <section class="mod anchor-sec" id="dogwoodpro" style="padding-top:64px">
+    <h2 class="reveal" data-i18n="sol.h1"></h2>
+    <div class="dwp">
+      <div class="dwp-col reveal">
+        <div class="yt"><iframe src="https://www.youtube.com/embed/egHPLYa-4e4?rel=0&modestbranding=1" title="Introduction to DogWoodAI's Solution" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="yt"><iframe src="https://www.youtube.com/embed/7gUwX3mZw58?rel=0&modestbranding=1" title="LLM module of DogWoodAI: PlantBotPro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+      <div class="dwp-card reveal d1">
+        <div class="wheel"><img src="assets/software/b8.jpg" alt="DogWoodPro modules" loading="lazy"></div>
+        <h3 data-i18n="slp.mod"></h3>
+        <p data-i18n="slp.modp"></p>
+        <p class="arrow" data-i18n="slp.modp2"></p>
+      </div>
+    </div>
+  </section>
+
+  <div id="solList"></div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/translations.js"></script>
+<script>
+Object.assign(window.I18N.en, {
+  "slp.mod":"Modularly Expandable Intelligent AI Solution",
+  "slp.modp":"Each module in DogWoodPro can operate independently and seamlessly interconnect with others to form a unified AI-driven solution.",
+  "slp.modp2":"→ Provide solutions comprised of modules requested by clients",
+
+  "slg1.f1":"Real-time product quality prediction solution",
+  "slg1.f2":"Reduces product-quality management costs",
+  "slg1.f3":"Explanations for real-time product-quality predictions",
+  "slg1.b1":"Analyzes real-time data from thousands of sensors to precisely predict product quality and yield at both the unit-process and plant-wide levels",
+  "slg1.b2":"Significantly reduces production-quality issues and operational costs caused by limited sampling frequency and manpower shortages",
+  "slg1.b3":"Delivers validated, reliable prediction performance across operational scenarios including catalyst decay, mode shifts and feed changes",
+
+  "slg2.f1":"Integrated insight from scattered operating data",
+  "slg2.f2":"Intuitive visualization of trends and relationships",
+  "slg2.f3":"Analysis tailored to each plant's variables and goals",
+  "slg2.b1":"Identifies critical variable relationships affecting productivity",
+  "slg2.b2":"Establishes optimal operating methods under varying conditions",
+  "slg2.b3":"Turns historical operation into actionable strategy",
+
+  "slg3.f1":"Recommends operating parameters that meet quality targets",
+  "slg3.f2":"Explainable-AI transparency behind every recommendation",
+  "slg3.f3":"Faster engineering decisions in complex operations",
+  "slg3.b1":"Hits quality targets while reducing energy and cost",
+  "slg3.b2":"Surfaces actionable insight beyond standard analysis",
+  "slg3.b3":"Streamlines decision-making in complex operations",
+
+  "slg4.f1":"Unit-process predictions in under a second",
+  "slg4.f2":"Plant-wide results within seconds",
+  "slg4.f3":"Scenario testing without specialized simulation expertise",
+  "slg4.b1":"Enables intuitive scenario testing and back-testing",
+  "slg4.b2":"Supports operating-strategy development",
+  "slg4.b3":"No specialized simulation expertise required",
+
+  "slg5.f1":"Real-time anomaly detection",
+  "slg5.f2":"Fewer false alerts through domain expertise",
+  "slg5.f3":"Customizable safety reports",
+  "slg5.b1":"Identifies high-frequency anomaly sectors for preventive maintenance",
+  "slg5.b2":"Minimizes false alerts through domain expertise",
+  "slg5.b3":"Generates site-specific safety reports",
+
+  "slg6.f1":"On-premise agentic LLM — data stays in-house",
+  "slg6.f2":"Predicts accident scenarios before they escalate",
+  "slg6.f3":"Real-time troubleshooting grounded in plant documents",
+  "slg6.b1":"Integrates safety protocols, manuals and incident histories",
+  "slg6.b2":"Offers real-time troubleshooting guidance",
+  "slg6.b3":"Predicts accident scenarios for faster response",
+
+  "slg7.f1":"Automatic model updates with newly accumulated data",
+  "slg7.f2":"Stable performance as the plant evolves",
+  "slg7.f3":"Lifecycle monitoring without manual effort",
+  "slg7.b1":"Incorporates newly accumulated operational data automatically",
+  "slg7.b2":"Maintains performance stability over time",
+  "slg7.b3":"Reduces the cost of keeping AI in production",
+
+  "slg8.f1":"Feasibility assessment for AI adoption",
+  "slg8.f2":"A staged roadmap toward autonomous operation",
+  "slg8.f3":"Expert process-optimization recommendations",
+  "slg8.b1":"Specialized advisory for autonomous-plant development",
+  "slg8.b2":"Plant-data analysis and model-based process simulation",
+  "slg8.b3":"Improvement plans and new process design"
+});
+Object.assign(window.I18N.ko, {
+  "slp.mod":"모듈 확장형 지능 AI 솔루션",
+  "slp.modp":"DogWoodPro의 각 모듈은 독립적으로 동작하면서도 서로 매끄럽게 연결되어 하나의 통합 AI 기반 솔루션을 구성합니다.",
+  "slp.modp2":"→ 고객이 요청한 모듈로 구성된 솔루션 제공",
+
+  "slg1.f1":"실시간 제품 품질 예측 솔루션",
+  "slg1.f2":"제품 품질 관리 비용 절감",
+  "slg1.f3":"실시간 품질 예측에 대한 설명 제공",
+  "slg1.b1":"수천 개 센서의 실시간 데이터를 분석해 단위 공정과 플랜트 전체 수준의 품질·수율을 정밀 예측",
+  "slg1.b2":"제한된 샘플링 주기와 인력 부족으로 인한 품질 문제와 운영 비용을 크게 절감",
+  "slg1.b3":"촉매 열화·모드 전환·원료 변경 등 다양한 운전 시나리오에서 검증된 신뢰성 있는 예측 성능",
+
+  "slg2.f1":"흩어진 운전 데이터의 통합 인사이트",
+  "slg2.f2":"추세와 상관관계의 직관적 시각화",
+  "slg2.f3":"플랜트별 변수·목표에 맞춘 분석",
+  "slg2.b1":"생산성에 영향을 주는 핵심 변수 관계 식별",
+  "slg2.b2":"다양한 조건에서 최적 운전 방법 수립",
+  "slg2.b3":"과거 운전을 실행 가능한 전략으로 전환",
+
+  "slg3.f1":"품질 목표를 달성하는 운전 변수 추천",
+  "slg3.f2":"모든 추천에 설명가능한 AI 투명성",
+  "slg3.f3":"복잡한 운전에서 더 빠른 엔지니어링 의사결정",
+  "slg3.b1":"에너지·비용을 줄이며 품질 목표 달성",
+  "slg3.b2":"일반 분석을 넘어선 실행 가능한 통찰",
+  "slg3.b3":"복잡한 운전의 의사결정 간소화",
+
+  "slg4.f1":"단위 공정 예측 1초 미만",
+  "slg4.f2":"플랜트 전체 결과 수 초 이내",
+  "slg4.f3":"전문 시뮬레이션 지식 없는 시나리오 테스트",
+  "slg4.b1":"직관적인 시나리오 테스트·백테스트",
+  "slg4.b2":"운전 전략 수립 지원",
+  "slg4.b3":"전문 시뮬레이션 전문성 불필요",
+
+  "slg5.f1":"실시간 이상 탐지",
+  "slg5.f2":"도메인 전문성으로 오경보 최소화",
+  "slg5.f3":"맞춤형 안전 보고서",
+  "slg5.b1":"예방 정비를 위한 이상 빈발 구간 식별",
+  "slg5.b2":"도메인 전문성으로 오경보 최소화",
+  "slg5.b3":"현장별 안전 보고서 생성",
+
+  "slg6.f1":"온프레미스 에이전틱 LLM — 데이터 사내 보관",
+  "slg6.f2":"사고 시나리오를 확대 전에 예측",
+  "slg6.f3":"플랜트 문서에 근거한 실시간 문제 해결",
+  "slg6.b1":"안전 프로토콜·매뉴얼·사고 이력 통합",
+  "slg6.b2":"실시간 문제 해결 가이드 제공",
+  "slg6.b3":"빠른 대응을 위한 사고 시나리오 예측",
+
+  "slg7.f1":"새로 축적된 데이터로 자동 모델 갱신",
+  "slg7.f2":"플랜트가 변해도 안정적인 성능",
+  "slg7.f3":"수작업 없는 수명주기 모니터링",
+  "slg7.b1":"새 운전 데이터를 자동 반영",
+  "slg7.b2":"시간이 지나도 성능 안정성 유지",
+  "slg7.b3":"AI 운영 유지 비용 절감",
+
+  "slg8.f1":"AI 도입 타당성 평가",
+  "slg8.f2":"자율 운전을 향한 단계적 로드맵",
+  "slg8.f3":"전문가의 공정 최적화 권고",
+  "slg8.b1":"자율 플랜트 개발 전문 자문",
+  "slg8.b2":"플랜트 데이터 분석 및 모델 기반 공정 시뮬레이션",
+  "slg8.b3":"개선 계획 및 신공정 설계"
+});
+
+(function(){
+  var M = [
+    {id:"predipro",  h:"nav.sol1", tag:"nav.sol1.d", k:"slg1", img:"nt01.jpg"},
+    {id:"analypro",  h:"nav.sol2", tag:"nav.sol2.d", k:"slg2", img:"nt02.jpg"},
+    {id:"optpro",    h:"nav.sol3", tag:"nav.sol3.d", k:"slg3", img:"nt03.jpg"},
+    {id:"simpro",    h:"nav.sol4", tag:"nav.sol4.d", k:"slg4", img:"nt04.jpg"},
+    {id:"safepro",   h:"nav.sol5", tag:"nav.sol5.d", k:"slg5", img:"nt05.jpg"},
+    {id:"plantbot",  h:"nav.sol6", tag:"nav.sol6.d", k:"slg6", img:"b6.jpg"},
+    {id:"mlops",     h:"nav.sol7", tag:"nav.sol7.d", k:"slg7", img:"b7.jpg"},
+    {id:"consulting",h:"nav.sol8", tag:"nav.sol8.d", k:"slg8", img:"a6.jpg"}
+  ];
+  function li(key){ return '<li data-i18n="'+key+'"></li>'; }
+  document.getElementById("solList").innerHTML = M.map(function(m){
+    return '<section class="mod anchor-sec" id="'+m.id+'">'+
+      '<h2 class="reveal"><span data-i18n="'+m.h+'"></span>: <span data-i18n="'+m.tag+'"></span></h2>'+
+      '<div class="reveal">'+
+        '<span class="uh" data-i18n="g.features"></span>'+
+        '<ul class="dash-list">'+li(m.k+'.f1')+li(m.k+'.f2')+li(m.k+'.f3')+'</ul>'+
+        '<span class="uh" data-i18n="g.benefits"></span>'+
+        '<ul class="dash-list">'+li(m.k+'.b1')+li(m.k+'.b2')+li(m.k+'.b3')+'</ul>'+
+      '</div>'+
+      '<div class="diagram reveal d1"><img src="assets/software/'+m.img+'" alt="" loading="lazy"></div>'+
+    '</section>';
+  }).join("");
+})();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

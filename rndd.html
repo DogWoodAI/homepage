@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R&amp;DD — DogWoodAI</title>
+<link rel="icon" href="assets/main/visual-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.figcap-u{text-align:center;font-size:.85rem;font-weight:600;color:#1f2937;margin-top:13px;text-decoration:underline;text-underline-offset:4px}
+/* images render at natural size, centered inside the full-width frame (like the original) */
+#rdList .diagram{padding:26px 18px}
+#rdList .diagram img{width:auto;max-width:100%;margin:0 auto}
+/* side layout (text left, figure right) used by select sections */
+.rd-side{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:start}
+.rd-side .diagram{margin-top:8px;padding:16px}
+.rd-side .diagram img{width:100%}
+@media(max-width:900px){.rd-side{grid-template-columns:1fr;gap:26px}}
+#rdList .mod p.rd-p{margin-top:14px;color:#374151;font-size:.96rem;line-height:1.85}
+#rdList .mod h2{font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.45}
+</style>
+</head>
+<body data-popup="off">
+<div id="site-header"></div>
+
+<section class="page-hero"><div class="container"><h1 data-i18n="nav.rndd"></h1></div></section>
+
+<div class="container">
+  <div id="rdList"></div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/translations.js"></script>
+<script>
+Object.assign(window.I18N.en, {
+  "rd1.t":"Comparative performance and machine learning-based optimization of TSA configurations for NH₃ removal from NH₃ cracking gas",
+  "rd1.p":"To bring ammonia (NH₃) levels in H₂ fuel-cell applications below 0.1 ppm, novel three-bed temperature swing adsorption (TSA) configurations using zeolite were developed and optimized with AI. Several TSA setups were evaluated, and the TSA-TGER configuration proved the most efficient in techno-economic comparison — cooling with H₂ pressure-swing-adsorption tail gas and heating with NH₃ TSA off-gas. The AI models delivered precise predictions while sharply cutting computational cost, and the resulting design lowered NH₃ removal cost to only 0.98% of overall H₂ production cost — a promising route for cleaning NH₃ cracking gases.",
+  "rd1.c":"TSA configurations for NH₃ removal from NH₃ cracking gas, performance of AI model and scatter profiles for optimization of the main operating variables",
+  "rd2.t":"Dynamic model-driven AI for H₂ recovery and CO₂ capture from hydrogen tail gas",
+  "rd2.p":"An integrated process recovering H₂ and capturing CO₂ from hydrogen-plant tail gases — organized into front and rear sectors — was validated and optimized using a dynamic model together with AI. The outcome demonstrates cost-effective H₂ recovery and efficient CO₂ capture, bridging energy-research gaps and sustainability. The trained AI reproduces system behavior precisely at low computational cost, while a differential-evolution approach searches optimal operating conditions. The methodology is validated against reference data for a hybrid cryogenic–membrane process, ultimately establishing its cost and energy efficiency.",
+  "rd2.c":"Configuration of the integrated process for H₂ recovery and CO₂ capture from the tail gas of a H₂ SMR plant, and evaluation using AI model",
+  "rd3.t":"Deep reinforcement learning optimization framework for a power generation plant considering performance and environmental issues",
+  "rd3.p":"Balancing power production against emission limits is a complex task in electric power generation. A deep reinforcement learning optimization framework (DRLOF) was built for a circulating fluidized bed (CFB) power plant: plant data forms the environment, which interacts with an advantage actor-critic (A2C) agent. The framework maximizes generation while respecting capacity constraints and environmental emission standards and accounting for operating cost. The separate-A2CN architecture increased electricity generation and reduced emissions at lower computational cost, and showed flexibility and adaptability across test scenarios — with implications beyond CFB plants for other chemical processes. The solution was provided to an electrical power company.",
+  "rd3.c":"A2C architecture to maximize the power generation and reduce NOx in CFB power plant",
+  "rd4.t":"CO₂ capture capability of 0.5 MW MEA demo plant using deep learning pipelines",
+  "rd4.p":"Three AI pipelines — S-DLP, SBE-DLP and L-DLP — were developed to predict the CO₂ capture potential of amine-based processes. Real operating data from a 0.5 MW MEA demo plant supported data cleaning, feature selection and AI-driven prediction. After outlier elimination, the best pipeline was selected and delivered accurate predictions of CO₂ capture rate and concentration; it was further used to predict temperature variation in the absorber and stripper, which is crucial for energy saving. The result demonstrates accurate, efficient prediction of CO₂ capture for chemical processes.",
+  "rd4.c":"Configuration of CO₂ capture process and the performance comparison of each pipelines",
+  "rd5.t":"Techno-economic analysis and optimization using AI model for a CO₂ absorption process using an MDEA/PZ solvent with a solvent looping system for steam methane reforming",
+  "rd5.p":"An AI model was built for a pre-combustion CO₂ absorption process that uses a solvent-looping system with a blended MDEA/PZ solvent. The looping system recycles part of the solvent from a flash drum, cutting energy consumption and shrinking the stripper. AI models predict capital and operating costs with high accuracy, and a multi-variable mutation approach over those models optimizes the operating conditions to minimize CO₂ capture cost. The solution was provided to an oil company.",
+  "rd5.c":"Prediction accuracy and optimal operating conditions using AI for CO₂ absorption process.",
+  "rd6.t":"Actor-critic reinforcement learning using the AI model to determine the optimal operating conditions of the hydrocracking process",
+  "rd6.p":"Because traditional mathematical optimization is costly and poorly suited to the quick response and customization that hydrocracking units demand, an actor-critic reinforcement learning strategy was developed over an AI surrogate model. The surrogate — built from a validated mathematical model — gives accurate predictions with minimal computational resources. The RL framework determined optimal operating conditions with 97.86–98.5% accuracy, showing consistency and an average efficiency of 98% across case studies. Quick response time, low computational burden and customizability make it practical for online use, and the strategy extends beyond hydrocracking to other chemical industries.",
+  "rd6.c":"Hydrocracking process Reinforcement Learning Optimization",
+  "rd7.t":"Integrating mathematical modelling and machine learning for steam methane reformer in the chemical industry",
+  "rd7.p":"The steam methane reformer (SMR) is central to hydrogen production from natural gas. A combined mathematical-modeling and AI approach was developed to raise SMR performance: a rigorous dynamic model was built and validated, reliably predicting temperature, pressure, mole fraction and heat flux. The model then generated performance data across varying catalyst parameters and operating conditions; the dataset was analyzed with principal components, and an AI was trained to map operating variables to predicted outputs with high accuracy at a fraction of the simulation cost. This enables online operation, optimization and system design for hydrogen production at low computational cost.",
+  "rd7.c":"Comparison of dynamic model and AI model results for SMR Process",
+  "rd8.t":"AI optimization for low-carbon H₂ production via a sorption-enhanced steam methane reforming (SESMR) process integrated with separation process",
+  "rd8.p":"An AI model was developed for an SESMR process integrated with separation for low-carbon H₂ production — aiming to simplify optimization and control, guide sorbent–catalyst development, and exploit AI's predictive accuracy. The integrated process comprises a cyclic fluidized bed (CFB), pressure swing adsorption (PSA) and other units. Sensitivity analysis and feature selection identified the main objectives and variables, and an AI-driven optimization formulated an SESMR-driven model that achieved a 15% cost reduction for high-purity H₂ production with CO₂ capture versus the traditional SMR process. The findings support operation, optimization and control of integrated SESMR processes and carry implications for sorbent and catalyst development.",
+  "rd8.c":"AI-driven SESMR process optimization and its results",
+  "rd9.t":"AI model of commercial scale SMB for multi-component n-paraffin separation",
+  "rd9.p":"An ML model was developed to analyze and improve simulated moving bed (SMB) chromatography separating a multi-component mixture of C10–14 normal paraffins from kerosene. To handle complex feed compositions and operating variables, a mathematical dynamic model was used alongside data-driven AI trained on real industrial data. The analysis showed that optimizing the countercurrent ratio in different zones can enhance recovery, and highlighted a new operating strategy for effective impurity removal. Complementary use of mathematical and data-driven models was recommended given limited experimental data, and an exergy analysis of the overall SMB process surfaced further improvements — contributing to design and operation guidelines for a fine chemical company.",
+  "rd9.c":"Configuration of n-paraffin SMB adsorption chambers and scatter plot of the predicted impurities",
+  "rd10.t":"Design guideline for CO₂ to methanol conversion process supported by generic model of various bed reactors",
+  "rd10.p":"A generic model covering commercially viable bed reactors (BRs) was developed to derive a reactor design guideline for the CO₂-to-methanol (CTM) conversion process. Each BR exhibits its own optimal operating conditions, and the overall CTM process reaches minimum cost at specific reactor pressure and temperature values. The guidelines offer practical applications for CTM design, operation and decision-making, and the BR models can be reused for other CO₂ utilization processes.",
+  "rd10.c":"Proper reactor selection zone for CTM process design vs. CO₂ feed rate from the highest to lowest material costs.",
+  "rd11.t":"A novel process for wet CO₂ to methanol using a catalytic fluidized bed reactor integrated with separators",
+  "rd11.p":"An AI model and optimizer were developed for an advanced process converting wet CO₂ into methanol in a catalytic fluidized bed reactor integrated with separators. With demand growing for large-scale green processes that neutralize carbon emissions, the model offers an attractive solution: it optimizes the process while predicting performance accurately and cutting computational cost substantially.",
+  "rd11.c":"Optimization of the operating conditions using AI for SMR process",
+  "rd12.t":"AI-driven surrogate model for dynamic behaviors and performance of solid propellant combustion",
+  "rd12.p":"This development predicts the dynamic behavior and performance of solid-propellant combustion with a mathematical model and an AI surrogate. The rigorous mathematical model is impractical on its own due to computational complexity, so the surrogate was built to predict combustion dynamics quickly and accurately — running hundreds of times faster than dynamic simulation. The results were provided to a defense-related company.",
+  "rd12.c":"Results of dynamic behavior of solid propellant combustion using surrogate model",
+  "rd13.t":"Advanced cartridge design using CFD for a gas respiratory protection system",
+  "rd13.p":"Gas masks are vital for protecting people from hazardous materials, motivating advanced cartridges for next-generation respirators. A CFD model was validated against a prototype cartridge, and respiration resistance and breakthrough time were compared across three designs. A virtual-reality system visualized cartridge performance. The CFD model supports developing and optimizing gas-respirator cartridges — improving wearability, protection and overall design efficiency.",
+  "rd13.c":"Shape and geometry of gas cartridges and gas flow observed in VR.",
+  "rd14.t":"Advanced process integration and machine learning-based optimization to enhance techno-economic-environmental performance of CO₂ capture and conversion to methanol",
+  "rd14.p":"An integrated CO₂ capture-and-conversion-to-methanol (CCTM) process enhanced by AI-driven optimization achieves significant gains in energy use, production cost and CO₂ reduction. The advanced design reuses waste heat, off-gas and water — improving energy efficiency by 14.73–16.30%, lowering production cost by 0.81–1.28% and raising net CO₂ reduction by 3.13–3.38%. AI optimization reached a 92.53% CO₂ capture rate and an 8.21 $/tMeOH cut in production cost, offering a viable, sustainable path toward carbon-neutral methanol production.",
+  "rd14.c":"AI-driven optimization for a methanol conversion process with advanced CO₂ capture",
+  "rd15.t":"Blended-amine CO₂ capture process without stripper for high-pressure syngas",
+  "rd15.p":"A novel CO₂ capture process for high-pressure syngas uses a blended MDEA/PZ solvent without a traditional stripper: a low-pressure flash column takes its place, regenerating the solvent below 373.15 K and reducing energy consumption. Optimization with the AI model achieved a heat duty of 1.881 GJ/ton CO₂ — well below conventional methods — and economic analysis showed that with waste-heat recovery the process costs $32.89/ton CO₂, underscoring cost-effective capture for hydrogen production.",
+  "rd15.c":"AI-driven optimization for blended amine CO₂ capture process",
+  "rd16.t":"Pre-combustion CO₂ capture using amine-based absorption process for blue H₂ production from steam methane reformer",
+  "rd16.p":"A novel pre-combustion CO₂ capture process using an MDEA/PZ solvent was developed for blue H₂ production from the steam methane reformer. Sensitivity analysis and AI-driven optimization showed substantial energy savings, with reboiler duties of 1.318 and 1.364 GJ/tonCO₂ at 90% and 95% removal efficiency respectively; AI optimization trimmed equivalent work by a further 0.3%. The process consumes over 40% less energy than traditional post-combustion methods — highly competitive industrially, and especially beneficial for H₂ recovery without extra compression energy. The results were provided to a petrochemical company.",
+  "rd16.c":"Amine-based absorption process for CO₂ capture in SMR syngas & Profiles for optimization of operating parameters at 90%",
+  "rd17.t":"Prediction of CO₂ solubility in multicomponent electrolyte solutions up to 709 bar: Analogical bridge between hydrophobic solvation and adsorption model",
+  "rd17.p":"A novel model predicting CO₂ solubility in multicomponent electrolyte solutions up to 709 bar was developed from an analogy between hydrophobic solvation and an ideal adsorption model. Using only four parameters, it accurately predicts CO₂ solubility across solutions containing diverse ions (e.g., Na⁺, Ca²⁺, Mg²⁺, K⁺, SO₄²⁻, Cl⁻) by correlating CO₂ pressure, system temperature and the concentration of electrostricted water molecules. Validated on 1,384 experimental data points, the model achieved 95% prediction accuracy — significant utility for industrial CO₂ applications.",
+  "rd17.c":"Experimental data vs. model predictions of CO₂ solubility",
+  "rd18.t":"Industrial-scale 12-layered-bed vacuum pressure swing adsorption for fuel cell-grade H₂ production from steam methane reforming syngas",
+  "rd18.p":"An industrial 12-layered-bed vacuum pressure swing adsorption (VPSA) process was developed to produce fuel-cell-grade H₂ from carbon-captured steam-methane-reforming syngas. On top of dynamic simulations validated with industrial data, a surrogate model predicts hydrogen purity, recovery and CO concentration — managing the intricate interactions across 12 beds and 24 operational steps. The AI models were integrated with multi-objective optimization to identify operating conditions that maximize purity and recovery. This three-stage AI development strategy demonstrates a robust, systematic approach to designing and optimizing VPSA in SMR plants with carbon capture, contributing to a low-carbon economy. The results were provided to an oil company.",
+  "rd18.c":"12-layered-bed VPSA for fuel cell-grade H₂ production and surrogate model-based optimization",
+  "rd19.t":"Hybrid process using cryogenic and pressure swing adsorption process for CO₂ capture and H₂ production",
+  "rd19.p":"Cryogenic distillation combined with a two-stage pressure swing adsorption system was developed for effective CO₂ capture and additional H₂ production from SMR tail gas. AI models enable rapid performance evaluation across operating conditions, and the multi-AI models were integrated with multi-objective optimization under constraints of a CO₂ capture rate above 90% and fuel-cell-grade H₂ purity of at least 99.999% (CO ≤ 0.2 ppm) while minimizing separation cost. The AI solution supplied the inputs for techno-economic analysis: the hybrid process achieves competitive H₂ separation and CO₂ capture costs, with further reductions possible when extra blue-hydrogen production is counted. The results were provided to an oil company.",
+  "rd19.c":"AI-driven optimization for the hybrid process"
+});
+Object.assign(window.I18N.ko, {
+  "rd1.t":"NH₃ 분해가스 내 NH₃ 제거를 위한 TSA 구성의 성능 비교 및 머신러닝 기반 최적화",
+  "rd1.p":"H₂ 연료전지용 암모니아(NH₃) 농도를 0.1 ppm 이하로 낮추기 위해 제올라이트를 이용한 신규 3-베드 온도순환흡착(TSA) 구성을 개발하고 AI로 최적화했습니다. 여러 TSA 구성을 평가한 결과, H₂ PSA 테일가스를 냉각에, NH₃ TSA 오프가스를 가열에 활용하는 TSA-TGER 구성이 기술·경제성 비교에서 가장 효율적이었습니다. AI 모델은 연산 비용을 크게 줄이면서 정밀한 예측을 제공했고, 그 결과 NH₃ 제거 비용을 전체 H₂ 생산 비용의 0.98% 수준으로 낮춰 NH₃ 분해가스 정제의 유망한 해법을 제시했습니다.",
+  "rd1.c":"NH₃ 분해가스 NH₃ 제거용 TSA 구성, AI 모델 성능 및 주요 운전변수 최적화 산점도",
+  "rd2.t":"수소 테일가스의 H₂ 회수 및 CO₂ 포집을 위한 동적 모델 기반 AI",
+  "rd2.p":"수소 플랜트 테일가스에서 H₂를 회수하고 CO₂를 포집하는 전단·후단 통합 공정을 동적 모델과 AI로 검증·최적화했습니다. 그 결과 비용 효율적인 H₂ 회수와 효율적인 CO₂ 포집을 입증하며 에너지 연구와 지속가능성 사이의 간극을 잇습니다. 학습된 AI는 낮은 연산 비용으로 시스템 거동을 정밀하게 재현하고, 차분진화 기법이 최적 운전 조건을 탐색합니다. 본 방법론은 하이브리드 극저온–멤브레인 공정의 기준 데이터로 검증되어 비용과 에너지 효율을 최종 판단합니다.",
+  "rd2.c":"H₂ SMR 플랜트 테일가스의 H₂ 회수·CO₂ 포집 통합 공정 구성과 AI 모델 평가",
+  "rd3.t":"성능과 환경 문제를 고려한 발전 플랜트용 심층강화학습 최적화 프레임워크",
+  "rd3.p":"발전량과 배출 한도의 균형은 전력 산업의 복잡한 과제입니다. 순환유동층(CFB) 발전소를 위한 심층강화학습 최적화 프레임워크(DRLOF)는 플랜트 데이터로 환경을 구성하고 A2C(advantage actor-critic) 에이전트와 상호작용합니다. 용량 제약과 환경 배출 기준을 지키고 운영 비용을 고려하면서 발전량을 극대화하며, separate-A2CN 구조는 더 낮은 연산 비용으로 발전량 증가와 배출 저감을 달성했습니다. 다양한 시나리오에서 유연성과 적응성을 보였고 CFB를 넘어 다른 화학 공정·산업으로 확장 가능합니다. 결과는 전력 회사에 제공되었습니다.",
+  "rd3.c":"CFB 발전소의 발전량 극대화와 NOx 저감을 위한 A2C 아키텍처",
+  "rd4.t":"딥러닝 파이프라인을 이용한 0.5 MW MEA 실증 플랜트의 CO₂ 포집 성능",
+  "rd4.p":"아민 기반 포집 공정의 CO₂ 포집 잠재력을 예측하기 위해 세 가지 AI 파이프라인(S-DLP, SBE-DLP, L-DLP)을 개발했습니다. 0.5 MW MEA 실증 플랜트의 실제 운전 데이터로 데이터 정제, 특징 선택, AI 예측을 수행했고, 이상치 제거 후 선정된 최적 파이프라인은 CO₂ 포집률과 농도를 정확히 예측했습니다. 나아가 에너지 절감에 핵심적인 흡수탑·재생탑의 온도 변화 예측에도 활용되어, 화학 공정 CO₂ 포집의 정확하고 효율적인 예측 가능성을 입증했습니다.",
+  "rd4.c":"CO₂ 포집 공정 구성 및 파이프라인별 성능 비교",
+  "rd5.t":"SMR용 MDEA/PZ 용매·용매 순환 시스템 CO₂ 흡수 공정의 AI 기반 기술경제성 분석 및 최적화",
+  "rd5.p":"MDEA/PZ 혼합 용매와 용매 순환 시스템을 활용한 연소 전 CO₂ 흡수 공정의 AI 모델을 개발했습니다. 플래시 드럼에서 용매 일부를 재순환하는 신규 순환 시스템으로 에너지 소비와 재생탑 크기를 줄였습니다. AI 모델이 자본·운영 비용을 정확히 예측하고, AI 모델 기반 다변수 변이 기법으로 운전 조건을 최적화해 CO₂ 포집 비용을 최소화했습니다. 솔루션은 정유사에 제공되었습니다.",
+  "rd5.c":"CO₂ 흡수 공정에 대한 AI 예측 정확도와 최적 운전 조건",
+  "rd6.t":"AI 모델을 이용한 수소화분해 공정 최적 운전조건 결정을 위한 액터-크리틱 강화학습",
+  "rd6.p":"기존 수학적 최적화는 비용이 크고 수소화분해 설비가 요구하는 빠른 대응·맞춤화에 적합하지 않아, AI 대리 모델 위에서 동작하는 액터-크리틱 강화학습 전략을 개발했습니다. 검증된 수학 모델로부터 구축한 대리 모델은 최소한의 연산 자원으로 정확한 예측을 제공합니다. RL 프레임워크는 97.86~98.5%의 정확도로 최적 운전조건을 결정했고 사례 연구에서 평균 98%의 효율과 일관성을 보였습니다. 빠른 응답, 낮은 연산 부담, 맞춤화 가능성 덕분에 온라인 적용에 실용적이며, 수소화분해를 넘어 다른 화학 산업으로 확장 가능한 새로운 최적화 솔루션입니다.",
+  "rd6.c":"수소화분해 공정 강화학습 최적화",
+  "rd7.t":"화학 산업 수증기 메탄 개질기(SMR)를 위한 수학적 모델링과 머신러닝의 통합",
+  "rd7.p":"수증기 메탄 개질기(SMR)는 천연가스 기반 수소 생산의 핵심 설비입니다. SMR 성능 향상을 위해 수학적 모델링과 AI를 결합한 접근을 개발했습니다. 엄밀한 동적 모델을 구축·검증하여 온도, 압력, 몰분율, 열유속 예측의 신뢰성을 입증했고, 촉매 변수와 운전 조건을 바꿔가며 성능 데이터를 생성했습니다. 주성분 분석으로 데이터를 해석하고 운전 변수와 예측 출력의 관계를 정확히 매핑하는 AI를 학습시켜, 동적 시뮬레이션 대비 연산 시간을 크게 줄이면서 높은 정확도를 달성했습니다. 이로써 낮은 연산 비용으로 수소 생산의 온라인 운전·최적화·시스템 설계가 가능해집니다.",
+  "rd7.c":"SMR 공정의 동적 모델과 AI 모델 결과 비교",
+  "rd8.t":"분리 공정과 통합된 흡착강화 SMR(SESMR) 공정의 저탄소 H₂ 생산을 위한 AI 최적화",
+  "rd8.p":"저탄소 H₂ 생산을 위해 분리 공정과 통합된 SESMR 공정의 AI 모델을 개발했습니다. 최적화·제어를 단순화하고 흡착제–촉매 개발 방향을 제시하며 AI의 정밀 예측 역량을 활용하는 것이 목표입니다. 통합 공정은 순환유동층(CFB), PSA 등으로 구성됩니다. 민감도 분석과 특징 선택으로 핵심 목적함수와 변수를 식별했고, AI 기반 최적화로 SESMR 구동 모델을 수립하여 기존 SMR 대비 고순도 H₂ 생산·CO₂ 포집 비용을 15% 절감했습니다. 이 결과는 통합 SESMR 공정의 운전·최적화·제어에 기여하며 복잡 공정의 흡착제·촉매 개발에도 시사점을 제공합니다.",
+  "rd8.c":"AI 기반 SESMR 공정 최적화와 그 결과",
+  "rd9.t":"다성분 노말파라핀 분리를 위한 상업 규모 SMB의 AI 모델",
+  "rd9.p":"등유에서 C10-14 노말파라핀 다성분 혼합물을 분리하는 모사이동층(SMB) 크로마토그래피의 분석·개선을 위한 ML 모델을 개발했습니다. 복잡한 원료 조성과 운전 변수에 대응하기 위해 수학적 동적 모델과 실제 산업 데이터를 학습한 데이터 기반 AI를 함께 사용해 SMB 성능을 평가했습니다. 분석 결과 구역별 향류비 최적화로 회수율을 높일 수 있음을 확인했고, 효과적인 불순물 제거를 위한 새로운 운전 전략을 제시했습니다. 제한된 실험 데이터를 고려해 수학·데이터 모델의 상호 보완 활용을 권고했으며, SMB 전체 공정의 엑서지 분석으로 추가 개선 가능성을 도출 — 정밀화학 기업의 설계·운전 가이드라인 수립에 기여했습니다.",
+  "rd9.c":"노말파라핀 SMB 흡착 챔버 구성과 예측 불순물 산점도",
+  "rd10.t":"다양한 베드 반응기의 일반화 모델로 뒷받침되는 CO₂-메탄올 전환 공정 설계 가이드라인",
+  "rd10.p":"일반화 모델을 개발하여 CO₂-메탄올(CTM) 전환 공정의 새로운 반응기 설계 가이드라인을 제시했습니다. 상용 가능한 베드 반응기(BR) 전반을 분석해 각각의 최적 운전 조건을 결정했으며, 반응기마다 최적 조건이 다르고 전체 CTM 공정은 특정 반응기 압력·온도에서 최소 비용을 보였습니다. 도출된 가이드라인은 CTM 공정의 설계·운전·의사결정에 실용적으로 적용되며, BR 모델은 다른 CO₂ 활용 공정에도 기여할 수 있습니다.",
+  "rd10.c":"최고~최저 원료비 구간의 CO₂ 공급 속도 대비 CTM 공정 설계용 적정 반응기 선택 영역",
+  "rd11.t":"분리기와 통합된 촉매 유동층 반응기를 이용한 습식 CO₂-메탄올 신공정",
+  "rd11.p":"분리기와 통합된 촉매 유동층 반응기에서 습식 CO₂를 메탄올로 전환하는 첨단 공정을 위한 AI 모델과 최적화기를 개발했습니다. 탄소 중립을 위한 대규모 친환경 공정 수요가 커지는 가운데, 이 모델은 성능을 정확히 예측하면서 연산 비용을 크게 줄여 공정을 최적화하는 매력적인 해법을 제공합니다.",
+  "rd11.c":"SMR 공정을 위한 AI 기반 운전 조건 최적화",
+  "rd12.t":"고체 추진제 연소의 동적 거동·성능 예측을 위한 AI 대리 모델",
+  "rd12.p":"수학 모델과 AI 대리 모델로 고체 추진제 연소의 동적 거동과 성능을 예측합니다. 엄밀한 수학 모델은 연산 복잡성 때문에 실용성이 제한되므로, 이를 보완하는 AI 대리 모델을 개발해 연소 동적 거동을 빠르고 정확하게 예측했습니다. 대리 모델은 연산 속도에서 동적 시뮬레이션을 수백 배 능가했으며, 결과는 방산 관련 기업에 제공되었습니다.",
+  "rd12.c":"대리 모델을 이용한 고체 추진제 연소 동적 거동 결과",
+  "rd13.t":"가스 호흡 보호 시스템을 위한 CFD 기반 고급 카트리지 설계",
+  "rd13.p":"방독면은 유해 물질로부터 개인을 보호하는 핵심 장비로, 차세대 호흡 보호구를 위한 고급 카트리지 개발이 요구됩니다. 프로토타입 카트리지로 CFD 모델을 검증하고 세 가지 설계의 호흡 저항과 파과 시간을 비교했으며, 가상현실(VR) 시스템으로 카트리지 성능을 시각적으로 관찰했습니다. 이 CFD 모델은 착용성, 보호 성능, 설계 효율을 높이는 방독면 카트리지 개발·최적화에 기여합니다.",
+  "rd13.c":"가스 카트리지의 형상·구조와 VR로 관찰한 가스 흐름",
+  "rd14.t":"CO₂ 포집·메탄올 전환의 기술·경제·환경 성능 향상을 위한 공정 통합 및 머신러닝 최적화",
+  "rd14.p":"AI 최적화로 강화된 통합 CO₂ 포집-메탄올 전환(CCTM) 공정은 에너지 소비, 생산 비용, CO₂ 저감에서 의미 있는 개선을 달성했습니다. 폐열·오프가스·물을 재활용하는 고도화 설계로 에너지 효율을 14.73~16.30% 개선하고 생산 비용을 0.81~1.28% 절감했으며 순 CO₂ 저감을 3.13~3.38% 높였습니다. AI 최적화로 92.53%의 CO₂ 포집률과 8.21 $/tMeOH의 생산비 절감을 달성하여, 메탄올 생산의 탄소 중립을 향한 지속가능한 해법을 제시합니다.",
+  "rd14.c":"고도화된 CO₂ 포집을 갖춘 메탄올 전환 공정의 AI 최적화",
+  "rd15.t":"고압 합성가스를 위한 재생탑 없는 혼합 아민 CO₂ 포집 공정",
+  "rd15.p":"고압 합성가스를 위한 신규 CO₂ 포집 공정으로, MDEA/PZ 혼합 용매를 사용하면서 전통적인 재생탑을 저압 플래시 컬럼으로 대체했습니다. 이를 통해 373.15 K 미만의 낮은 온도에서 용매를 재생하여 에너지 소비를 줄입니다. AI 모델 기반 최적화로 1.881 GJ/ton CO₂의 열부하를 달성해 기존 방식을 크게 밑돌았고, 경제성 분석 결과 폐열 회수 시 공정 비용은 $32.89/ton CO₂로 수소 생산에서의 비용 효율적 포집 잠재력을 보여줍니다.",
+  "rd15.c":"혼합 아민 CO₂ 포집 공정의 AI 기반 최적화",
+  "rd16.t":"SMR 블루수소 생산을 위한 아민 흡수 기반 연소 전 CO₂ 포집",
+  "rd16.p":"수증기 메탄 개질기(SMR) 기반 블루 H₂ 생산을 위한 MDEA/PZ 용매의 신규 연소 전 CO₂ 포집 공정을 개발했습니다. 민감도 분석과 AI 최적화로 상당한 에너지 절감을 확인했으며, 90%와 95% 제거 효율에서 각각 1.318, 1.364 GJ/tonCO₂의 재비기 부하를 달성하고 AI 최적화로 등가 일을 추가로 0.3% 절감했습니다. 기존 연소 후 방식보다 40% 이상 낮은 에너지 소비로 산업 적용 경쟁력이 높고, 특히 추가 압축 에너지 없는 H₂ 회수에 유리합니다. 결과는 석유화학 기업에 제공되었습니다.",
+  "rd16.c":"SMR 합성가스 CO₂ 포집용 아민 흡수 공정 및 90% 조건 운전변수 최적화 프로파일",
+  "rd17.t":"709 bar까지의 다성분 전해질 용액 CO₂ 용해도 예측: 소수성 용매화-흡착 모델의 유추적 연결",
+  "rd17.p":"소수성 용매화와 이상 흡착 모델 간 유추를 바탕으로 다성분 전해질 용액의 CO₂ 용해도를 709 bar까지 예측하는 신규 모델을 개발했습니다. 단 4개의 매개변수로 CO₂ 압력, 시스템 온도, 전기수축수 분자 농도를 상관시켜 다양한 이온(Na⁺, Ca²⁺, Mg²⁺, K⁺, SO₄²⁻, Cl⁻)이 포함된 용액의 CO₂ 용해도를 정확히 예측합니다. 1,384개의 실험 데이터로 검증하여 95%의 예측 정확도를 달성했으며, 산업적 CO₂ 응용에 큰 효용을 제공합니다.",
+  "rd17.c":"CO₂ 용해도의 실험 데이터 vs. 모델 예측 비교",
+  "rd18.t":"탄소 포집 SMR 합성가스로부터 연료전지급 H₂ 생산을 위한 산업 규모 12층 베드 진공 PSA",
+  "rd18.p":"탄소 포집 SMR 합성가스에서 연료전지급 H₂를 생산하기 위해 산업 현장에서 쓰이는 12층 베드 진공 PSA(VPSA) 공정을 개발했습니다. 산업 데이터로 검증된 동적 시뮬레이션 위에 대리 모델을 구축하여 12개 베드·24개 운전 단계의 복잡한 상호작용을 관리하며 수소 순도·회수율·CO 농도를 예측합니다. AI 모델을 다목적 최적화와 통합해 순도와 회수율을 극대화하는 최적 운전 조건을 도출했습니다. 이 3단계 AI 솔루션 개발 전략은 탄소 포집을 갖춘 SMR 플랜트 VPSA 공정의 설계·최적화에 대한 견고하고 체계적인 접근을 보여주며 저탄소 경제에 기여합니다. 결과는 정유사에 제공되었습니다.",
+  "rd18.c":"연료전지급 H₂ 생산용 12층 베드 VPSA와 대리 모델 기반 최적화",
+  "rd19.t":"CO₂ 포집과 H₂ 생산을 위한 극저온·PSA 하이브리드 공정",
+  "rd19.p":"SMR 플랜트 테일가스에서 효과적인 CO₂ 포집과 추가 H₂ 생산을 위해 극저온 증류와 2단 PSA 시스템을 결합한 공정을 개발했습니다. 다양한 운전 조건에서 신속한 성능 평가가 가능하도록 AI 모델을 구축했고, 멀티 AI 모델을 다목적 최적화와 통합하여 CO₂ 포집률 90% 초과, 연료전지급 H₂ 순도 99.999% 이상(CO ≤ 0.2 ppm) 제약 아래 분리 비용을 최소화했습니다. AI 솔루션이 기술경제성 분석에 필요한 정보를 제공한 결과, 하이브리드 공정은 경쟁력 있는 H₂ 분리·CO₂ 포집 비용을 달성하며 추가 블루수소 생산을 반영하면 비용을 더 낮출 수 있습니다. 결과는 정유사에 제공되었습니다.",
+  "rd19.c":"하이브리드 공정의 AI 기반 최적화"
+});
+
+(function(){
+  var IMG  = [12,13,1,2,3,4,5,6,7,8,9,10,11,14,15,16,17,18,19]; // real page order
+  var SIDE = {6:true, 7:true}; // sections with text-left / figure-right layout
+  var html = "";
+  for(var i=1;i<=19;i++){
+    var n = (IMG[i-1]<10?"0":"")+IMG[i-1];
+    var fig = '<div>'+
+        '<div class="diagram reveal d1"><img src="assets/rndd/'+n+'.jpg" alt="" loading="lazy"></div>'+
+        '<p class="figcap-u" data-i18n="rd'+i+'.c"></p>'+
+      '</div>';
+    if(SIDE[i]){
+      html += '<section class="mod anchor-sec" id="rdd-'+i+'"><div class="rd-side">'+
+        '<div class="reveal"><h2 data-i18n="rd'+i+'.t"></h2><p class="rd-p" data-i18n="rd'+i+'.p"></p></div>'+
+        fig+
+      '</div></section>';
+    } else {
+      html += '<section class="mod anchor-sec" id="rdd-'+i+'">'+
+        '<h2 class="reveal" data-i18n="rd'+i+'.t"></h2>'+
+        '<p class="rd-p reveal" data-i18n="rd'+i+'.p"></p>'+
+        fig+
+      '</section>';
+    }
+  }
+  document.getElementById("rdList").innerHTML = html;
+})();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
