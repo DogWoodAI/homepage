@@ -286,11 +286,8 @@ body.menu-open .hamburger span::after{top:0;transform:rotate(-45deg)}
 /* media placeholder block */
 .media{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--grad-hero);
   min-height:340px;display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-lg)}
-.media .media-label{position:absolute;bottom:16px;left:18px;font-size:.78rem;color:#b9caea;
-  background:rgba(0,0,0,.25);padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px)}
 .media .media-ic{width:90px;height:90px;opacity:.9}
 .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.media .media-label{z-index:2}
 .media.has-img::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,18,46,.1),rgba(6,18,46,.45))}
 
 /* full-width technical diagram band (Approach / Solution) */
@@ -299,7 +296,6 @@ body.menu-open .hamburger span::after{top:0;transform:rotate(-45deg)}
 .diagram + .diagram{margin-top:22px}
 .diagram-cap{text-align:center;font-size:.86rem;color:var(--muted);margin-top:14px}
 .media.soft{background:linear-gradient(135deg,var(--bg-softer),#dbe7fb);color:var(--blue-500)}
-.media.soft .media-label{color:var(--slate);background:rgba(255,255,255,.6)}
 .media.video::before{content:"";position:absolute;width:72px;height:72px;border-radius:50%;
   background:rgba(255,255,255,.9);box-shadow:0 8px 30px rgba(0,0,0,.3)}
 .media.video::after{content:"";position:absolute;border-left:24px solid var(--blue-500);
@@ -420,7 +416,7 @@ td .badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.7
 
 /* profile cards (leadership) */
 .profile{display:flex;gap:24px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;align-items:flex-start}
-.profile .avatar{width:104px;height:124px;border-radius:16px;flex:none;display:grid;place-items:center;color:#fff;
+.profile .avatar{width:100px;height:140px;border-radius:16px;flex:none;display:grid;place-items:center;color:#fff;
   background:var(--grad-hero);font-size:2rem;font-weight:800;overflow:hidden}
 .profile .avatar img{width:100%;height:100%;object-fit:cover}
 .profile h3{font-size:1.3rem;margin-bottom:2px}

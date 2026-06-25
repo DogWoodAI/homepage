@@ -4,7 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DogWoodAI</title>
-<link rel="icon" href="assets/main/favicon.ico">
+<!-- shared-head:start -->
+<meta name="description" content="DogWoodAI builds tailor-made AI for real-time prediction, simulation, optimization and safety analysis of manufacturing plants.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DogWoodAI">
+<meta property="og:description" content="DogWoodAI builds tailor-made AI for real-time prediction, simulation, optimization and safety analysis of manufacturing plants.">
+<meta property="og:image" content="https://dogwoodai.github.io/homepage/assets/main/og-image.png"> <!--도메인 변경시 바꾸기(바꾸고 .bat실행)-->
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="728">
+<meta property="og:image:height" content="372">
+<meta property="og:site_name" content="DogWoodAI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DogWoodAI">
+<meta name="twitter:description" content="DogWoodAI builds tailor-made AI for real-time prediction, simulation, optimization and safety analysis of manufacturing plants.">
+<meta name="twitter:image" content="https://dogwoodai.github.io/homepage/assets/main/og-image.png"> <!--도메인 변경시 바꾸기-->
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="msapplication-config" content="favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- shared-head:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -43,7 +76,7 @@
 Object.assign(window.I18N.en, {
   "slp.mod":"Modularly Expandable Intelligent AI Solution",
   "slp.modp":"Each module in DogWoodPro can operate independently and seamlessly interconnect with others to form a unified AI-driven solution.",
-  "slp.modp2":"→ Provide solutions comprised of modules requested by clients",
+  "slp.modp2":"??Provide solutions comprised of modules requested by clients",
 
   "slg1.f1":"Real-time product quality prediction solution",
   "slg1.f2":"Reduces product-quality management costs",
@@ -80,7 +113,7 @@ Object.assign(window.I18N.en, {
   "slg5.b2":"Minimizes false alerts through domain expertise",
   "slg5.b3":"Generates site-specific safety reports",
 
-  "slg6.f1":"On-premise agentic LLM — data stays in-house",
+  "slg6.f1":"On-premise agentic LLM ??data stays in-house",
   "slg6.f2":"Predicts accident scenarios before they escalate",
   "slg6.f3":"Real-time troubleshooting grounded in plant documents",
   "slg6.b1":"Integrates safety protocols, manuals and incident histories",
@@ -102,65 +135,65 @@ Object.assign(window.I18N.en, {
   "slg8.b3":"Improvement plans and new process design"
 });
 Object.assign(window.I18N.ko, {
-  "slp.mod":"모듈 확장형 지능 AI 솔루션",
-  "slp.modp":"DogWoodPro의 각 모듈은 독립적으로 동작하면서도 서로 매끄럽게 연결되어 하나의 통합 AI 기반 솔루션을 구성합니다.",
-  "slp.modp2":"→ 고객이 요청한 모듈로 구성된 솔루션 제공",
+  "slp.mod":"모듈 ?�장??지??AI ?�루??,
+  "slp.modp":"DogWoodPro??�?모듈?� ?�립?�으�??�작?�면?�도 ?�로 매끄?�게 ?�결?�어 ?�나???�합 AI 기반 ?�루?�을 구성?�니??",
+  "slp.modp2":"??고객???�청??모듈�?구성???�루???�공",
 
-  "slg1.f1":"실시간 제품 품질 예측 솔루션",
-  "slg1.f2":"제품 품질 관리 비용 절감",
-  "slg1.f3":"실시간 품질 예측에 대한 설명 제공",
-  "slg1.b1":"수천 개 센서의 실시간 데이터를 분석해 단위 공정과 플랜트 전체 수준의 품질·수율을 정밀 예측",
-  "slg1.b2":"제한된 샘플링 주기와 인력 부족으로 인한 품질 문제와 운영 비용을 크게 절감",
-  "slg1.b3":"촉매 열화·모드 전환·원료 변경 등 다양한 운전 시나리오에서 검증된 신뢰성 있는 예측 성능",
+  "slg1.f1":"?�시�??�품 ?�질 ?�측 ?�루??,
+  "slg1.f2":"?�품 ?�질 관�?비용 ?�감",
+  "slg1.f3":"?�시�??�질 ?�측???�???�명 ?�공",
+  "slg1.b1":"?�천 �??�서???�시�??�이?��? 분석???�위 공정�??�랜???�체 ?��????�질·?�율???��? ?�측",
+  "slg1.b2":"?�한???�플�?주기?� ?�력 부족으�??�한 ?�질 문제?� ?�영 비용???�게 ?�감",
+  "slg1.b3":"촉매 ?�화·모드 ?�환·?�료 변�????�양???�전 ?�나리오?�서 검증된 ?�뢰???�는 ?�측 ?�능",
 
-  "slg2.f1":"흩어진 운전 데이터의 통합 인사이트",
-  "slg2.f2":"추세와 상관관계의 직관적 시각화",
-  "slg2.f3":"플랜트별 변수·목표에 맞춘 분석",
-  "slg2.b1":"생산성에 영향을 주는 핵심 변수 관계 식별",
-  "slg2.b2":"다양한 조건에서 최적 운전 방법 수립",
-  "slg2.b3":"과거 운전을 실행 가능한 전략으로 전환",
+  "slg2.f1":"?�어�??�전 ?�이?�의 ?�합 ?�사?�트",
+  "slg2.f2":"추세?� ?��?관계의 직�????�각??,
+  "slg2.f3":"?�랜?�별 변?�·목?�에 맞춘 분석",
+  "slg2.b1":"?�산?�에 ?�향??주는 ?�심 변??관�??�별",
+  "slg2.b2":"?�양??조건?�서 최적 ?�전 방법 ?�립",
+  "slg2.b3":"과거 ?�전???�행 가?�한 ?�략?�로 ?�환",
 
-  "slg3.f1":"품질 목표를 달성하는 운전 변수 추천",
-  "slg3.f2":"모든 추천에 설명가능한 AI 투명성",
-  "slg3.f3":"복잡한 운전에서 더 빠른 엔지니어링 의사결정",
-  "slg3.b1":"에너지·비용을 줄이며 품질 목표 달성",
-  "slg3.b2":"일반 분석을 넘어선 실행 가능한 통찰",
-  "slg3.b3":"복잡한 운전의 의사결정 간소화",
+  "slg3.f1":"?�질 목표�??�성?�는 ?�전 변??추천",
+  "slg3.f2":"모든 추천???�명가?�한 AI ?�명??,
+  "slg3.f3":"복잡???�전?�서 ??빠른 ?��??�어�??�사결정",
+  "slg3.b1":"?�너지·비용??줄이�??�질 목표 ?�성",
+  "slg3.b2":"?�반 분석???�어???�행 가?�한 ?�찰",
+  "slg3.b3":"복잡???�전???�사결정 간소??,
 
-  "slg4.f1":"단위 공정 예측 1초 미만",
-  "slg4.f2":"플랜트 전체 결과 수 초 이내",
-  "slg4.f3":"전문 시뮬레이션 지식 없는 시나리오 테스트",
-  "slg4.b1":"직관적인 시나리오 테스트·백테스트",
-  "slg4.b2":"운전 전략 수립 지원",
-  "slg4.b3":"전문 시뮬레이션 전문성 불필요",
+  "slg4.f1":"?�위 공정 ?�측 1�?미만",
+  "slg4.f2":"?�랜???�체 결과 ??�??�내",
+  "slg4.f3":"?�문 ?��??�이??지???�는 ?�나리오 ?�스??,
+  "slg4.b1":"직�??�인 ?�나리오 ?�스?�·백?�스??,
+  "slg4.b2":"?�전 ?�략 ?�립 지??,
+  "slg4.b3":"?�문 ?��??�이???�문??불필??,
 
-  "slg5.f1":"실시간 이상 탐지",
-  "slg5.f2":"도메인 전문성으로 오경보 최소화",
-  "slg5.f3":"맞춤형 안전 보고서",
-  "slg5.b1":"예방 정비를 위한 이상 빈발 구간 식별",
-  "slg5.b2":"도메인 전문성으로 오경보 최소화",
-  "slg5.b3":"현장별 안전 보고서 생성",
+  "slg5.f1":"?�시�??�상 ?��?",
+  "slg5.f2":"?�메???�문?�으�??�경�?최소??,
+  "slg5.f3":"맞춤???�전 보고??,
+  "slg5.b1":"?�방 ?�비�??�한 ?�상 빈발 구간 ?�별",
+  "slg5.b2":"?�메???�문?�으�??�경�?최소??,
+  "slg5.b3":"?�장�??�전 보고???�성",
 
-  "slg6.f1":"온프레미스 에이전틱 LLM — 데이터 사내 보관",
-  "slg6.f2":"사고 시나리오를 확대 전에 예측",
-  "slg6.f3":"플랜트 문서에 근거한 실시간 문제 해결",
-  "slg6.b1":"안전 프로토콜·매뉴얼·사고 이력 통합",
-  "slg6.b2":"실시간 문제 해결 가이드 제공",
-  "slg6.b3":"빠른 대응을 위한 사고 시나리오 예측",
+  "slg6.f1":"?�프?��????�이?�틱 LLM ???�이???�내 보�?",
+  "slg6.f2":"?�고 ?�나리오�??��? ?�에 ?�측",
+  "slg6.f3":"?�랜??문서??근거???�시�?문제 ?�결",
+  "slg6.b1":"?�전 ?�로?�콜·매뉴?�·사�??�력 ?�합",
+  "slg6.b2":"?�시�?문제 ?�결 가?�드 ?�공",
+  "slg6.b3":"빠른 ?�?�을 ?�한 ?�고 ?�나리오 ?�측",
 
-  "slg7.f1":"새로 축적된 데이터로 자동 모델 갱신",
-  "slg7.f2":"플랜트가 변해도 안정적인 성능",
-  "slg7.f3":"수작업 없는 수명주기 모니터링",
-  "slg7.b1":"새 운전 데이터를 자동 반영",
-  "slg7.b2":"시간이 지나도 성능 안정성 유지",
-  "slg7.b3":"AI 운영 유지 비용 절감",
+  "slg7.f1":"?�로 축적???�이?�로 ?�동 모델 갱신",
+  "slg7.f2":"?�랜?��? 변?�도 ?�정?�인 ?�능",
+  "slg7.f3":"?�작???�는 ?�명주기 모니?�링",
+  "slg7.b1":"???�전 ?�이?��? ?�동 반영",
+  "slg7.b2":"?�간??지?�도 ?�능 ?�정???��?",
+  "slg7.b3":"AI ?�영 ?��? 비용 ?�감",
 
-  "slg8.f1":"AI 도입 타당성 평가",
-  "slg8.f2":"자율 운전을 향한 단계적 로드맵",
-  "slg8.f3":"전문가의 공정 최적화 권고",
-  "slg8.b1":"자율 플랜트 개발 전문 자문",
-  "slg8.b2":"플랜트 데이터 분석 및 모델 기반 공정 시뮬레이션",
-  "slg8.b3":"개선 계획 및 신공정 설계"
+  "slg8.f1":"AI ?�입 ?�?�성 ?��?",
+  "slg8.f2":"?�율 ?�전???�한 ?�계??로드�?,
+  "slg8.f3":"?�문가??공정 최적??권고",
+  "slg8.b1":"?�율 ?�랜??개발 ?�문 ?�문",
+  "slg8.b2":"?�랜???�이??분석 �?모델 기반 공정 ?��??�이??,
+  "slg8.b3":"개선 계획 �??�공???�계"
 });
 
 (function(){

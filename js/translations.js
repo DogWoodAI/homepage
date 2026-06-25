@@ -535,7 +535,7 @@ window.I18N = {
 
     /* ---- NEWS ---- */
     "news.bc":"뉴스",
-    "news.h1":"뉴스 & 소식",
+    "news.h1":"News",
     "news.sub":"DogWoodAI의 주요 성과, 전시, 발표 소식.",
     "news.n1.date":"2026년 1월",
     "news.n1.t":"DogWoodAI, CES 2026 전시",
