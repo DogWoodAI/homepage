@@ -123,7 +123,7 @@ window.I18N = {
     "g.value":"Value Delivered",
     "quick.contact":"CONTACT US",
     "quick.top":"TOP",
-    "ap.intro":"DogWoodAI applies the machine learning technologies best suited to each client's needs and plant conditions, building AI solutions on the foundational approaches below to support the realization of autonomous manufacturing.",
+    "ap.intro":"DogwoodAI applies the most suitable machine learning technologies tailored to each client’s needs and plant conditions, developing AI solutions through a range of foundational approaches described below, that support the realization of autonomous manufacturing.",
 
     /* ---- COMPANY ---- */
     "company.h1":"Building AI-autonomous manufacturing plants",
@@ -413,11 +413,11 @@ window.I18N = {
 
     "nav.ap1":"맞춤형 AI 기술",
     "nav.ap1.d":"플랜트별 맞춤 설계",
-    "nav.ap2":"실데이터 기반 AI 기술",
+    "nav.ap2":"현장 데이터 기반 AI 기술",
     "nav.ap2.d":"실시간 운전 데이터 분석",
     "nav.ap3":"모델 기반 AI 기술",
     "nav.ap3.d":"지배방정식 기반 시뮬레이션",
-    "nav.ap4":"물리 기반 AI 기술",
+    "nav.ap4":"물리 법칙 기반 AI 기술",
     "nav.ap4.d":"이론 + 빅데이터 AI",
 
     "nav.sol0":"DogWoodPro",
@@ -482,7 +482,7 @@ window.I18N = {
     "g.value":"제공 가치",
     "quick.contact":"CONTACT US",
     "quick.top":"TOP",
-    "ap.intro":"DogWoodAI는 각 고객의 요구와 플랜트 조건에 가장 적합한 머신러닝 기술을 적용하여, 아래의 기반 접근법 위에서 자율 제조 실현을 뒷받침하는 AI 솔루션을 개발합니다.",
+    "ap.intro":"DogwoodAI는 각 고객의 요구사항과 플랜트의 운영 환경에 맞춰 최적의 머신러닝 기술을 적용하며, 자율 제조를 실현하기 위해 아래의 다양한 핵심 접근법을 통해 AI 솔루션을 개발하고 있습니다.",
 
     /* ---- COMPANY ---- */
     "company.h1":"AI 자율 제조 플랜트를 만듭니다",
