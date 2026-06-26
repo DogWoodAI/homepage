@@ -137,19 +137,21 @@ Object.assign(window.I18N.ko, {
     {n:1, img:"assets/project/01.jpg", size:[577,358]},
     {n:2, img:"assets/project/02.jpg", size:[577,358]},
     {n:3, video:"assets/video/Aveva.mp4", size:[1280,720]},
-    {n:4, img:"assets/project/04.jpg", size:[1380,367]},
-    {n:5, img:"assets/project/05.jpg", size:[1380,779]},
-    {n:6, img:"assets/project/06.jpg", size:[577,570]},
-    {n:7, video:"assets/video/mp4.mp4", size:[1280,720]},
+    {n:4, video:"assets/video/mp4.mp4", size:[1280,720]},
+    {n:5, img:"assets/project/04.jpg", size:[1380,367]},
+    {n:6, img:"assets/project/05.jpg", size:[1380,779]},
+    {n:7, img:"assets/project/06.jpg", size:[577,570]},
     {n:8, img:"assets/project/08.jpg", size:[1380,343]},
     {n:9, img:"assets/project/09.jpg", size:[1380,287]}
   ];
   document.getElementById("pjList").innerHTML = P.map(function(p,i){
     var k = "pj"+p.n;
+    var stacked = [5,6,8,9].indexOf(p.n) > -1;
+    var cls = "detail anchor-sec" + (stacked ? " detail--stacked" : (i%2 ? " rev" : ""));
     var media = p.video
       ? '<video class="native-video" width="'+p.size[0]+'" height="'+p.size[1]+'" controls preload="metadata"><source src="'+p.video+'" type="video/mp4"></video>'
       : '<img src="'+p.img+'" alt="" width="'+p.size[0]+'" height="'+p.size[1]+'" loading="lazy">';
-    return '<section class="detail anchor-sec'+(i%2?' rev':'')+'" id="project-'+p.n+'">'+
+    return '<section class="'+cls+'" id="project-'+p.n+'">'+
       '<div class="d-txt reveal">'+
         '<h2 data-i18n="proj.p'+p.n+'.t"></h2>'+
         '<span class="uh" data-i18n="g.challenge"></span>'+
