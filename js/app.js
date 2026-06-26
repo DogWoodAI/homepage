@@ -38,7 +38,6 @@
   };
 
   /* ---------- nav model ---------- */
-  var SOL_IC = [IC.layers, IC.gauge, IC.chart, IC.sliders, IC.sim, IC.shield, IC.bot, IC.refresh, IC.handshake];
   var nav = {
     about:[
       ["about#company","nav.company","",IC.factory],
@@ -59,7 +58,7 @@
       ["solution#optpro","nav.sol3","",IC.sliders],
       ["solution#simpro","nav.sol4","",IC.sim],
       ["solution#safepro","nav.sol5","",IC.shield],
-      ["solution#plantbot","nav.sol6","",IC.bot],
+      ["solution#plantagentpro","nav.sol6","",IC.bot],
       ["solution#mlops","nav.sol7","",IC.refresh],
       ["solution#consulting","nav.sol8","",IC.handshake]
     ],
@@ -100,6 +99,70 @@
       ["ip-papers#publications","nav.publications","",IC.doc]
     ]
   };
+
+  function normalizeNavList(list){
+    return (list || []).map(function(i){
+      if(Array.isArray(i)) return i;
+      return [i.href || "#", i.label || "", i.desc || ""];
+    });
+  }
+  function normalizeNav(data){
+    ["about","approach","solution","rndd","projects","ip"].forEach(function(key){
+      if(data && data[key]) nav[key] = normalizeNavList(data[key]);
+    });
+  }
+  function mergeI18n(bundle){
+    if(!bundle) return;
+    ["en","ko"].forEach(function(langKey){
+      if(bundle[langKey]){
+        window.I18N[langKey] = Object.assign(window.I18N[langKey] || {}, bundle[langKey]);
+      }
+    });
+  }
+  function fetchJson(url){
+    return fetch(url, {cache:"no-store"}).then(function(res){
+      if(!res.ok) throw new Error("Failed to load " + url);
+      return res.json();
+    });
+  }
+  function navFromPageData(data){
+    if(data.approach && data.approach.sections){
+      nav.approach = data.approach.sections.map(function(s){
+        return ["approach#" + s.id, s.h, s.navDesc || ""];
+      });
+    }
+    if(data.solution && data.solution.modules){
+      nav.solution = [["solution#dogwoodpro", "nav.sol0", "", IC.layers]].concat(data.solution.modules.map(function(m){
+        return ["solution#" + m.id, m.h, ""];
+      }));
+    }
+    if(data.rndd && data.rndd.sizes){
+      nav.rndd = Object.keys(data.rndd.sizes).sort().map(function(_, idx){
+        var n = idx + 1;
+        return ["rndd#rdd-" + n, "nav.rdd." + n, "nav.rdd." + n + ".d", IC.doc];
+      });
+    }
+    if(data.projects && data.projects.projects){
+      nav.projects = data.projects.projects.map(function(p){
+        return ["projects#project-" + p.n, p.navLabel || ("nav.project." + p.n), p.navDesc || ""];
+      });
+    }
+  }
+  function loadNavigation(done){
+    Promise.all([
+      fetchJson("data/approach.json"),
+      fetchJson("data/solution.json"),
+      fetchJson("data/rndd.json"),
+      fetchJson("data/projects.json")
+    ])
+      .then(function(items){
+        var data = {approach:items[0], solution:items[1], rndd:items[2], projects:items[3]};
+        items.forEach(function(item){ mergeI18n(item.i18n); });
+        navFromPageData(data);
+        done();
+      })
+      .catch(function(){ done(); });
+  }
 
   function dropItems(list, reserveSub){
     return list.map(function(i){
@@ -227,7 +290,7 @@
     }
     document.querySelectorAll(".reveal:not(.in)").forEach(function(el){ _revealIO.observe(el); });
   }
-  window.DW = { t:t, getLang:function(){return lang;}, setLang:setLang, observeReveals:observeReveals };
+  window.DW = { t:t, getLang:function(){return lang;}, setLang:setLang, applyLang:applyLang, observeReveals:observeReveals };
 
   /* ---------- interactions ---------- */
   function wire(){
@@ -395,14 +458,16 @@
   }
   document.addEventListener("DOMContentLoaded", function(){
     setBanner();
-    inject("site-header", buildHeader());
-    inject("site-footer", buildFooter());
-    document.body.insertAdjacentHTML("beforeend", buildQuick());
-    if(document.body.getAttribute("data-popup")!=="off"){
-      document.body.insertAdjacentHTML("beforeend", buildPopup());
-    }
-    applyLang();
-    wire();
-    window.DW.IC = IC; // expose icons for pages
+    loadNavigation(function(){
+      inject("site-header", buildHeader());
+      inject("site-footer", buildFooter());
+      document.body.insertAdjacentHTML("beforeend", buildQuick());
+      if(document.body.getAttribute("data-popup")!=="off"){
+        document.body.insertAdjacentHTML("beforeend", buildPopup());
+      }
+      applyLang();
+      wire();
+      window.DW.IC = IC; // expose icons for pages
+    });
   });
 })();

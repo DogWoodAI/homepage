@@ -1,5 +1,5 @@
 (function(){
-  var DATA_URL = "assets/news/data.json";
+  var DATA_URL = "data/news.json";
   var FALLBACK_IMAGE = "assets/news/no-image.png";
 
   function lang(){

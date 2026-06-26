@@ -1,0 +1,187 @@
+{
+  "i18n": {
+    "en": {
+      "pj1.c": "Refinery companies require highly accurate, real-time predictions of product yield and quality in complex hydrocracking processes to optimize operations and reduce variability.",
+      "pj1.a": "DogWoodAI developed tailored-made AI model designed specifically for hydrocracking plants. The model was built to predict product properties within 1% error and was implemented in close collaboration with the client to ensure continuous field monitoring and improvement.",
+      "pj1.v": "The solution was validated over a six-month field test in a Korean refinery. It demonstrated highly accurate, real-time prediction performance, leading to improved process control and decision-making capabilities in a mission-critical environment.",
+      "pj1.cap": "Tailor-made ML solution for a hydrocracking plant",
+      "pj2.c": "Fine chemical plants face limitations with conventional mathematical models in handling process complexity and often lack sufficient data for training standalone AI models.",
+      "pj2.a": "DogWoodAI developed a Hybrid AI Simulator combining physics-informed mathematical models with data-based AI techniques. This hybrid approach was co-developed with a global platform partner to complement the strengths of each methodology.",
+      "pj2.v": "The hybrid simulator, achieving prediction deviations of less than 0.5%, was deployed in a domestic fine chemical company. It provides accurate real-time predictions of product quality and yield.",
+      "pj2.cap": "Hybrid Simulator based on machine learning and mathematical model for the fine chemical production",
+      "pj3.c": "Traditional commercial simulators are often limited in capturing real-time plant behavior and delivering predictive performance in complex chemical processes.",
+      "pj3.a": "In collaboration with AVEVA, DogWoodAI integrated AVEVA’s first-principle simulation capabilities with AI model, forming a hybrid simulation platform tailored for chemical plants.",
+      "pj3.v": "The project successfully demonstrated the potential of Hybrid Simulation to outperform conventional commercial simulators. The collaboration opened new possibilities for scalable adoption across diverse manufacturing sectors, showcasing DogWoodAI’s innovation in applied industrial AI.",
+      "pj3.cap": "Hybrid Simulator: Interview with AVEVA",
+      "pj4.c": "Optimizing mixing and reaction performance in three-phase reactors is complex due to the interactions among gas, liquid, and solid phases, especially during solid particle formation.",
+      "pj4.a": "DogWoodAI applied advanced CFD modeling to simulate flow patterns and phase interactions within the reactor. The study focused on determining the best impeller design and operating conditions to maximize mixing efficiency.",
+      "pj4.v": "The project identified optimal reactor configurations and operating parameters, laying the foundation for the development of a CFD-based AI model for future predictive simulations and performance optimization.",
+      "pj4.cap": "CFD results for the mixing performance of the reactor (Gas-Liquid-Solid phases)",
+      "pj5.c": "Designing a scalable and efficient process for Xenon recovery from Helium mixtures requires accurate process modeling and simulation based on limited experimental data.",
+      "pj5.a": "DogWoodAI developed a model-based framework that included constructing a physicochemical database, creating a validated breakthrough simulator, and performing process simulations to assess feasibility.",
+      "pj5.v": "The project confirmed the technical feasibility of the Xenon recovery process and provided key design guidelines for scaling. It also demonstrated DogWoodAI’s strength in combining theoretical modeling with real-world validation for future AI-driven development.",
+      "pj5.cap": "Xe recovery process results",
+      "pj6.c": "Fine chemical plants require intelligent systems capable of handling dynamic changes, such as catalyst aging, while ensuring product quality, operational safety, and maintenance efficiency.",
+      "pj6.a": "DogWoodAI launched DogWoodPro, an integrated AI framework featuring real-time data analysis, anomaly detection, optimization guidance, and safety insights. The system processes data for each tag in real time to predict product outcomes.",
+      "pj6.v": "The AI system has been operational in a fine chemical plant, offering real-time predictive insights, anomaly alerts, and data-based maintenance reports. It significantly enhances production stability, safety, and operational efficiency.",
+      "pj6.cap": "DogWoodPro",
+      "pj7.c": "Due to the nature of the semiconductor material batch process, multiple operation and analysis cycles are required to achieve target product quality. Reducing these repeated operations through accurate quality prediction is a key challenge.",
+      "pj7.a": "DogWoodAI developed an AI-driven simulator that supports intelligent decision-making by analyzing process data using domain knowledge and training AI models to predict accurate product quality for each batch operation.",
+      "pj7.v": "Through accurate predictive simulations, the solution significantly reduces unnecessary process iterations, thereby maximizing production efficiency and yield. In turn, this leads to cost savings and enhanced process stability, strengthening the manufacturing operation’s overall competitiveness.",
+      "pj7.cap": "Comparative analysis of actual and predicted values before & after equipment modification in the semiconductor materials batch process",
+      "pj8.c": "Relying solely on the experience of on-site personnel presented practical limitations in objectively assessing the plant's current digitalization level and establishing a systematic data collection strategy for AI implementation.",
+      "pj8.a": "DogWoodAI conducted an in-depth analysis of the plant's actual operating data and the physicochemical characteristics of core equipment to outline supplementary data collection strategies and verify the technical feasibility of AI integration.",
+      "pj8.v": "This consulting provides a blueprint for data-driven decision-making and active process control, laying the foundation for an advanced smart plant capable of achieving groundbreaking quality stabilization.",
+      "pj8.cap": "Quality analysis results of sensor data from core equipment in the plant",
+      "pj9.c": "To accurately evaluate and predict performance changes in adsorbents contaminated by process impurities, rigorous modeling and simulation based on experimental data were essential.",
+      "pj9.a": "DogWoodAI built a reliable adsorbent database utilizing literature and experimental data, developed a validated breakthrough simulator, and conducted detailed process simulations and sensitivity analyses.",
+      "pj9.v": "The impurity removal performance of the adsorbents was quantitatively analyzed and compared before and after contamination. This significantly strengthened the technical capabilities required to deploy DogWoodAI's model-based AI solutions in the field.",
+      "pj9.cap": "Analysis of adsorbent breakthrough performance according to variations in inlet flowrate",
+      "nav.project.1": "Tailor-made AI solution for Hydrocracking Plant",
+      "nav.project.2": "Hybrid Simulator for Fine Chemical Plant",
+      "nav.project.3": "Interview with AVEVA",
+      "nav.project.4": "CFD Models for Three-phase Reactor",
+      "nav.project.5": "Xenon Recovery Process",
+      "nav.project.6": "Advanced AI Solutions for Fine Chemical Plant",
+      "nav.project.7": "AI Simulator for Semiconductor Material Process",
+      "nav.project.8": "DX Consulting for a Non-Ferrous Metal Plant",
+      "nav.project.9": "Adsorbent Performance for Steel Plant Inlet Gas"
+    },
+    "ko": {
+      "pj1.c": "정유 공정에서는 복잡한 하이드로크래킹 반응 속에서 제품 수율과 품질을 실시간으로 정밀하게 예측하는 것이 매우 중요합니다. 이를 통해 공정 최적화를 수행하고 품질의 변동을 최소화해야 합니다.",
+      "pj1.a": "당사는 하이드로크래킹 공장에 특화된 맞춤형 AI 모델을 개발하였습니다. 공장에 대한 철저한 이해를 바탕으로 개발된 해당 모델은 1% 미만의 예측 오차로 제품 특성을 실시간으로 예측하며, 현장 내 지속적인 모니터링과 개선을 위해 고객사와의 협업을 통해 구현되었습니다.",
+      "pj1.v": "6개월간의 국내 정유사 현장 테스트를 통해 솔루션의 성능과 신뢰성을 검증하였습니다. 해당 솔루션은 높은 성능의 실시간 예측을 보여주었고, 고객사는 주요 공정에 대한 제어 및 의사결정에 도움을 받았습니다.",
+      "pj1.cap": "정밀화학 공장을 위한 하이브리드 시뮬레이터",
+      "pj2.c": "정밀화학 공정은 복잡한 특성으로 인해 수치 해석 모델만으로는 정확한 예측이 어려우며, 동시에 AI를 위한 충분한 학습 데이터도 부족한 상황입니다.",
+      "pj2.a": "당사는 수학적 모델과 AI 기법을 결합한 물리 기반 하이브리드 AI 시뮬레이터를 개발하였습니다. 이는 글로벌 플랫폼 기업과의 협업을 통해 구축되었으며, 각 접근 방식의 한계를 보완할 수 있도록 설계되었습니다.",
+      "pj2.v": "예측 오차가 0.5% 이하인 하이브리드 시뮬레이터는 국내 정밀화학 공정에 적용되어 제품 품질과 수율을 예측합니다.",
+      "pj2.cap": "정밀화학 생산 공정을 위한 머신러닝-수학모델 기반 하이브리드 시뮬레이터",
+      "pj3.c": "기존의 상용 시뮬레이터는 복잡한 화학 공정의 실시간 거동을 반영하기에 한계가 있으며, 예측 성능 또한 제한적입니다.",
+      "pj3.a": "당사는 AVEVA와 협업하여, AVEVA의 제일원리 기반 시뮬레이터와 AI 모델을 결합한 하이브리드 시뮬레이션 플랫폼을 구축하였습니다.",
+      "pj3.v": "프로젝트를 통해 하이브리드 시뮬레이션이 품질과 수율을 예측하는 데 있어 기존에 상업화 되어있는 시뮬레이터들보다 뛰어나다는 것을 입증하였습니다. 향후 다양한 제조 산업으로의 확장 가능성을 확인했으며, 당사는 지속적인 기술 협업을 통해 이를 실현하고자 합니다.",
+      "pj3.cap": "하이브리드 시뮬레이터: AVEVA 인터뷰",
+      "pj4.c": "액상-기체 반응을 통해 고체 입자를 생성하는 3상 반응기에서는, 유동 및 혼합 성능 최적화를 위한 정밀한 분석이 필요합니다. 이는 가스, 액체, 고체 간 상호작용으로 인해 복잡한 난제를 포함하고 있습니다.",
+      "pj4.a": "당사는 전산유체역학(CFD) 기법을 활용하여 반응기 내 유동 패턴과 상간 상호작용을 시뮬레이션하였습니다. 혼합 효율을 극대화할 수 있는 교반기를 설계하고 운전 조건을 도출하는데 집중하였습니다.",
+      "pj4.v": "프로젝트를 통해 최적의 반응기 구조 및 운전 조건이 도출되었으며, 이를 기반으로 향후 예측 기반 CFD AI 모델 개발이 이어질 예정입니다.",
+      "pj4.cap": "반응기의 혼합 성능에 대한 CFD 해석 결과 (기체-액체-고체 3상)",
+      "pj5.c": "헬륨-제논 혼합물로부터 제논을 효율적으로 회수하기 위한 대규모 공정 설계를 위해서는, 실험 데이터를 기반으로 한 정밀한 모델링과 시뮬레이션이 요구됩니다.",
+      "pj5.a": "당사는 문헌 및 실험 데이터를 기반으로 물리화학 데이터베이스를 구축하고, 실험 결과와 검증된 파과 시뮬레이터를 개발한 후, 공정 시뮬레이션을 수행하여 전반적인 공정 타당성을 평가했습니다.",
+      "pj5.v": "Xe 회수 공정의 타당성을 확인하고, 대규모 설계를 위한 핵심 지침을 도출하였습니다. 본 프로젝트를 통해 당사는 향후 모델 기반 AI 솔루션의 기반을 확고히 다졌습니다.",
+      "pj5.cap": "제논 회수 공정 결과",
+      "pj6.c": "정밀화학 공장은 촉매 성능 저하와 같은 공정의 동적 특성과 상호 연결성을 고려한 지능형 시스템이 요구되며, 이때 예측, 안전, 유지보수 전반을 포함하는 통합적인 접근이 필요합니다.",
+      "pj6.a": "당사는 실시간 데이터 분석, 이상 탐지, 최적화 가이드, 안전 및 유지보수 분석을 포함한 통합 AI 소프트웨어인 DogWoodPro를 개발하였습니다. 해당 시스템은 각 태그별 실시간 데이터를 분석하여 제품 품질을 예측합니다.",
+      "pj6.v": "국내 정밀화학 공장에 적용된 이 솔루션은 예측 기반 운전 최적화, 실시간 이상 감지 및 안전 알림, 분석 리포트 제공 등을 통해 공장의 안전성과 효율성을 대폭 향상시켰습니다.",
+      "pj6.cap": "DogWoodPro",
+      "pj7.c": "해당 공정의 특성상 여러 번의 운전과 분석을 거쳐 목표 품질의 제품을 생산하고 있으며, 이에 정확한 품질 예측을 통해 운전 횟수를 줄이는 것이 요구됩니다.",
+      "pj7.a": "당사는 지능형 의사 결정을 지원하기 위해 공정 데이터에 대해 도메인 지식을 이용하여 분석하고 AI 모델을 개발하여 운전 조건에 따른 제품 품질을 예측하는 AI 기반 시뮬레이터를 개발하였습니다.",
+      "pj7.v": "AI 시뮬레이터를 통해 불필요한 공정 반복을 크게 감소시켜 생산 효율을 극대화하고, 제조 비용 절감과 공정 안정성 향상을 기대할 수 있습니다.",
+      "pj7.cap": "반도체 소재 배치 공정 내 설비 변경 전후의 실측치와 AI 모델 예측치 간의 일치도 비교 분석",
+      "pj8.c": "현장 인력의 경험에 의존하는 기존 방식으로는 공장의 현재 디지털화 수준을 객관적으로 진단하고, AI 도입을 위한 체계적인 데이터 수집 전략을 수립하는 데 현실적인 한계가 있었습니다.",
+      "pj8.a": "공장의 실제 운전 데이터와 핵심 설비의 물리화학적 특성을 심층적으로 분석하여, 추가적인 데이터 수집 전략을 구체화하고 AI 기술 적용의 기술적 타당성을 검증하였습니다.",
+      "pj8.v": "데이터 기반의 정확한 의사결정과 능동적인 공정 제어가 가능한 청사진을 제시하여, 향후 획기적인 품질 안정화를 이룰 수 있는 첨단 스마트 공장의 기반을 마련해 줍니다.",
+      "pj8.cap": "공장 내 핵심 설비의 센서 데이터 품질 분석 결과",
+      "pj9.c": "공정 내 불순물로 인해 오염된 흡착제의 성능 변화를 정확히 평가하고 예측하기 위해서는 실험 데이터에 기반한 정교한 모델링과 시뮬레이션이 필수적입니다.",
+      "pj9.a": "문헌 및 실험 데이터를 바탕으로 신뢰성 있는 흡착제 데이터베이스를 구축한 후, 검증된 파과 시뮬레이터를 개발하여 정밀한 공정 시뮬레이션과 민감도 분석을 수행했습니다.",
+      "pj9.v": "오염 전후의 흡착제 불순물 제거 성능을 정량적으로 비교 분석해 냈으며, 이를 바탕으로 향후 자사의 모델 기반 AI 솔루션을 현장에 적용하기 위한 기술적 역량을 한층 강화했습니다.",
+      "pj9.cap": "유입 가스 유량 변화에 따른 대상 흡착제의 파과 성능 분석",
+      "nav.project.1": "하이드로크래킹 공장을 위한 맞춤형 AI 솔루션",
+      "nav.project.2": "정밀화학 공장을 위한 하이브리드 AI 시뮬레이터",
+      "nav.project.3": "AVEVA와의 인터뷰",
+      "nav.project.4": "전지소재합성 3상 반응기를 위한 CFD 모델",
+      "nav.project.5": "제논 회수 흡착공정",
+      "nav.project.6": "정밀화학 공장을 위한 AI 솔루션",
+      "nav.project.7": "반도체 소재 공정을 위한 AI 시뮬레이터",
+      "nav.project.8": "비철금속 공장 DX 컨설팅",
+      "nav.project.9": "인입 가스 대상 철강사 흡착제 성능 해석"
+    }
+  },
+  "projects": [
+    {
+      "n": 1,
+      "img": "assets/projects/01.jpg",
+      "size": [
+        577,
+        358
+      ],
+      "navLabel": "nav.project.1"
+    },
+    {
+      "n": 2,
+      "img": "assets/projects/02.jpg",
+      "size": [
+        577,
+        358
+      ],
+      "navLabel": "nav.project.2"
+    },
+    {
+      "n": 3,
+      "video": "assets/video/Aveva.mp4",
+      "size": [
+        1280,
+        720
+      ],
+      "navLabel": "nav.project.3"
+    },
+    {
+      "n": 4,
+      "video": "assets/video/mp4.mp4",
+      "size": [
+        1280,
+        720
+      ],
+      "navLabel": "nav.project.4"
+    },
+    {
+      "n": 5,
+      "img": "assets/projects/05.jpg",
+      "size": [
+        1380,
+        367
+      ],
+      "navLabel": "nav.project.5"
+    },
+    {
+      "n": 6,
+      "img": "assets/projects/06.jpg",
+      "size": [
+        1380,
+        779
+      ],
+      "navLabel": "nav.project.6"
+    },
+    {
+      "n": 7,
+      "img": "assets/projects/07.jpg",
+      "size": [
+        577,
+        570
+      ],
+      "navLabel": "nav.project.7"
+    },
+    {
+      "n": 8,
+      "img": "assets/projects/08.jpg",
+      "size": [
+        1380,
+        343
+      ],
+      "navLabel": "nav.project.8"
+    },
+    {
+      "n": 9,
+      "img": "assets/projects/09.jpg",
+      "size": [
+        1380,
+        287
+      ],
+      "navLabel": "nav.project.9"
+    }
+  ],
+  "stacked": [
+    5,
+    6,
+    8,
+    9
+  ]
+}

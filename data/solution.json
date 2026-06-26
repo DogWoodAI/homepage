@@ -1,0 +1,278 @@
+{
+  "i18n": {
+    "en": {
+      "slp.mod": "Modularly Expandable Intelligent AI Solution",
+      "slp.modp": "Each module in DogWoodPro can operate independently and seamlessly interconnect with others to form a unified AI-driven solution",
+      "slp.modp2": "→ Provide solutions comprised of modules requested by clients",
+      "slg1.f1": "Real-time Product Quality Prediction Solution",
+      "slg1.f2": "Reducing Product Quality Management Costs",
+      "slg1.f3": "Explanations for Real-time Product Quality Predictions",
+      "slg1.b1": "Analyzes real-time data from thousands of sensors to precisely predict product quality and yield at both the unit process and plant-wide levels.",
+      "slg1.b2": "Significantly reduces production quality issues and operational costs caused by limited sampling frequency and manpower shortages.",
+      "slg1.b3": "Delivers validated and reliable prediction performance across a variety of operational scenarios, including catalyst decay, mode shifts, and feed changes.",
+      "slg2.f1": "Integrated Operational Data Insights",
+      "slg2.f2": "Intuitive Data Visualization for User-defined sensors and time periods",
+      "slg2.f3": "AI-based Tailored Analysis",
+      "slg2.b1": "Provides in-depth analysis of the relationships between key variables (tags) and productivity, helping users intuitively understand the current state of the process.",
+      "slg2.b2": "Identifies the variables that most significantly influence core metrics such as yield and quality.",
+      "slg2.b3": "Offers visualization tools to analyze variable trends under different conditions, helping to establish optimal operating strategies.",
+      "slg3.f1": "Suggestion of Operating Conditions to Achieve Target Quality",
+      "slg3.f2": "Fast and Comprehensive Optimization with XAI-based Insights",
+      "slg3.f3": "Easy-to-Use Interface with Process Flow Diagram Visualization",
+      "slg3.f4": "Evaluation and Analysis of Operating Strategies",
+      "slg3.b1": "Recommends optimal operating conditions to achieve target yield or quality, supported by Explainable AI (XAI) for full transparency.",
+      "slg3.b2": "Enables efficient decision-making in complex operations, reducing the burden on engineers.",
+      "slg3.b3": "Provides actionable insights that go beyond simple analysis, driving real improvements in plant performance.",
+      "slg4.f1": "Operational Scenario Testing with Easy-to-Use Interface",
+      "slg4.f2": "Accurate and Fast Results",
+      "slg4.f3": "Cost Savings through Fast Decision-making",
+      "slg4.f4": "Improved Understanding of Process and Plant Behavior",
+      "slg4.b1": "Delivers predictions in under a second for unit processes and just a few seconds for entire plants.",
+      "slg4.b2": "Allows intuitive operation without requiring expert knowledge of process simulation.",
+      "slg4.b3": "Supports easy back-testing and predictions across various operational scenarios, helping engineers develop robust operating strategies.",
+      "slg5.f1": "Real-Time Detection of Various Anomalies and Events",
+      "slg5.f2": "Reports on Anomaly Patterns and Related Sectors at User-Defined Periods",
+      "slg5.f3": "Significantly Reduced False Alarms",
+      "slg5.b1": "Delivers true anomalies from massive amounts of sensor data by minimizing unnecessary alerts, leveraging cutting-edge technologies and domain expert knowledge.",
+      "slg5.b2": "Provides safety analysis reports for user-defined time periods and pinpoints sectors where anomalies occur most frequently.",
+      "slg5.b3": "Enables preventive maintenance and enhances the user’s ability to respond to safety-related events.",
+      "slg6.f1": "Accident Scenario Prediction and Response Guidance",
+      "slg6.f2": "Enhanced Process Understanding",
+      "slg6.f3": "Real-Time Q&A for On-Site Situations",
+      "slg6.f4": "Robust Security of Plant Information",
+      "slg6.b1": "Functions as an on-premise AI assistant powered by agentic LLMs and DogWoodAI code, integrated with SafePro or operable independently.",
+      "slg6.b2": "Predicts potential accidents and suggests countermeasures using SOPs, HAZOP, P&ID, manuals, incident history, and equipment data.",
+      "slg6.b3": "Offers instant, conversational support for anomalies, quality issues, and failures—enhancing troubleshooting, maintenance, and employee training.",
+      "slg7.f1": "Reliable use of AI solutions through automatic updates",
+      "slg7.f2": "Reduced Maintenance Costs for AI Solutions",
+      "slg7.b1": "Automatically updates AI models using advanced technology.",
+      "slg7.b2": "Maintains excellent performance, by incorporating newly accumulated operational data.",
+      "slg7.b3": "Provides consistent, stable results without performance degradation over time, even as production operations evolve.",
+      "slg8.p1": "DogWoodAI offers specialized consulting services for industries that have plans to build AI-driven autonomous manufacturing plants. By leveraging clients’ data, DogWoodAI conducts thorough assessments to evaluate the feasibility of AI solutions tailored to their specific needs.",
+      "slg8.p2": "For industries facing challenges in analyzing plant data, simulating existing or new processes, DogWoodAI draws on extensive expertise in physics-based and model-based methodologies. These consulting services help determine feasibility and reduce costs in developing AI solutions for the plant. If necessary, a technology consultant can propose new processes or modifications to enhance the efficiency of existing or planned plants.",
+      "nav.sol0": "DogWoodPro",
+      "nav.sol1": "PrediPro",
+      "nav.sol1.d": "Real-time Product Prediction",
+      "nav.sol2": "AnalyPro",
+      "nav.sol2.d": "Operational Data Analysis",
+      "nav.sol3": "OptPro",
+      "nav.sol3.d": "Plant AI Optimizer",
+      "nav.sol4": "SimPro",
+      "nav.sol4.d": "Plant AI Simulator",
+      "nav.sol5": "SafePro",
+      "nav.sol5.d": "Safety Analysis",
+      "nav.sol6": "PlantAgentPro",
+      "nav.sol6.d": "Plant AI Agent",
+      "nav.sol7": "MLOps",
+      "nav.sol7.d": "AI Management",
+      "nav.sol8": "Consulting",
+      "nav.sol8.d": "Industrial AI Solution Challenges"
+    },
+    "ko": {
+      "slp.mod": "모듈 단위로 확장되는 지능형 AI 솔루션",
+      "slp.modp": "DogWoodPro의 각 모듈은 독립적으로 활용 가능하며, 필요에 따라 유기적으로 연동되어 AI 기반의 통합 솔루션으로 확장 가능",
+      "slp.modp2": "→ 고객의 요청에 따라 필요한 모듈들로 구성될 수 있는 솔루션",
+      "slg1.f1": "공장 맞춤형 실시간 품질 예측 솔루션",
+      "slg1.f2": "생산품질 관리 비용 절감",
+      "slg1.f3": "실시간 공장 품질 예측에 대한 설명 제공",
+      "slg1.b1": "실시간으로 수천 개의 센서로부터 수집된 데이터를 분석하여 공정 및 공장 전체 수준에서 제품 품질과 수율을 정밀하게 예측합니다.",
+      "slg1.b2": "제한된 제품 샘플링 빈도와 인력 부족으로 인한 생산 품질 문제 및 운영 비용을 크게 감소시킵니다.",
+      "slg1.b3": "다양한 운전 조건 변화(촉매 열화, 운전 모드 전환, 원료 변화 등)에서도 검증된 안정성과 예측 성능을 제공합니다.",
+      "slg2.f1": "통합적 운전데이터 인사이트 제공",
+      "slg2.f2": "사용자 지정 센서와 기간에 대한 직관적인 시각화 정보 제공",
+      "slg2.f3": "AI기반 맞춤형 분석 제공",
+      "slg2.b1": "주요 변수(tag)와 생산성과의 상관관계를 심층 분석하여, 공정의 현재 상태를 직관적으로 파악할 수 있습니다.",
+      "slg2.b2": "다양한 분석기법을 통해 수율, 품질 등 핵심 지표에 영향을 주는 요소들을 체계적으로 확인할 수 있습니다.",
+      "slg2.b3": "시각 자료를 통해 다양한 조건에서 변수별 트렌드를 쉽게 비교 분석하며, 최적의 운전 전략 수립을 지원합니다.",
+      "slg3.f1": "목표 품질 생산을 위한 운전 조건 제시",
+      "slg3.f2": "빠르고 포괄적인 최적화와 XAI를 통한 통찰력 제공",
+      "slg3.f3": "공정 흐름도(PFD) 바탕의 편리한 인터페이스",
+      "slg3.f4": "운전기술개발의 가상적 평가 및 분석",
+      "slg3.b1": "목표 수율 또는 품질을 달성하기 위한 최적의 운전 조건을 제안하며, 그 근거를 XAI(설명 가능한 AI)를 통해 명확히 제공합니다.",
+      "slg3.b2": "복잡한 공정 조건에서도 효율적인 의사 결정을 지원하여, 엔지니어의 결정 부담을 줄여줍니다.",
+      "slg3.b3": "단순한 데이터 분석을 넘어 실제 운영 개선 효과를 유도하는 실질적인 인사이트를 제공합니다.",
+      "slg4.f1": "사용하기 쉬운 인터페이스를 통한 운전 시나리오 테스트",
+      "slg4.f2": "정확하고 빠른 결과 제공",
+      "slg4.f3": "신속한 의사결정을 통한 비용 절감",
+      "slg4.f4": "공정과 공장의 작동에 대한 이해도 향상",
+      "slg4.b1": "복잡한 기존 공정 시뮬레이터의 한계를 극복하여, 단위 공정은 1초 이내, 전체 공장은 수 초 내에 예측 결과를 제공합니다.",
+      "slg4.b2": "별도의 공정 모사에 대한 전문 지식 없이도 직관적인 시뮬레이션이 가능합니다.",
+      "slg4.b3": "다양한 운전 시나리오에 대한 백테스팅과 예측을 손쉽게 수행할 수 있어, 운영 전략 수립에 큰 도움이 됩니다.",
+      "slg5.f1": "다양한 이상징후 및 이벤트 실시간 탐지",
+      "slg5.f2": "이상 징후에 대한 장단기 패턴별, 공장 구역별 이상 알림",
+      "slg5.f3": "오탐률을 획기적으로 줄인 AI 기술",
+      "slg5.b1": "첨단 기술과 도메인 지식을 반영하여 수많은 센서의 실제 이상 징후를 효과적으로 식별하여, 불필요한 경고로 인한 사용자 불편을 줄입니다.",
+      "slg5.b2": "지정한 기간에 대한 안전 분석 보고서를 제공하며, 이상 현상이 자주 발생하는 설비나 구역을 정확히 파악할 수 있습니다.",
+      "slg5.b3": "예방적 유지보수를 가능하게 하여, 설비의 안정성과 공정 안전 대응 능력을 강화합니다.",
+      "slg6.f1": "사고 시나리오 예측 및 대처 방안 제시",
+      "slg6.f2": "공정 이해도 향상 지원",
+      "slg6.f3": "현장 상황에 대한 실시간 대화형 질의 응답",
+      "slg6.f4": "철저한 공장 정보 보안",
+      "slg6.b1": "SafePro와 연계하거나 독립적으로 작동하는 Agentic LLM 기반 현장형 AI 어시스턴트 역할을 합니다.",
+      "slg6.b2": "SOP, HAZOP, P&ID, 매뉴얼, 사고 이력, 장비 데이터를 활용해 사고 예측과 대응 방안 제시합니다.",
+      "slg6.b3": "이상, 품질 편차, 고장에 즉시 응답하며 트러블슈팅, 유지보수, 교육을 지원합니다.",
+      "slg7.f1": "AI 솔루션의 자동 업데이트를 통한 안정적인 사용",
+      "slg7.f2": "AI 솔루션의 유지보수 비용 절감",
+      "slg7.b1": "첨단 기술을 통해 자동 재학습되는 AI 모델을 지속적으로 제공합니다.",
+      "slg7.b2": "누적된 운전 데이터를 반영하여 최적의 성능을 유지합니다.",
+      "slg7.b3": "생산 작업의 변화를 반영하여 시간이 지나도 AI의 성능 저하 없이 지속적이고 안정적인 결과를 제공합니다.",
+      "slg8.p1": "DogWoodAI는 AI 기반 자율 공장 구축을 계획 중인 산업 현장을 위해 특화된 컨설팅 서비스를 제공합니다. 고객의 데이터를 활용하여, 해당 산업의 요구에 맞춘 AI 솔루션의 적용 가능성을 철저히 평가하고 진단합니다.",
+      "slg8.p2": "또한, 플랜트 데이터를 분석하거나 기존 공정 또는 신규 공정을 시뮬레이션하는 데 어려움을 겪고 있는 산업을 위해, DogWoodAI는 물리 기반 및 모델 기반 기법에 대한 풍부한 전문 지식을 바탕으로 지원을 제공합니다. 이러한 컨설팅 서비스는 AI 솔루션 개발의 타당성 검토 및 비용 절감에 도움을 주며, 필요할 경우 기술 컨설턴트가 기존 또는 계획 중인 플랜트의 효율 향상을 위한 신규 공정 또는 개선안을 제안할 수도 있습니다.",
+      "nav.sol0": "DogWoodPro",
+      "nav.sol1": "PrediPro",
+      "nav.sol1.d": "실시간 품질 예측",
+      "nav.sol2": "AnalyPro",
+      "nav.sol2.d": "운전 데이터 분석",
+      "nav.sol3": "OptPro",
+      "nav.sol3.d": "공정 AI 최적화",
+      "nav.sol4": "SimPro",
+      "nav.sol4.d": "공정 AI 시뮬레이터",
+      "nav.sol5": "SafePro",
+      "nav.sol5.d": "안전 분석",
+      "nav.sol6": "PlantAgentPro",
+      "nav.sol6.d": "플랜트 AI 에이전트",
+      "nav.sol7": "MLOps",
+      "nav.sol7.d": "AI 모델 관리",
+      "nav.sol8": "컨설팅",
+      "nav.sol8.d": "산업 AI 도입 컨설팅"
+    }
+  },
+  "modules": [
+    {
+      "id": "predipro",
+      "h": "nav.sol1",
+      "tag": "nav.sol1.d",
+      "k": "slg1",
+      "img": "predipro-01.jpg",
+      "size": [
+        1590,
+        354
+      ],
+      "img2": "predipro-02.jpg",
+      "size2": [
+        1742,
+        481
+      ]
+    },
+    {
+      "id": "analypro",
+      "h": "nav.sol2",
+      "tag": "nav.sol2.d",
+      "k": "slg2",
+      "img": "analypro-01.jpg",
+      "size": [
+        1380,
+        286
+      ],
+      "img2": "analypro-02.jpg",
+      "size2": [
+        1742,
+        822
+      ]
+    },
+    {
+      "id": "optpro",
+      "h": "nav.sol3",
+      "tag": "nav.sol3.d",
+      "k": "slg3",
+      "features": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "img": "optpro-01.jpg",
+      "size": [
+        1380,
+        335
+      ],
+      "img2": "optpro-02.jpg",
+      "size2": [
+        1793,
+        765
+      ]
+    },
+    {
+      "id": "simpro",
+      "h": "nav.sol4",
+      "tag": "nav.sol4.d",
+      "k": "slg4",
+      "features": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "img": "simpro-01.jpg",
+      "size": [
+        1380,
+        372
+      ],
+      "img2": "simpro-02.jpg",
+      "size2": [
+        1793,
+        765
+      ]
+    },
+    {
+      "id": "safepro",
+      "h": "nav.sol5",
+      "tag": "nav.sol5.d",
+      "k": "slg5",
+      "img": "safepro-01.jpg",
+      "size": [
+        1380,
+        523
+      ],
+      "img2": "safepro-02.jpg",
+      "size2": [
+        1780,
+        904
+      ]
+    },
+    {
+      "id": "plantagentpro",
+      "h": "nav.sol6",
+      "tag": "nav.sol6.d",
+      "k": "slg6",
+      "features": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "img": "plantagentpro-01.jpg",
+      "size": [
+        1787,
+        1058
+      ]
+    },
+    {
+      "id": "mlops",
+      "h": "nav.sol7",
+      "tag": "nav.sol7.d",
+      "k": "slg7",
+      "features": [
+        1,
+        2
+      ],
+      "img": "mlops-01.jpg",
+      "size": [
+        1200,
+        396
+      ]
+    },
+    {
+      "id": "consulting",
+      "h": "nav.sol8",
+      "tag": "nav.sol8.d",
+      "k": "slg8",
+      "body": "paragraphs",
+      "img": "consulting-01.jpg",
+      "size": [
+        1328,
+        242
+      ]
+    }
+  ]
+}

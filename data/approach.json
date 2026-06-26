@@ -1,0 +1,126 @@
+{
+  "i18n": {
+    "en": {
+      "apg1.about": "Our Tailor-made AI Technology is specifically developed to address the unique needs of clients under the domain understandings of client data in the industrial sector. It is optimized to utilize real-time data from a wide range of sensors (RTDB) installed in chemical plants.",
+      "apg1.f1": "Processes and analyzes large volumes of field-generated data",
+      "apg1.f2": "Predicts multiple product qualities simultaneously",
+      "apg1.f3": "Customizable for different industrial applications",
+      "apg1.b1": "Enables precise predictions fitted to the production environments of manufacturing, refining and chemical plants",
+      "apg1.b2": "Improves operational efficiency by utilizing actual plant data",
+      "apg1.b3": "Enhances product quality and consistency",
+      "apg1.case": "Korean oil & fine chemical companies successfully completed a 3-6 months field test, validating the solution’s reliability in a real operational environment.",
+      "apg1.cap": "UI Platform for Tailor-made AI for HCR",
+      "apg2.about": "This technology focuses on analyzing real-time operational data collected directly from manufacturing plants to provide immediate, actionable insights.",
+      "apg2.f1": "Monitors and analyzes real-time sensor data",
+      "apg2.f2": "Predicts key process variables such as product yield and quality",
+      "apg2.f3": "Outperforms traditional platform-based AI in industrial environments",
+      "apg2.b1": "Provides higher prediction accuracy using actual data",
+      "apg2.b2": "Supports real-time process control and optimization",
+      "apg2.b3": "Enhances safety and productivity in manufacturing settings",
+      "apg2.cap": "Real data-based AI Solution for Power Plant",
+      "apg3.about": "Model-driven AI Technology leverages first-principle mathematical equations to simulate industrial processes and generate high-quality data for training AI models.",
+      "apg3.f1": "Creates dynamic models based on governing equations",
+      "apg3.f2": "Generates synthetic data and conducts sensitivity analyses",
+      "apg3.f3": "Validates models using real-world measurements",
+      "apg3.b1": "Enables AI development in data-scarce environments",
+      "apg3.b2": "Reduces dependency on large-scale historical datasets",
+      "apg3.b3": "Offers scalable modeling for complex integrated processes",
+      "apg3.case": "Successfully developed and validated a dynamic AI model for an integrated hydrogen production process, enabling efficient hydrogen recovery and CO₂ capture from steam methane reforming tail gas.",
+      "apg3.cap": "Model-based AI Solution for the Integrated Process",
+      "apg4.about": "Physics-driven AI Technology combines scientific theory with AI, especially in cases where field data is insufficient for traditional data-based approaches.",
+      "apg4.f1": "Integrates physicochemical theory with big data AI algorithms",
+      "apg4.f2": "Predicts beyond actual operating ranges",
+      "apg4.f3": "Generates consistent, theoretically grounded data",
+      "apg4.b1": "Enables solution development in data-limited industrial environments",
+      "apg4.b2": "Supports future performance forecasting with enhanced reliability",
+      "apg4.b3": "Reduces risks associated with data insufficiency",
+      "apg4.cap": "Prediction of Solubility in Electrochemical Solutions through Physics-based AI Solution",
+      "nav.ap1": "Tailor-made AI Technology",
+      "nav.ap2": "Real data-based AI Technology",
+      "nav.ap3": "Model-based AI Technology",
+      "nav.ap4": "Physics-based AI Technology"
+    },
+    "ko": {
+      "apg1.about": "맞춤형 AI 기술은 산업 분야 고객의 제공 데이터의 이해를 기반으로 고유한 요구 사항을 충족하도록 특별히 개발된 솔루션입니다. 화학 공장에 설치된 다양한 센서에서 수집된 실시간 데이터(RTDB)를 최적화하여 활용합니다.",
+      "apg1.f1": "현장에서 생성된 대용량 데이터를 처리 및 분석",
+      "apg1.f2": "다양한 제품의 수율을 동시에 예측",
+      "apg1.f3": "산업 환경에 맞춰 커스터마이징 가능",
+      "apg1.b1": "특정 제조공장 대상으로 생산 환경의 요구에 부합하는 정밀한 예측 가능",
+      "apg1.b2": "실제 공장 데이터를 활용하여 운영 효율성 향상",
+      "apg1.b3": "제품 품질 및 일관성 강화",
+      "apg1.case": "국내 정유사 및 정밀화학사에서 3~6개월간 현장 테스트를 성공적으로 완료하여 솔루션의 신뢰성을 검증했습니다.",
+      "apg1.cap": "HCR을 위한 맞춤형 AI의 UI 플랫폼",
+      "apg2.about": "본 기술은 제조공장에서 수집하는 실시간 운영 데이터를 분석하여 즉각적인 인사이트와 예측 정보를 제공합니다.",
+      "apg2.f1": "실시간 센서 데이터를 모니터링 및 분석",
+      "apg2.f2": "제품 수율 및 품질과 같은 핵심 공정 변수를 예측",
+      "apg2.f3": "기존의 플랫폼 기반 AI 대비 우수한 성능 보유",
+      "apg2.b1": "실제 데이터를 기반으로 한 높은 예측 정확도",
+      "apg2.b2": "실시간 공정 제어 및 최적화 지원",
+      "apg2.b3": "제조 현장의 안전성과 생산성 향상",
+      "apg2.cap": "발전소를 위한 실제 데이터 기반의 AI 솔루션",
+      "apg3.about": "모델 기반 AI는 제일원리 기반 지배 방정식을 활용하여 산업 공정을 시뮬레이션하고, 고품질 데이터를 생성해 AI 솔루션을 구현하는 기술입니다.",
+      "apg3.f1": "제일원리를 기반으로 한 동적 모델 생성",
+      "apg3.f2": "합성 데이터 생성 및 민감도 분석 수행",
+      "apg3.f3": "실제 측정 데이터를 활용한 모델 검증",
+      "apg3.b1": "데이터가 부족한 환경에서도 AI 개발 가능",
+      "apg3.b2": "대규모의 과거 데이터에 대한 의존도 감소",
+      "apg3.b3": "복잡한 통합 공정에 대한 확장 가능한 모델링 제공",
+      "apg3.case": "수소 생산 통합 공정에 대한 동적 AI 모델을 개발 및 검증하고, 스팀 메탄 개질 반응에서 발생하는 테일가스로부터 수소 회수 및 이산화탄소 포집을 성공적으로 구현하였습니다. 이 모델은 기업에 제공되어 기존 데이터를 통해 검증되었습니다.",
+      "apg3.cap": "통합 공정을 위한 모델 기반의 AI 솔루션",
+      "apg4.about": "물리 기반 AI 기술은 충분한 현장 데이터 확보가 어려운 경우, 과학 이론과 AI를 융합하여 해결책을 제시하는 기술입니다.",
+      "apg4.f1": "물리화학 이론과 빅데이터 AI 알고리즘의 통합",
+      "apg4.f2": "실제 운전 범위를 넘어선 성능 예측 가능",
+      "apg4.f3": "일관되고 이론적 근거에 따른 데이터 생성",
+      "apg4.b1": "데이터가 부족한 산업 환경에서도 솔루션 개발 가능",
+      "apg4.b2": "향후 성능 예측의 신뢰도 향상",
+      "apg4.b3": "데이터 부족에 따른 리스크 감소",
+      "apg4.cap": "물리학 기반의 AI 솔루션을 통한 전기화학적 용액의 용해도 예측",
+      "nav.ap1": "맞춤형 AI 기술",
+      "nav.ap2": "현장 데이터 기반 AI 기술",
+      "nav.ap3": "모델 기반 AI 기술",
+      "nav.ap4": "물리 법칙 기반 AI 기술"
+    }
+  },
+  "sections": [
+    {
+      "id": "tailor-made",
+      "h": "nav.ap1",
+      "k": "apg1",
+      "img": "001.jpg",
+      "size": [
+        507,
+        371
+      ]
+    },
+    {
+      "id": "real-data",
+      "h": "nav.ap2",
+      "k": "apg2",
+      "img": "002.jpg",
+      "size": [
+        1308,
+        305
+      ]
+    },
+    {
+      "id": "model-based",
+      "h": "nav.ap3",
+      "k": "apg3",
+      "img": "003.jpg",
+      "size": [
+        1380,
+        544
+      ]
+    },
+    {
+      "id": "physics-based",
+      "h": "nav.ap4",
+      "k": "apg4",
+      "img": "004.jpg",
+      "size": [
+        1209,
+        507
+      ]
+    }
+  ]
+}
