@@ -41,48 +41,48 @@
   var SOL_IC = [IC.layers, IC.gauge, IC.chart, IC.sliders, IC.sim, IC.shield, IC.bot, IC.refresh, IC.handshake];
   var nav = {
     about:[
-      ["about#company","nav.company","nav.company.d",IC.factory],
-      ["about#industries","nav.industries","nav.industries.d",IC.layers],
-      ["about#customers","nav.customers","nav.customers.d",IC.handshake],
-      ["news","nav.news","nav.news.d",IC.doc]
+      ["about#company","nav.company","",IC.factory],
+      ["about#industries","nav.industries","",IC.layers],
+      ["about#customers","nav.customers","",IC.handshake],
+      ["news","nav.news","",IC.doc]
     ],
     approach:[
-      ["approach#tailor-made","nav.ap1","nav.ap1.d",IC.target],
-      ["approach#real-data","nav.ap2","nav.ap2.d",IC.gauge],
-      ["approach#model-based","nav.ap3","nav.ap3.d",IC.flask],
-      ["approach#physics-based","nav.ap4","nav.ap4.d",IC.atom]
+      ["approach#tailor-made","nav.ap1","",IC.target],
+      ["approach#real-data","nav.ap2","",IC.gauge],
+      ["approach#model-based","nav.ap3","",IC.flask],
+      ["approach#physics-based","nav.ap4","",IC.atom]
     ],
     solution:[
-      ["solution#dogwoodpro","nav.sol0","nav.sol0.d",IC.layers],
-      ["solution#predipro","nav.sol1","nav.sol1.d",IC.gauge],
-      ["solution#analypro","nav.sol2","nav.sol2.d",IC.chart],
-      ["solution#optpro","nav.sol3","nav.sol3.d",IC.sliders],
-      ["solution#simpro","nav.sol4","nav.sol4.d",IC.sim],
-      ["solution#safepro","nav.sol5","nav.sol5.d",IC.shield],
-      ["solution#plantbot","nav.sol6","nav.sol6.d",IC.bot],
-      ["solution#mlops","nav.sol7","nav.sol7.d",IC.refresh],
-      ["solution#consulting","nav.sol8","nav.sol8.d",IC.handshake]
+      ["solution#dogwoodpro","nav.sol0","",IC.layers],
+      ["solution#predipro","nav.sol1","",IC.gauge],
+      ["solution#analypro","nav.sol2","",IC.chart],
+      ["solution#optpro","nav.sol3","",IC.sliders],
+      ["solution#simpro","nav.sol4","",IC.sim],
+      ["solution#safepro","nav.sol5","",IC.shield],
+      ["solution#plantbot","nav.sol6","",IC.bot],
+      ["solution#mlops","nav.sol7","",IC.refresh],
+      ["solution#consulting","nav.sol8","",IC.handshake]
     ],
     rndd:[
-      ["rndd#rdd-1","nav.rdd.1","",IC.doc],
-      ["rndd#rdd-2","nav.rdd.2","",IC.doc],
-      ["rndd#rdd-3","nav.rdd.3","",IC.doc],
-      ["rndd#rdd-4","nav.rdd.4","",IC.doc],
-      ["rndd#rdd-5","nav.rdd.5","",IC.doc],
-      ["rndd#rdd-6","nav.rdd.6","",IC.doc],
-      ["rndd#rdd-7","nav.rdd.7","",IC.doc],
-      ["rndd#rdd-8","nav.rdd.8","",IC.doc],
-      ["rndd#rdd-9","nav.rdd.9","",IC.doc],
-      ["rndd#rdd-10","nav.rdd.10","",IC.doc],
-      ["rndd#rdd-11","nav.rdd.11","",IC.doc],
-      ["rndd#rdd-12","nav.rdd.12","",IC.doc],
-      ["rndd#rdd-13","nav.rdd.13","",IC.doc],
-      ["rndd#rdd-14","nav.rdd.14","",IC.doc],
-      ["rndd#rdd-15","nav.rdd.15","",IC.doc],
-      ["rndd#rdd-16","nav.rdd.16","",IC.doc],
-      ["rndd#rdd-17","nav.rdd.17","",IC.doc],
-      ["rndd#rdd-18","nav.rdd.18","",IC.doc],
-      ["rndd#rdd-19","nav.rdd.19","",IC.doc]
+      ["rndd#rdd-1","nav.rdd.1","nav.rdd.1.d",IC.doc],
+      ["rndd#rdd-2","nav.rdd.2","nav.rdd.2.d",IC.doc],
+      ["rndd#rdd-3","nav.rdd.3","nav.rdd.3.d",IC.doc],
+      ["rndd#rdd-4","nav.rdd.4","nav.rdd.4.d",IC.doc],
+      ["rndd#rdd-5","nav.rdd.5","nav.rdd.5.d",IC.doc],
+      ["rndd#rdd-6","nav.rdd.6","nav.rdd.6.d",IC.doc],
+      ["rndd#rdd-7","nav.rdd.7","nav.rdd.7.d",IC.doc],
+      ["rndd#rdd-8","nav.rdd.8","nav.rdd.8.d",IC.doc],
+      ["rndd#rdd-9","nav.rdd.9","nav.rdd.9.d",IC.doc],
+      ["rndd#rdd-10","nav.rdd.10","nav.rdd.10.d",IC.doc],
+      ["rndd#rdd-11","nav.rdd.11","nav.rdd.11.d",IC.doc],
+      ["rndd#rdd-12","nav.rdd.12","nav.rdd.12.d",IC.doc],
+      ["rndd#rdd-13","nav.rdd.13","nav.rdd.13.d",IC.doc],
+      ["rndd#rdd-14","nav.rdd.14","nav.rdd.14.d",IC.doc],
+      ["rndd#rdd-15","nav.rdd.15","nav.rdd.15.d",IC.doc],
+      ["rndd#rdd-16","nav.rdd.16","nav.rdd.16.d",IC.doc],
+      ["rndd#rdd-17","nav.rdd.17","nav.rdd.17.d",IC.doc],
+      ["rndd#rdd-18","nav.rdd.18","nav.rdd.18.d",IC.doc],
+      ["rndd#rdd-19","nav.rdd.19","nav.rdd.19.d",IC.doc]
     ],
     projects:[
       ["projects#project-1","nav.project.1","",IC.factory],
@@ -96,14 +96,20 @@
       ["projects#project-9","nav.project.9","",IC.chart]
     ],
     ip:[
-      ["ip-papers#patent","nav.patents","nav.patents.d",IC.award],
-      ["ip-papers#publications","nav.publications","nav.publications.d",IC.doc]
+      ["ip-papers#patent","nav.patents","",IC.award],
+      ["ip-papers#publications","nav.publications","",IC.doc]
     ]
   };
 
-  function dropItems(list){
+  function dropItems(list, reserveSub){
     return list.map(function(i){
-      return '<a class="drop-link" href="'+i[0]+'"><b data-i18n-html="'+i[1]+'"></b></a>';
+      var sub = "";
+      if(i[2]){
+        sub = '<span class="drop-sub" data-i18n-html="'+i[2]+'"></span>';
+      }else if(reserveSub){
+        sub = '<span class="drop-sub" aria-hidden="true"></span>';
+      }
+      return '<a class="drop-link" href="'+i[0]+'"><b data-i18n-html="'+i[1]+'"></b>'+sub+'</a>';
     }).join("");
   }
 
@@ -141,7 +147,7 @@
   function navItem(label, list, wide, href){
     var cls = "nav-item nav-" + href.replace(/[^a-z0-9_-]/gi, "-");
     return '<li class="'+cls+'"><a class="nav-link" href="'+href+'" data-i18n="'+label+'"></a>'+
-      '<div class="dropdown'+(wide?' wide':'')+'"><div class="dropdown-grid">'+dropItems(list)+'</div></div></li>';
+      '<div class="dropdown'+(wide?' wide':'')+'"><div class="dropdown-grid">'+dropItems(list, href==="rndd")+'</div></div></li>';
   }
   function buildMobile(){
     function grp(label, list){

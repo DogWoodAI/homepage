@@ -140,6 +140,10 @@ body[data-page="index.html"] .site-header:has(.nav-item:hover) .nav-link:hover{c
   background:#fff;border-bottom:1px solid var(--line);box-shadow:0 16px 28px rgba(13,33,73,.08);
   opacity:0;visibility:hidden;transition:.16s;transform:translateY(-4px);
 }
+.dropdown.wide{
+  max-height:calc(100vh - var(--nav-h));
+  overflow-y:auto;
+}
 .dropdown::before{content:"";position:absolute;top:-14px;left:0;right:0;height:16px} /* hover bridge */
 .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .dropdown-grid{display:flex;justify-content:center;gap:46px;padding:15px 24px;flex-wrap:wrap}
@@ -148,21 +152,38 @@ body[data-page="index.html"] .site-header:has(.nav-item:hover) .nav-link:hover{c
 .nav-rndd .dropdown-grid,
 .nav-projects .dropdown-grid{
   --dropdown-cols:5;
-  --dropdown-item-w:220px;
   display:grid;
-  grid-template-columns:repeat(var(--dropdown-cols), minmax(0, var(--dropdown-item-w)));
+  width:100%;
+  max-width:var(--maxw);
+  margin:0 auto;
+  grid-template-columns:repeat(var(--dropdown-cols), minmax(0, 1fr));
   justify-content:center;
-  gap:12px 24px;
-  padding:18px 24px;
+  gap:12px 20px;
+  padding:18px 12px;
 }
+body:has(.page-hero) .nav-rndd .dropdown-grid,
+body:has(.page-hero) .nav-projects .dropdown-grid{max-width:1400px}
 .drop-link{display:block;white-space:nowrap}
 .nav-rndd .drop-link,
 .nav-projects .drop-link{white-space:normal}
 .drop-link b{font-weight:600;font-size:.88rem;color:#222;transition:.14s}
-.drop-link:hover b{color:var(--blue-500);text-decoration:underline;text-underline-offset:5px}
+.nav-rndd .drop-link b{display:block;font-size:.82rem;line-height:1.36}
+.nav-rndd .drop-sub{
+  display:block;
+  min-height:1.35em;
+  margin-top:4px;
+  font-size:.68rem;
+  line-height:1.34;
+  font-weight:400;
+  color:#8a94a6;
+}
+.drop-link:hover b,
+.drop-link:hover .drop-sub{text-decoration:underline;text-underline-offset:5px}
 body[data-page="index.html"] .dropdown{background:#05080d;border-bottom-color:rgba(255,255,255,.12);box-shadow:0 16px 28px rgba(0,0,0,.22)}
 body[data-page="index.html"] .drop-link b{color:#fff}
-body[data-page="index.html"] .drop-link:hover b{color:#fff;text-decoration:underline;text-underline-offset:5px}
+body[data-page="index.html"] .nav-rndd .drop-sub{color:rgba(255,255,255,.58)}
+body[data-page="index.html"] .drop-link:hover b,
+body[data-page="index.html"] .drop-link:hover .drop-sub{text-decoration:underline;text-underline-offset:5px}
 
 .nav-right{display:flex;align-items:center;gap:12px}
 /* language switch — plain text next to the logo, active is underlined */
