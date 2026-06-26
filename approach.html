@@ -139,10 +139,10 @@ Object.assign(window.I18N.ko, {
 /* build the 4 sections */
 (function(){
   var S = [
-    {id:"tailor-made",  h:"nav.ap1", k:"apg1", img:"001.jpg"},
-    {id:"real-data",    h:"nav.ap2", k:"apg2", img:"002.jpg"},
-    {id:"model-based",  h:"nav.ap3", k:"apg3", img:"003.jpg"},
-    {id:"physics-based",h:"nav.ap4", k:"apg4", img:"004.jpg"}
+    {id:"tailor-made",  h:"nav.ap1", k:"apg1", img:"001.jpg", size:[507,371]},
+    {id:"real-data",    h:"nav.ap2", k:"apg2", img:"002.jpg", size:[1308,305]},
+    {id:"model-based",  h:"nav.ap3", k:"apg3", img:"003.jpg", size:[1380,544]},
+    {id:"physics-based",h:"nav.ap4", k:"apg4", img:"004.jpg", size:[1209,507]}
   ];
   function li(key){ return '<li data-i18n="'+key+'"></li>'; }
   function caseBlock(s){
@@ -164,7 +164,7 @@ Object.assign(window.I18N.ko, {
         caseBlock(s)+
       '</div>'+
       '<figure class="d-fig reveal d1">'+
-        '<div class="frame"><img src="assets/software/'+s.img+'" alt="" loading="lazy"></div>'+
+        '<div class="frame"><img src="assets/software/'+s.img+'" alt="" width="'+s.size[0]+'" height="'+s.size[1]+'" loading="lazy"></div>'+
         '<figcaption data-i18n="'+s.k+'.cap"></figcaption>'+
       '</figure>'+
     '</section>';

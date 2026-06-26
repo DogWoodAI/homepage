@@ -301,7 +301,7 @@ body.menu-open .hamburger span::after{top:0;transform:rotate(-45deg)}
 .media.has-img::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,18,46,.1),rgba(6,18,46,.45))}
 
 /* full-width technical diagram band (Approach / Solution) */
-.diagram{width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);margin-top:18px}
+.diagram{width:100%;border-radius:4px;overflow:hidden;border:1px solid var(--line);background:#fff;margin-top:15px}
 .diagram img{width:100%;height:auto;display:block}
 .diagram + .diagram{margin-top:22px}
 .diagram-cap{text-align:center;font-size:.86rem;color:var(--muted);margin-top:14px}
@@ -714,23 +714,27 @@ section:has(.news-detail-wrap){padding-top:64px}
    =================================================================== */
 .yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm)}
 .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.native-video{width:100%;border-radius:6px;display:block;background:#000}
+.native-video{width:100%;height:auto;aspect-ratio:16/9;border-radius:6px;display:block;background:#000}
 
 /* DogWoodPro intro: 2 videos left, wheel card right */
 .dwp{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:stretch;margin:38px 0 10px}
-.dwp-col{display:flex;flex-direction:column;gap:22px}
+.dwp-col{display:flex;flex-direction:column;gap:22px;justify-content:space-between}
 .dwp-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:26px;box-shadow:var(--shadow-sm)}
-.dwp-card .wheel{max-width:380px;margin:0 auto 18px}
-.dwp-card h3{font-size:1.3rem;text-align:center;margin-bottom:12px}
-.dwp-card p{font-size:1.08rem;color:#374151;line-height:1.86}
+.dwp-card .wheel{max-width:510px;margin:0 auto 18px}
+.dwp-card .wheel img{width:100%;height:auto}
+.dwp-card h3{max-width:550px;margin:0 auto 12px;font-size:clamp(1.35rem,1.45vw,1.5rem);}
+.dwp-card p{max-width:550px;margin-left:auto;margin-right:auto;font-size:clamp(1rem,1.11vw,1.08rem);color:#374151;line-height:1.86}
 .dwp-card p.arrow{margin-top:10px;color:#1f2937}
 @media(max-width:900px){.dwp{grid-template-columns:1fr}}
 
 /* stacked module section: heading + lists full width, diagram below */
-.mod{padding:72px 0;border-bottom:1px solid var(--line)}
+.mod{padding:30px 0;border-bottom:1px solid var(--line)}
 .mod:last-of-type{border-bottom:none}
-.mod h2{font-size:clamp(1.72rem,2.55vw,2.24rem);margin-bottom:8px;letter-spacing:-.01em}
+.mod h2{font-size:clamp(1.72rem,2.55vw,2.24rem);margin:10px auto;letter-spacing:-.01em}
 .mod .diagram{margin-top:30px}
+.solution-copy{width:100%;margin-top:18px}
+.solution-copy p{color:#374151;font-size:1.12rem;line-height:1.9}
+.solution-copy p+p{margin-top:18px}
 
 /* ===================================================================
    ABOUT PAGE — refined company / industries / customers layout

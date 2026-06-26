@@ -315,10 +315,29 @@
       });
     }
 
-    // hash anchor: re-scroll after layout settles (images can shift positions)
-    if(location.hash){
+    // hash anchor: keep the first landing accurate while images/fonts finish settling.
+    function scrollToHashAnchor(){
+      if(!location.hash) return;
       var tgt = document.getElementById(location.hash.slice(1));
-      if(tgt) setTimeout(function(){ tgt.scrollIntoView({behavior:"smooth", block:"start"}); }, 250);
+      if(tgt) tgt.scrollIntoView({behavior:"auto", block:"start"});
+    }
+    if(location.hash){
+      var hashScrollUntil = Date.now() + 6000;
+      function scrollToHashAnchorWhileSettling(){
+        if(Date.now() <= hashScrollUntil) scrollToHashAnchor();
+      }
+      [0, 120, 360, 900, 1600, 2600, 4000].forEach(function(delay){
+        setTimeout(scrollToHashAnchor, delay);
+      });
+      window.addEventListener("load", scrollToHashAnchor, {once:true});
+      document.querySelectorAll("img").forEach(function(img){
+        if(img.complete) return;
+        img.addEventListener("load", scrollToHashAnchorWhileSettling, {once:true});
+        img.addEventListener("error", scrollToHashAnchorWhileSettling, {once:true});
+      });
+      if(document.fonts && document.fonts.ready){
+        document.fonts.ready.then(scrollToHashAnchor);
+      }
     }
 
     // floating TOP button

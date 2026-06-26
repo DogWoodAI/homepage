@@ -134,21 +134,21 @@ Object.assign(window.I18N.ko, {
 
 (function(){
   var P = [
-    {n:1, img:"assets/project/01.jpg"},
-    {n:2, img:"assets/project/02.jpg"},
-    {n:3, video:"assets/video/Aveva.mp4"},
-    {n:4, img:"assets/project/04.jpg"},
-    {n:5, img:"assets/project/05.jpg"},
-    {n:6, img:"assets/project/06.jpg"},
-    {n:7, video:"assets/video/mp4.mp4"},
-    {n:8, img:"assets/project/08.jpg"},
-    {n:9, img:"assets/project/09.jpg"}
+    {n:1, img:"assets/project/01.jpg", size:[577,358]},
+    {n:2, img:"assets/project/02.jpg", size:[577,358]},
+    {n:3, video:"assets/video/Aveva.mp4", size:[1280,720]},
+    {n:4, img:"assets/project/04.jpg", size:[1380,367]},
+    {n:5, img:"assets/project/05.jpg", size:[1380,779]},
+    {n:6, img:"assets/project/06.jpg", size:[577,570]},
+    {n:7, video:"assets/video/mp4.mp4", size:[1280,720]},
+    {n:8, img:"assets/project/08.jpg", size:[1380,343]},
+    {n:9, img:"assets/project/09.jpg", size:[1380,287]}
   ];
   document.getElementById("pjList").innerHTML = P.map(function(p,i){
     var k = "pj"+p.n;
     var media = p.video
-      ? '<video class="native-video" controls preload="metadata"><source src="'+p.video+'" type="video/mp4"></video>'
-      : '<img src="'+p.img+'" alt="" loading="lazy">';
+      ? '<video class="native-video" width="'+p.size[0]+'" height="'+p.size[1]+'" controls preload="metadata"><source src="'+p.video+'" type="video/mp4"></video>'
+      : '<img src="'+p.img+'" alt="" width="'+p.size[0]+'" height="'+p.size[1]+'" loading="lazy">';
     return '<section class="detail anchor-sec'+(i%2?' rev':'')+'" id="project-'+p.n+'">'+
       '<div class="d-txt reveal">'+
         '<h2 data-i18n="proj.p'+p.n+'.t"></h2>'+

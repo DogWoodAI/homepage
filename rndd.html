@@ -189,12 +189,22 @@ Object.assign(window.I18N.ko, {
 
 (function(){
   var IMG  = [12,13,1,2,3,4,5,6,7,8,9,10,11,14,15,16,17,18,19]; // real page order
+  var SIZE = {
+    "01":[883,487], "02":[602,495], "03":[883,545], "04":[595,359], "05":[595,359],
+    "06":[963,315], "07":[811,344], "08":[844,303], "09":[837,600], "10":[630,345],
+    "11":[417,521], "12":[1350,463], "13":[1350,415], "14":[916,851], "15":[988,891],
+    "16":[1200,391], "17":[1185,479], "18":[1185,778], "19":[1185,446]
+  };
   var SIDE = {6:true, 7:true}; // sections with text-left / figure-right layout
+  var hashMatch = location.hash.match(/^#rdd-(\d+)$/);
+  var hashTarget = hashMatch ? parseInt(hashMatch[1], 10) : 0;
   var html = "";
   for(var i=1;i<=19;i++){
     var n = (IMG[i-1]<10?"0":"")+IMG[i-1];
+    var size = SIZE[n];
+    var loading = hashTarget && i <= hashTarget ? "eager" : "lazy";
     var fig = '<div>'+
-        '<div class="diagram reveal d1"><img src="assets/rndd/'+n+'.jpg" alt="" loading="lazy"></div>'+
+        '<div class="diagram reveal d1"><img src="assets/rndd/'+n+'.jpg" alt="" width="'+size[0]+'" height="'+size[1]+'" style="aspect-ratio:'+size[0]+'/'+size[1]+'" loading="'+loading+'"></div>'+
         '<p class="figcap-u" data-i18n="rd'+i+'.c"></p>'+
       '</div>';
     if(SIDE[i]){
