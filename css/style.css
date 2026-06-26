@@ -745,6 +745,8 @@ section:has(.news-detail-wrap){padding-top:64px}
 .q-top svg{width:13px;height:13px}
 
 /* IP & Papers tables */
+#patent h2,
+#publications h2{font-size:clamp(1.72rem,2.55vw,2.24rem);letter-spacing:-.01em}
 .ip-table{border-top:2px solid #15171c}
 .ip-table th{text-align:center;background:#f6f7f9;color:#15171c}
 .ip-table td.c{text-align:center;white-space:nowrap}
