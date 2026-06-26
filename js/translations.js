@@ -338,8 +338,7 @@ window.I18N = {
 
     /* ---- CONTACT ---- */
     "contact.bc":"Contact Us",
-    "contact.h1":"Let's talk about your plant",
-    "contact.sub":"Tell us about your process and we'll show you how tailor-made AI can predict, simulate and optimize it.",
+    "contact.h1":"Contact Us",
     "contact.info.t":"Get in touch",
     "contact.addr.l":"Address",
     "contact.addr.v":"F05 DogWoodAI, 4F, 81-5 Yeonhui-ro, Seodaemun-gu, Seoul, Republic of Korea (03708)",
@@ -697,15 +696,14 @@ window.I18N = {
 
     /* ---- CONTACT ---- */
     "contact.bc":"문의하기",
-    "contact.h1":"여러분의 플랜트에 대해 이야기해요",
-    "contact.sub":"공정에 대해 알려주시면 맞춤형 AI가 어떻게 예측·시뮬레이션·최적화하는지 보여드리겠습니다.",
+    "contact.h1":"Contact Us",
     "contact.info.t":"연락처",
     "contact.addr.l":"주소",
-    "contact.addr.v":"서울특별시 서대문구 연희로 81-5, 4층 F05 DogWoodAI (03708)",
+    "contact.addr.v":"(08862) 서울특별시 서대문구 연희로 81-5, 4층 F05호 주식회사 도그우드에이아이 (연희동, 평화빌딩)",
     "contact.phone.l":"전화",
     "contact.email.l":"이메일",
     "contact.form.t":"메시지 보내기",
-    "contact.f.name":"이름",
+    "contact.f.name":"성함",
     "contact.f.name.ph":"성함",
     "contact.f.company":"회사",
     "contact.f.company.ph":"회사명",
