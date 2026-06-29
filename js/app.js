@@ -154,6 +154,38 @@
   function langSegment(value){
     return normalizeLang(value) === "en" ? "en" : "kr";
   }
+  function hashLangParts(hash){
+    var raw = String(hash || "").replace(/^#/, "");
+    if(raw.charAt(0) !== "/") return null;
+    var parts = raw.split("/").filter(Boolean);
+    var seg = parts[0] ? parts[0].toLowerCase() : "";
+    if(seg !== "en" && seg !== "kr" && seg !== "ko") return null;
+    return {lang:seg === "en" ? "en" : "ko", anchor:parts.slice(1).join("/")};
+  }
+  function currentAnchorId(){
+    if(!location.hash) return "";
+    var hashRoute = usesHashRoutes() ? hashLangParts(location.hash) : null;
+    if(hashRoute) return hashRoute.anchor || "";
+    return location.hash.slice(1);
+  }
+  function scrollToCurrentAnchor(){
+    var anchorId = currentAnchorId();
+    if(!anchorId) return;
+    var tgt = document.getElementById(anchorId);
+    if(tgt) tgt.scrollIntoView({behavior:"auto", block:"start"});
+  }
+  function routeMode(){
+    var queryMode = new URLSearchParams(location.search).get("dw-route");
+    var storedMode = "";
+    try { storedMode = localStorage.getItem("dw_route_mode") || ""; } catch(e) {}
+    var configuredMode = String(window.DW_ROUTE_MODE || queryMode || storedMode || "auto").toLowerCase();
+    if(configuredMode === "hash" || configuredMode === "path") return configuredMode;
+    if(hashLangParts(location.hash)) return "hash";
+    return /\.github\.io$/i.test(location.hostname) ? "hash" : "path";
+  }
+  function usesHashRoutes(){
+    return routeMode() === "hash";
+  }
   function scriptBase(){
     var script = document.currentScript || document.querySelector('script[src$="js/app.js"]');
     if(!script) return "/";
@@ -169,14 +201,23 @@
     if(basePath !== "/" && path.indexOf(basePath) === 0) return "/" + path.slice(basePath.length);
     return path;
   }
+  function pageFromPath(path){
+    var parts = stripBase(path || location.pathname).split("/").filter(Boolean);
+    var seg = parts[0] ? parts[0].toLowerCase() : "";
+    if(seg === "en" || seg === "kr" || seg === "ko") parts.shift();
+    var page = parts.join("/").replace(/\.html$/i, "");
+    return page === "index" ? "" : page;
+  }
   function routeParts(path){
+    var hashRoute = usesHashRoutes() ? hashLangParts(location.hash) : null;
     var parts = stripBase(path || location.pathname).split("/").filter(Boolean);
     var seg = parts[0] ? parts[0].toLowerCase() : "";
     var routeLang = null;
     if(seg === "en") routeLang = "en";
     else if(seg === "kr" || seg === "ko") routeLang = "ko";
     if(routeLang) parts.shift();
-    return {lang:routeLang, page:parts.join("/")};
+    var page = pageFromPath(path || location.pathname);
+    return {lang:(hashRoute && hashRoute.lang) || routeLang, page:page};
   }
   function pageHref(page, targetLang){
     var clean = String(page || "").replace(/^\.\//, "").replace(/^\/+/, "");
@@ -189,6 +230,12 @@
     clean = clean.replace(/\.html$/i, "");
     if(clean === "index") clean = "";
     var langPath = langSegment(targetLang || lang);
+    if(usesHashRoutes()){
+      var pagePath = clean;
+      var hashRoute = hashLangParts(hash);
+      var anchor = hashRoute ? hashRoute.anchor : (hash ? hash.slice(1) : "");
+      return basePath + pagePath + query + "#/" + langPath + "/" + (anchor ? anchor : "");
+    }
     return basePath + langPath + "/" + clean + query + hash;
   }
   function assetHref(path){
@@ -347,15 +394,36 @@
     localizeStaticLinks();
     document.dispatchEvent(new CustomEvent("langchange",{detail:{lang:lang}}));
   }
+  window.addEventListener("hashchange", function(){
+    if(!usesHashRoutes()) return;
+    var hashRoute = hashLangParts(location.hash);
+    if(hashRoute && hashRoute.lang !== lang){
+      lang = hashRoute.lang;
+      applyLang();
+    }
+    setTimeout(scrollToCurrentAnchor, 0);
+  });
   function currentLocalizedUrl(l){
     var current = routeParts(location.pathname);
     var page = current.page || "";
-    return pageHref(page + location.search + location.hash, l);
+    var hashRoute = usesHashRoutes() ? hashLangParts(location.hash) : null;
+    var anchor = hashRoute && hashRoute.anchor ? "#" + hashRoute.anchor : (!usesHashRoutes() ? location.hash : "");
+    return pageHref(page + location.search + anchor, l);
   }
   function setLang(l){
     l = normalizeLang(l);
     if(l === lang && routeParts(location.pathname).lang) return;
-    location.href = currentLocalizedUrl(l);
+    var nextUrl = currentLocalizedUrl(l);
+    if(usesHashRoutes()){
+      var target = new URL(nextUrl, location.href);
+      if(target.pathname === location.pathname && target.search === location.search){
+        history.pushState(null, "", target.href);
+        lang = l;
+        applyLang();
+        return;
+      }
+    }
+    location.href = nextUrl;
   }
 
   var _revealIO = null;
@@ -473,11 +541,9 @@
 
     // hash anchor: keep the first landing accurate while images/fonts finish settling.
     function scrollToHashAnchor(){
-      if(!location.hash) return;
-      var tgt = document.getElementById(location.hash.slice(1));
-      if(tgt) tgt.scrollIntoView({behavior:"auto", block:"start"});
+      scrollToCurrentAnchor();
     }
-    if(location.hash){
+    if(currentAnchorId()){
       var hashScrollUntil = Date.now() + 6000;
       function scrollToHashAnchorWhileSettling(){
         if(Date.now() <= hashScrollUntil) scrollToHashAnchor();

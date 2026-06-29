@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DogWoodAI</title>
+<script>
+(function(){
+  "use strict";
+
+  var pages = {
+    "about": true,
+    "approach": true,
+    "solution": true,
+    "rndd": true,
+    "projects": true,
+    "ip-papers": true,
+    "news": true,
+    "news-detail": true,
+    "contact": true
+  };
+  var parts = location.pathname.split("/").filter(Boolean);
+  var langIndex = -1;
+
+  for(var i = 0; i < parts.length; i += 1){
+    if(/^(en|kr|ko)$/i.test(parts[i])){
+      langIndex = i;
+      break;
+    }
+  }
+
+  var hashParts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  var hashLang = /^(en|kr|ko)$/i.test(hashParts[0] || "") ? hashParts[0].toLowerCase() : "";
+  var lang = "kr";
+  var baseParts = [];
+  var rest = [];
+
+  if(langIndex >= 0){
+    lang = parts[langIndex].toLowerCase() === "en" ? "en" : "kr";
+    baseParts = parts.slice(0, langIndex);
+    rest = parts.slice(langIndex + 1);
+  }else{
+    lang = hashLang === "en" ? "en" : "kr";
+    baseParts = parts.slice(0, -1);
+    rest = parts.slice(-1);
+  }
+
+  var base = "/" + baseParts.join("/");
+  if(base !== "/") base += "/";
+
+  var page = (rest[0] || "").replace(/\.html$/i, "");
+  var anchor = hashLang ? hashParts.slice(1).join("/") : (location.hash ? location.hash.slice(1) : "");
+  var target = base;
+
+  if(page && pages[page]){
+    target += page + ".html";
+  }
+
+  target += location.search + "#/" + lang + "/" + (anchor ? anchor : "");
+  location.replace(target);
+})();
+</script>
+</head>
+<body>
+Redirecting to DogWoodAI...
+</body>
+</html>
