@@ -1,9 +1,28 @@
 (function(){
-  var DATA_URL = "data/news.json";
-  var FALLBACK_IMAGE = "assets/news/no-image.png";
+  function scriptBase(){
+    var script = document.currentScript || document.querySelector('script[src$="js/news.js"]');
+    if(!script) return "/";
+    var path = new URL(script.getAttribute("src"), location.href).pathname;
+    var parts = path.split("/").filter(Boolean);
+    var jsIndex = parts.lastIndexOf("js");
+    if(jsIndex >= 0) parts = parts.slice(0, jsIndex);
+    if(parts.length && /^(kr|ko|en)$/i.test(parts[parts.length - 1])) parts.pop();
+    return "/" + (parts.length ? parts.join("/") + "/" : "");
+  }
+  var BASE = scriptBase();
+  function asset(path){
+    if(window.DW && window.DW.assetHref) return window.DW.assetHref(path);
+    return BASE + String(path || "").replace(/^\.\//, "").replace(/^\/+/, "");
+  }
+  function page(path){
+    if(window.DW && window.DW.localizeHref) return window.DW.localizeHref(path);
+    return path;
+  }
+  var DATA_URL = asset("data/news.json");
+  var FALLBACK_IMAGE = asset("assets/news/no-image.png");
 
   function lang(){
-    return window.DW && window.DW.getLang ? window.DW.getLang() : (localStorage.getItem("dw_lang") || "en");
+    return window.DW && window.DW.getLang ? window.DW.getLang() : "ko";
   }
 
   function t(key, fallback){
@@ -51,7 +70,7 @@
 
   function normalizePath(src){
     if(!src) return FALLBACK_IMAGE;
-    return src.replace(/^\.\//, "");
+    return asset(src);
   }
 
   function mediaMap(item){
@@ -103,7 +122,7 @@
       var src = normalizePath(thumb.src);
       var alt = localize(thumb.alt) || copy.title || "News thumbnail";
       return [
-        '<a class="news-card news-list-card reveal" href="news-detail?slug=', encodeURIComponent(item.slug), '">',
+        '<a class="news-card news-list-card reveal" href="', escapeHtml(page("news-detail?slug=" + encodeURIComponent(item.slug))), '">',
           '<span class="news-thumb"><img src="', escapeHtml(src), '" alt="', escapeHtml(alt), '" loading="lazy"></span>',
           '<span class="news-body">',
             '<span class="news-card-meta">',
@@ -159,7 +178,7 @@
     var slug = new URLSearchParams(location.search).get("slug");
     var item = data.find(function(entry){ return entry.slug === slug && entry.published !== false; });
     if(!item){
-      root.innerHTML = '<div class="news-detail-empty"><h2>'+escapeHtml(t("news.notfound","News post not found."))+'</h2><a class="btn" href="news">'+escapeHtml(t("news.back","Back to News"))+'</a></div>';
+      root.innerHTML = '<div class="news-detail-empty"><h2>'+escapeHtml(t("news.notfound","News post not found."))+'</h2><a class="btn" href="'+escapeHtml(page("news"))+'">'+escapeHtml(t("news.back","Back to News"))+'</a></div>';
       return;
     }
     var copy = textFor(item);

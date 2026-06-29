@@ -15,9 +15,24 @@
     if(window.DW && window.DW.applyLang) window.DW.applyLang();
     if(window.DW && window.DW.observeReveals) window.DW.observeReveals();
   }
+  function scriptBase(){
+    var script = document.currentScript || document.querySelector('script[src$="js/page-data.js"]');
+    if(!script) return "/";
+    var path = new URL(script.getAttribute("src"), location.href).pathname;
+    var parts = path.split("/").filter(Boolean);
+    var jsIndex = parts.lastIndexOf("js");
+    if(jsIndex >= 0) parts = parts.slice(0, jsIndex);
+    if(parts.length && /^(kr|ko|en)$/i.test(parts[parts.length - 1])) parts.pop();
+    return "/" + (parts.length ? parts.join("/") + "/" : "");
+  }
+  var basePath = scriptBase();
+  function assetHref(path){
+    if(window.DW && window.DW.assetHref) return window.DW.assetHref(path);
+    return basePath + String(path || "").replace(/^\.\//, "").replace(/^\/+/, "");
+  }
 
   function load(url, render){
-    fetch(url, {cache:"no-store"})
+    fetch(assetHref(url), {cache:"no-store"})
       .then(function(res){
         if(!res.ok) throw new Error("Failed to load page data: " + url);
         return res.json();
@@ -32,5 +47,5 @@
       });
   }
 
-  window.PageData = {load:load, mergeI18n:mergeI18n};
+  window.PageData = {load:load, mergeI18n:mergeI18n, assetHref:assetHref};
 })();

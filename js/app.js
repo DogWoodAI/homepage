@@ -148,12 +148,78 @@
       });
     }
   }
+  function normalizeLang(value){
+    return value === "en" ? "en" : "ko";
+  }
+  function langSegment(value){
+    return normalizeLang(value) === "en" ? "en" : "kr";
+  }
+  function scriptBase(){
+    var script = document.currentScript || document.querySelector('script[src$="js/app.js"]');
+    if(!script) return "/";
+    var path = new URL(script.getAttribute("src"), location.href).pathname;
+    var parts = path.split("/").filter(Boolean);
+    var jsIndex = parts.lastIndexOf("js");
+    if(jsIndex >= 0) parts = parts.slice(0, jsIndex);
+    if(parts.length && /^(kr|ko|en)$/i.test(parts[parts.length - 1])) parts.pop();
+    return "/" + (parts.length ? parts.join("/") + "/" : "");
+  }
+  var basePath = scriptBase();
+  function stripBase(path){
+    if(basePath !== "/" && path.indexOf(basePath) === 0) return "/" + path.slice(basePath.length);
+    return path;
+  }
+  function routeParts(path){
+    var parts = stripBase(path || location.pathname).split("/").filter(Boolean);
+    var seg = parts[0] ? parts[0].toLowerCase() : "";
+    var routeLang = null;
+    if(seg === "en") routeLang = "en";
+    else if(seg === "kr" || seg === "ko") routeLang = "ko";
+    if(routeLang) parts.shift();
+    return {lang:routeLang, page:parts.join("/")};
+  }
+  function pageHref(page, targetLang){
+    var clean = String(page || "").replace(/^\.\//, "").replace(/^\/+/, "");
+    var hash = "";
+    var query = "";
+    var hashAt = clean.indexOf("#");
+    if(hashAt >= 0){ hash = clean.slice(hashAt); clean = clean.slice(0, hashAt); }
+    var queryAt = clean.indexOf("?");
+    if(queryAt >= 0){ query = clean.slice(queryAt); clean = clean.slice(0, queryAt); }
+    clean = clean.replace(/\.html$/i, "");
+    if(clean === "index") clean = "";
+    var langPath = langSegment(targetLang || lang);
+    return basePath + langPath + "/" + clean + query + hash;
+  }
+  function assetHref(path){
+    var clean = String(path || "").replace(/^\.\//, "").replace(/^\/+/, "");
+    return basePath + clean;
+  }
+  function shouldLocalizeHref(href){
+    if(!href || href.charAt(0) === "#") return false;
+    if(/^(https?:|mailto:|tel:|javascript:)/i.test(href)) return false;
+    if(/^(assets|data|css|js|favicon)\//i.test(href.replace(/^\.\//, ""))) return false;
+    return true;
+  }
+  function localizeHref(href, targetLang){
+    if(!shouldLocalizeHref(href)) return href;
+    var raw = String(href).replace(/^\.\//, "");
+    if(raw.charAt(0) === "/") raw = stripBase(raw).replace(/^\/+/, "");
+    raw = raw.replace(/^(kr|ko|en)(\/|$)/i, "");
+    return pageHref(raw, targetLang);
+  }
+  function localizeStaticLinks(root){
+    (root || document).querySelectorAll("a[href]").forEach(function(a){
+      var href = a.getAttribute("href");
+      if(shouldLocalizeHref(href)) a.setAttribute("href", localizeHref(href));
+    });
+  }
   function loadNavigation(done){
     Promise.all([
-      fetchJson("data/approach.json"),
-      fetchJson("data/solution.json"),
-      fetchJson("data/rndd.json"),
-      fetchJson("data/projects.json")
+      fetchJson(assetHref("data/approach.json")),
+      fetchJson(assetHref("data/solution.json")),
+      fetchJson(assetHref("data/rndd.json")),
+      fetchJson(assetHref("data/projects.json"))
     ])
       .then(function(items){
         var data = {approach:items[0], solution:items[1], rndd:items[2], projects:items[3]};
@@ -172,7 +238,7 @@
       }else if(reserveSub){
         sub = '<span class="drop-sub" aria-hidden="true"></span>';
       }
-      return '<a class="drop-link" href="'+i[0]+'"><b data-i18n-html="'+i[1]+'"></b>'+sub+'</a>';
+      return '<a class="drop-link" href="'+localizeHref(i[0])+'"><b data-i18n-html="'+i[1]+'"></b>'+sub+'</a>';
     }).join("");
   }
 
@@ -180,7 +246,7 @@
   function buildHeader(){
     return '<header class="site-header"><div class="container"><nav class="nav">'+
       '<div class="nav-left">'+
-        '<a class="brand" href="./"><img class="brand-logo" src="assets/main/visual-logo.png" alt="DogWoodAI"></a>'+
+        '<a class="brand" href="'+pageHref("")+'"><img class="brand-logo" src="'+assetHref("assets/main/visual-logo.png")+'" alt="DogWoodAI"></a>'+
         '<div class="lang-toggle"><button data-lang="ko">KOR</button><button data-lang="en">ENG</button></div>'+
       '</div>'+
       '<ul class="nav-menu">'+
@@ -192,14 +258,14 @@
         navItem("nav.ip", nav.ip, false, "ip-papers")+
       '</ul>'+
       '<div class="nav-right">'+
-        '<a class="btn nav-cta" href="contact" data-i18n="nav.contact"></a>'+
+        '<a class="btn nav-cta" href="'+pageHref("contact")+'" data-i18n="nav.contact"></a>'+
         '<button class="hamburger" aria-label="menu"><span></span></button>'+
       '</div>'+
     '</nav></div></header>'+ buildMobile();
   }
   function buildQuick(){
     return '<div class="quick">'+
-      '<a class="q-contact" href="contact">'+
+      '<a class="q-contact" href="'+pageHref("contact")+'">'+
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>'+
         '<span data-i18n="quick.contact"></span></a>'+
       '<button class="q-top" type="button">'+
@@ -209,19 +275,19 @@
   }
   function navItem(label, list, wide, href){
     var cls = "nav-item nav-" + href.replace(/[^a-z0-9_-]/gi, "-");
-    return '<li class="'+cls+'"><a class="nav-link" href="'+href+'" data-i18n="'+label+'"></a>'+
+    return '<li class="'+cls+'"><a class="nav-link" href="'+pageHref(href)+'" data-i18n="'+label+'"></a>'+
       '<div class="dropdown'+(wide?' wide':'')+'"><div class="dropdown-grid">'+dropItems(list, href==="rndd")+'</div></div></li>';
   }
   function buildMobile(){
     function grp(label, list){
       return '<div class="m-group"><div class="m-head"><span data-i18n="'+label+'"></span>'+IC.chev+'</div>'+
-        '<div class="m-sub">'+list.map(function(i){return '<a href="'+i[0]+'" data-i18n-html="'+i[1]+'"></a>';}).join("")+'</div></div>';
+        '<div class="m-sub">'+list.map(function(i){return '<a href="'+localizeHref(i[0])+'" data-i18n-html="'+i[1]+'"></a>';}).join("")+'</div></div>';
     }
     return '<div class="mobile-nav">'+
       grp("nav.about",nav.about)+grp("nav.approach",nav.approach)+grp("nav.solution",nav.solution)+
       grp("nav.rndd",nav.rndd)+grp("nav.projects",nav.projects)+
       grp("nav.ip",nav.ip)+
-      '<div class="m-cta"><a class="btn btn-primary" href="contact" data-i18n="nav.contact"></a></div>'+
+      '<div class="m-cta"><a class="btn btn-primary" href="'+pageHref("contact")+'" data-i18n="nav.contact"></a></div>'+
     '</div>';
   }
 
@@ -235,8 +301,8 @@
           '<p class="footer-copy" data-i18n="footer.rights"></p>'+
         '</div>'+
         '<div class="social">'+
-          '<a href="https://kr.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/main/LinkedIn_icon.png" alt="LinkedIn"></a>'+
-          '<a href="https://www.crunchbase.com/organization/dogwoodai" target="_blank" rel="noopener" aria-label="Crunchbase"><img src="assets/main/cb.png" alt="Crunchbase"></a>'+
+          '<a href="https://kr.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="'+assetHref("assets/main/LinkedIn_icon.png")+'" alt="LinkedIn"></a>'+
+          '<a href="https://www.crunchbase.com/organization/dogwoodai" target="_blank" rel="noopener" aria-label="Crunchbase"><img src="'+assetHref("assets/main/cb.png")+'" alt="Crunchbase"></a>'+
         '</div>'+
       '</div>'+
     '</div></footer>';
@@ -246,14 +312,15 @@
   function buildPopup(){
     return '<div class="ces-popup" id="cesPopup">'+
       '<button class="ces-close" id="cesClose" aria-label="close">&times;</button>'+
-      '<div class="ces-banner"><img src="assets/main/popup01.jpg" alt="CES 2026"></div>'+
+      '<div class="ces-banner"><img src="'+assetHref("assets/main/popup01.jpg")+'" alt="CES 2026"></div>'+
       '<div class="ces-body"><p data-i18n="ces.body"></p>'+
         '<a class="btn btn-primary" href="https://www.linkedin.com/company/dogwoodai" target="_blank" rel="noopener" data-i18n="ces.btn"></a>'+
       '</div></div>';
   }
 
   /* ---------- i18n ---------- */
-  var lang = localStorage.getItem("dw_lang") || "en";
+  var route = routeParts(location.pathname);
+  var lang = normalizeLang(route.lang || "ko");
   function t(key){
     var d = window.I18N[lang] || {};
     if(key in d) return d[key];
@@ -277,9 +344,19 @@
     document.querySelectorAll(".lang-toggle button").forEach(function(b){
       b.classList.toggle("active", b.getAttribute("data-lang")===lang);
     });
+    localizeStaticLinks();
     document.dispatchEvent(new CustomEvent("langchange",{detail:{lang:lang}}));
   }
-  function setLang(l){ lang=l; localStorage.setItem("dw_lang",l); applyLang(); }
+  function currentLocalizedUrl(l){
+    var current = routeParts(location.pathname);
+    var page = current.page || "";
+    return pageHref(page + location.search + location.hash, l);
+  }
+  function setLang(l){
+    l = normalizeLang(l);
+    if(l === lang && routeParts(location.pathname).lang) return;
+    location.href = currentLocalizedUrl(l);
+  }
 
   var _revealIO = null;
   function observeReveals(){
@@ -290,7 +367,17 @@
     }
     document.querySelectorAll(".reveal:not(.in)").forEach(function(el){ _revealIO.observe(el); });
   }
-  window.DW = { t:t, getLang:function(){return lang;}, setLang:setLang, applyLang:applyLang, observeReveals:observeReveals };
+  window.DW = {
+    t:t,
+    getLang:function(){return lang;},
+    setLang:setLang,
+    applyLang:applyLang,
+    observeReveals:observeReveals,
+    localizeHref:localizeHref,
+    localizeLinks:localizeStaticLinks,
+    assetHref:assetHref,
+    pageHref:pageHref
+  };
 
   /* ---------- interactions ---------- */
   function wire(){
@@ -449,7 +536,7 @@
   /* ---------- boot ---------- */
   function inject(id, html){ var el = document.getElementById(id); if(el) el.outerHTML = html; }
   function setBanner(){
-    var p = (location.pathname.split("/").pop() || "").toLowerCase();
+    var p = (routeParts(location.pathname).page || "").split("/").pop().toLowerCase();
     var b = "0"; // About + default -> s_visual00
     if(p.indexOf("approach")===0 || p==="solution.html" || p==="solution" || p==="rndd.html" || p==="rndd") b = "2"; // purple waves
     else if(p==="projects.html" || p==="projects") b = "3";                          // teal mesh
