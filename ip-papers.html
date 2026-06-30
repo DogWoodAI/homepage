@@ -84,7 +84,7 @@
 <script>
 (function(){
   function render(data){
-    function byOrder(a,b){ return Number(a.order || 0) - Number(b.order || 0); }
+    function byOrder(a,b){ return Number(b.order || 0) - Number(a.order || 0); }
     var patRoot = document.getElementById("patentRows");
     if(patRoot){
       patRoot.innerHTML = (data.patents || []).slice().sort(byOrder).map(function(p, i){

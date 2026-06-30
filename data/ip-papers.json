@@ -50,141 +50,18 @@
   ],
   "publications": [
     {
-      "title": "Hybrid process using cryogenic and pressure swing adsorption process for CO2 capture and extra H2 production from a tail gas in an SMR plant",
-      "journal": "Energy Conver. &amp; Manag.",
-      "date": "2025",
-      "rank": "IF: 10.4 / Top 4.97%",
+      "title": "Combined approach using mathematical modelling and artificial neural network for chemical industries: Steam methane reformer",
+      "journal": "Applied Energy",
+      "date": "2019",
+      "rank": "IF: 11.2 / Top 6.1%",
       "order": 1
     },
     {
-      "title": "Industrial-scale 12-layered-bed vacuum pressure swing adsorption for fuel cell-grade H2 production from carbon-captured steam methane reforming syngas",
+      "title": "Prediction of CO2 solubility in multicomponent electrolyte solutions up to 709 bar: Analogical bridge between hydrophobic solvation and adsorption model",
       "journal": "Chem. Eng. J.",
-      "date": "2024",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 2
-    },
-    {
-      "title": "Statistical Mechanic and Machine Learning Approach for competitive adsorption of CO2/CH4 on coals and shales for CO2-Enhanced Methane Recovery",
-      "journal": "Chem. Eng. J.",
-      "date": "2024",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 3
-    },
-    {
-      "title": "Advanced process integration and machine learning-based optimization to enhance techno-economic-environmental performance of CO2 capture and conversion to methanol",
-      "journal": "Energy",
-      "date": "2024",
-      "rank": "IF: 8.9 / Top 4.0%",
-      "order": 4
-    },
-    {
-      "title": "Blended-amine CO2 capture process without stripper for high-pressure syngas",
-      "journal": "Chem. Eng. J.",
-      "date": "2024",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 5
-    },
-    {
-      "title": "Comparative Performance and Machine Learning-based Optimization of TSA Configurations for NH3 Removal from NH3 Cracking Gas",
-      "journal": "Chem. Eng. J.",
-      "date": "2023",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 6
-    },
-    {
-      "title": "Performance and ANN-based Optimization of a Novel Process for Wet CO2 to Methanol using a Catalytic Fluidized Bed Reactor integrated with Separators",
-      "journal": "Fuel",
-      "date": "2023",
-      "rank": "IF: 8.0 / Top 12.94%",
-      "order": 7
-    },
-    {
-      "title": "Dynamic Model and Deep Neural Network-based Surrogate Model to Predict Dynamic Behaviors and Steady-state Performance of Solid Propellant Combustion",
-      "journal": "Combustion and Flame",
-      "date": "2023",
-      "rank": "IF: 5.7 / Top 9.12%",
-      "order": 8
-    },
-    {
-      "title": "Techno-economic analysis and optimization of a CO2 absorption process with a solvent looping system at the absorber using an MDEA/PZ blended solvent for steam methane reforming",
-      "journal": "Chem. Eng. J.",
-      "date": "2023",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 9
-    },
-    {
-      "title": "Design guideline for CO2 to methanol conversion process supported by generic model of various bed reactors",
-      "journal": "Energy Conver. &amp; Manag.",
-      "date": "2022",
-      "rank": "IF: 10.4 / Top 4.97%",
-      "order": 10
-    },
-    {
-      "title": "Facile and Accurate Calculation of the Density of Amino Acid Salt Solutions: A Simple and General Correlation vs Artificial Neural Networks",
-      "journal": "Energy and Fuels",
-      "date": "2022",
-      "rank": "IF: 4.6 / Top 31.12%",
-      "order": 11,
-      "realData": true
-    },
-    {
-      "title": "Pre-combustion CO2 capture using amine-based absorption process for blue H2 production from steam methane reformer",
-      "journal": "Energy Conver. &amp; Manag.",
-      "date": "2022",
-      "rank": "IF: 10.4 / Top 4.97%",
-      "order": 12
-    },
-    {
-      "title": "Dynamic modeling and machine learning of commercial-scale simulated moving bed chromatography for application to multi-component normal paraffin separation",
-      "journal": "Separ. Purif. Tech.",
-      "date": "2022",
-      "rank": "IF: 8.6 / Top 8.2%",
-      "order": 13,
-      "realData": true
-    },
-    {
-      "title": "Prediction of CO2 capture capability of 0.5 MW MEA demo plant using three different deep learning pipelines",
-      "journal": "Fuel",
-      "date": "2022",
-      "rank": "IF: 8.0 / Top 12.94%",
-      "order": 14,
-      "realData": true
-    },
-    {
-      "title": "Sensitivity analysis and artificial neural network-based optimization for low-carbon H2 production via a sorption-enhanced steam methane reforming (SESMR) process integrated with separation process",
-      "journal": "Inter'l J. of Hydrogen Energy",
-      "date": "2022",
-      "rank": "IF: 7.2 / Top 25.2%",
-      "order": 15
-    },
-    {
-      "title": "Actor-critic reinforcement learning to estimate the optimal operating conditions of the hydrocracking process",
-      "journal": "Computers &amp; Chem. Eng.",
-      "date": "2021",
-      "rank": "IF: 4.3 / Top 37.7%",
-      "order": 16
-    },
-    {
-      "title": "Artificial neural network modelling for solubility of carbon dioxide in various aqueous solutions from pure water to brine",
-      "journal": "J. of CO2 Utilization",
-      "date": "2021",
-      "rank": "IF: 8.3 / Top 17.5%",
-      "order": 17,
-      "realData": true
-    },
-    {
-      "title": "Deep reinforcement learning optimization framework for a power generation plant considering performance and environmental issues",
-      "journal": "J. of Cleaner Production",
-      "date": "2021",
-      "rank": "IF: 11.1 / Top 13.6%",
-      "order": 18
-    },
-    {
-      "title": "Prediction of SOx-NOx Emission from a Coal-Fired CFB Power Plant with Machine Learning: Plant Data Learned by Deep Neural Network and Least Square Support Vector Machine",
-      "journal": "J. of Cleaner Production",
       "date": "2020",
-      "rank": "IF: 11.1 / Top 13.6%",
-      "order": 19,
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 2,
       "realData": true
     },
     {
@@ -192,21 +69,144 @@
       "journal": "Applied Energy",
       "date": "2020",
       "rank": "IF: 11.2 / Top 6.1%",
-      "order": 20
+      "order": 3
     },
     {
-      "title": "Prediction of CO2 solubility in multicomponent electrolyte solutions up to 709 bar: Analogical bridge between hydrophobic solvation and adsorption model",
-      "journal": "Chem. Eng. J.",
+      "title": "Prediction of SOx-NOx Emission from a Coal-Fired CFB Power Plant with Machine Learning: Plant Data Learned by Deep Neural Network and Least Square Support Vector Machine",
+      "journal": "J. of Cleaner Production",
       "date": "2020",
-      "rank": "IF: 15.1 / Top 3.2%",
-      "order": 21,
+      "rank": "IF: 11.1 / Top 13.6%",
+      "order": 4,
       "realData": true
     },
     {
-      "title": "Combined approach using mathematical modelling and artificial neural network for chemical industries: Steam methane reformer",
-      "journal": "Applied Energy",
-      "date": "2019",
-      "rank": "IF: 11.2 / Top 6.1%",
+      "title": "Deep reinforcement learning optimization framework for a power generation plant considering performance and environmental issues",
+      "journal": "J. of Cleaner Production",
+      "date": "2021",
+      "rank": "IF: 11.1 / Top 13.6%",
+      "order": 5
+    },
+    {
+      "title": "Artificial neural network modelling for solubility of carbon dioxide in various aqueous solutions from pure water to brine",
+      "journal": "J. of CO2 Utilization",
+      "date": "2021",
+      "rank": "IF: 8.3 / Top 17.5%",
+      "order": 6,
+      "realData": true
+    },
+    {
+      "title": "Actor-critic reinforcement learning to estimate the optimal operating conditions of the hydrocracking process",
+      "journal": "Computers &amp; Chem. Eng.",
+      "date": "2021",
+      "rank": "IF: 4.3 / Top 37.7%",
+      "order": 7
+    },
+    {
+      "title": "Sensitivity analysis and artificial neural network-based optimization for low-carbon H2 production via a sorption-enhanced steam methane reforming (SESMR) process integrated with separation process",
+      "journal": "Inter'l J. of Hydrogen Energy",
+      "date": "2022",
+      "rank": "IF: 7.2 / Top 25.2%",
+      "order": 8
+    },
+    {
+      "title": "Prediction of CO2 capture capability of 0.5 MW MEA demo plant using three different deep learning pipelines",
+      "journal": "Fuel",
+      "date": "2022",
+      "rank": "IF: 8.0 / Top 12.94%",
+      "order": 9,
+      "realData": true
+    },
+    {
+      "title": "Dynamic modeling and machine learning of commercial-scale simulated moving bed chromatography for application to multi-component normal paraffin separation",
+      "journal": "Separ. Purif. Tech.",
+      "date": "2022",
+      "rank": "IF: 8.6 / Top 8.2%",
+      "order": 10,
+      "realData": true
+    },
+    {
+      "title": "Pre-combustion CO2 capture using amine-based absorption process for blue H2 production from steam methane reformer",
+      "journal": "Energy Conver. &amp; Manag.",
+      "date": "2022",
+      "rank": "IF: 10.4 / Top 4.97%",
+      "order": 11
+    },
+    {
+      "title": "Facile and Accurate Calculation of the Density of Amino Acid Salt Solutions: A Simple and General Correlation vs Artificial Neural Networks",
+      "journal": "Energy and Fuels",
+      "date": "2022",
+      "rank": "IF: 4.6 / Top 31.12%",
+      "order": 12,
+      "realData": true
+    },
+    {
+      "title": "Design guideline for CO2 to methanol conversion process supported by generic model of various bed reactors",
+      "journal": "Energy Conver. &amp; Manag.",
+      "date": "2022",
+      "rank": "IF: 10.4 / Top 4.97%",
+      "order": 13
+    },
+    {
+      "title": "Techno-economic analysis and optimization of a CO2 absorption process with a solvent looping system at the absorber using an MDEA/PZ blended solvent for steam methane reforming",
+      "journal": "Chem. Eng. J.",
+      "date": "2023",
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 14
+    },
+    {
+      "title": "Dynamic Model and Deep Neural Network-based Surrogate Model to Predict Dynamic Behaviors and Steady-state Performance of Solid Propellant Combustion",
+      "journal": "Combustion and Flame",
+      "date": "2023",
+      "rank": "IF: 5.7 / Top 9.12%",
+      "order": 15
+    },
+    {
+      "title": "Performance and ANN-based Optimization of a Novel Process for Wet CO2 to Methanol using a Catalytic Fluidized Bed Reactor integrated with Separators",
+      "journal": "Fuel",
+      "date": "2023",
+      "rank": "IF: 8.0 / Top 12.94%",
+      "order": 16
+    },
+    {
+      "title": "Comparative Performance and Machine Learning-based Optimization of TSA Configurations for NH3 Removal from NH3 Cracking Gas",
+      "journal": "Chem. Eng. J.",
+      "date": "2023",
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 17
+    },
+    {
+      "title": "Blended-amine CO2 capture process without stripper for high-pressure syngas",
+      "journal": "Chem. Eng. J.",
+      "date": "2024",
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 18
+    },
+    {
+      "title": "Advanced process integration and machine learning-based optimization to enhance techno-economic-environmental performance of CO2 capture and conversion to methanol",
+      "journal": "Energy",
+      "date": "2024",
+      "rank": "IF: 8.9 / Top 4.0%",
+      "order": 19
+    },
+    {
+      "title": "Statistical Mechanic and Machine Learning Approach for competitive adsorption of CO2/CH4 on coals and shales for CO2-Enhanced Methane Recovery",
+      "journal": "Chem. Eng. J.",
+      "date": "2024",
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 20
+    },
+    {
+      "title": "Industrial-scale 12-layered-bed vacuum pressure swing adsorption for fuel cell-grade H2 production from carbon-captured steam methane reforming syngas",
+      "journal": "Chem. Eng. J.",
+      "date": "2024",
+      "rank": "IF: 15.1 / Top 3.2%",
+      "order": 21
+    },
+    {
+      "title": "Hybrid process using cryogenic and pressure swing adsorption process for CO2 capture and extra H2 production from a tail gas in an SMR plant",
+      "journal": "Energy Conver. &amp; Manag.",
+      "date": "2025",
+      "rank": "IF: 10.4 / Top 4.97%",
       "order": 22
     }
   ]
