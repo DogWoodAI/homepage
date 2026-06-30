@@ -540,18 +540,28 @@
     }
 
     // hash anchor: keep the first landing accurate while images/fonts finish settling.
+    var cancelHashAnchorScroll = false;
+    function stopHashAnchorScroll(){
+      cancelHashAnchorScroll = true;
+    }
     function scrollToHashAnchor(){
+      if(cancelHashAnchorScroll) return;
       scrollToCurrentAnchor();
     }
     if(currentAnchorId()){
       var hashScrollUntil = Date.now() + 6000;
       function scrollToHashAnchorWhileSettling(){
-        if(Date.now() <= hashScrollUntil) scrollToHashAnchor();
+        if(!cancelHashAnchorScroll && Date.now() <= hashScrollUntil) scrollToHashAnchor();
       }
       [0, 120, 360, 900, 1600, 2600, 4000].forEach(function(delay){
         setTimeout(scrollToHashAnchor, delay);
       });
       window.addEventListener("load", scrollToHashAnchor, {once:true});
+      window.addEventListener("wheel", stopHashAnchorScroll, {passive:true, once:true});
+      window.addEventListener("touchstart", stopHashAnchorScroll, {passive:true, once:true});
+      window.addEventListener("keydown", function(e){
+        if(["ArrowDown","ArrowUp","PageDown","PageUp","Home","End"," "].indexOf(e.key) >= 0) stopHashAnchorScroll();
+      });
       document.querySelectorAll("img").forEach(function(img){
         if(img.complete) return;
         img.addEventListener("load", scrollToHashAnchorWhileSettling, {once:true});
@@ -614,7 +624,9 @@
     loadNavigation(function(){
       inject("site-header", buildHeader());
       inject("site-footer", buildFooter());
-      document.body.insertAdjacentHTML("beforeend", buildQuick());
+      if(document.body.getAttribute("data-quick")!=="off"){
+        document.body.insertAdjacentHTML("beforeend", buildQuick());
+      }
       if(document.body.getAttribute("data-popup")!=="off"){
         document.body.insertAdjacentHTML("beforeend", buildPopup());
       }

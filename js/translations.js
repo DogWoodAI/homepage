@@ -132,6 +132,10 @@ window.I18N = {
     "g.value":"Value Delivered",
     "quick.contact":"CONTACT US",
     "quick.top":"TOP",
+    "404.title":"Page not found",
+    "404.desc":"The page you’re looking for doesn’t exist or may have been moved.",
+    "404.home":"Go Home",
+    "404.contact":"Contact",
     "ap.intro":"DogwoodAI applies the most suitable machine learning technologies tailored to each client’s needs and plant conditions, developing AI solutions through a range of foundational approaches described below, that support the realization of autonomous manufacturing.",
 
     /* ---- COMPANY ---- */
@@ -490,6 +494,10 @@ window.I18N = {
     "g.value":"도입 효과",
     "quick.contact":"CONTACT US",
     "quick.top":"TOP",
+    "404.title":"페이지를 찾을 수 없습니다",
+    "404.desc":"요청하신 페이지를 찾을 수 없습니다. 주소가 잘못되었거나 페이지가 이동되었을 수 있습니다.",
+    "404.home":"홈으로 이동",
+    "404.contact":"문의하기",
     "ap.intro":"DogwoodAI는 각 고객의 요구사항과 플랜트의 운영 환경에 맞춰 최적의 머신러닝 기술을 적용하며, 자율 제조를 실현하기 위해 아래의 다양한 핵심 접근법을 통해 AI 솔루션을 개발하고 있습니다.",
 
     /* ---- COMPANY ---- */
