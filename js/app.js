@@ -533,9 +533,25 @@
       }
       form.addEventListener("submit", function(e){
         e.preventDefault();
-        showToast(t("contact.toast"));
-        form.reset();
-        if(ta && cc) cc.textContent = "0 / 500";
+        var btn = form.querySelector('button[type="submit"]');
+        if(btn) btn.disabled = true;
+        fetch(form.getAttribute("action") || "/", {
+          method:"POST",
+          headers:{"Content-Type":"application/x-www-form-urlencoded"},
+          body:new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function(res){
+            if(!res.ok) throw new Error("Form submission failed");
+            showToast(t("contact.toast"));
+            form.reset();
+            if(ta && cc) cc.textContent = "0 / 500";
+          })
+          .catch(function(){
+            showToast(lang === "ko" ? "전송에 실패했습니다. 잠시 후 다시 시도해 주세요." : "Submission failed. Please try again later.");
+          })
+          .finally(function(){
+            if(btn) btn.disabled = false;
+          });
       });
     }
 
