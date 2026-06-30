@@ -1294,7 +1294,6 @@ body:has(.page-hero) .leader-content li{
   body:has(.page-hero) td{font-size:clamp(.86rem,1.85vh,1.02rem)}
 
   .news-grid{gap:clamp(16px,3.2vh,26px)}
-  .news-thumb{height:clamp(170px,31vh,250px)}
   .news-body{padding:clamp(16px,3vh,22px)}
   .news-body strong{font-size:clamp(.96rem,2.05vh,1.12rem);line-height:1.38}
   .news-detail{padding:clamp(34px,6vh,54px)}
@@ -1369,7 +1368,6 @@ body:has(.page-hero) .leader-content li{
   .subnav a{padding:10px 12px}
   .nav-menu .nav-item:nth-child(6) .dropdown-grid{transform:translateX(285px)}
   .detail{padding:46px 0}
-  .news-thumb{height:155px}
   .leader-row{gap:42px}
   .leader-photo{width:210px;height:294px}
 }

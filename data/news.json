@@ -72,7 +72,7 @@
     },
     "thumbnail": {
       "type": "video",
-      "src": "./assets/news/news2.png",
+      "src": "./assets/news/news2.jpg",
       "alt": {
         "ko": "한양대학교 프로그램 영상 썸네일",
         "en": "Hanyang University program video thumbnail"
@@ -145,7 +145,7 @@
       {
         "id": "photo-01",
         "type": "image",
-        "src": "./assets/news/news3.png",
+        "src": "./assets/news/news3.jpg",
         "alt": {
           "ko": "Saudi MEPEC 행사 현장",
           "en": "Saudi MEPEC event"
@@ -206,7 +206,7 @@
       {
         "id": "photo-01",
         "type": "image",
-        "src": "./assets/news/news4.png",
+        "src": "./assets/news/news4.jpg",
         "alt": {
           "ko": "AXIS MOU 체결 관련 이미지",
           "en": "AXIS MOU image"
@@ -286,7 +286,7 @@
     },
     "thumbnail": {
       "type": "video",
-      "src": "./assets/news/news5.png",
+      "src": "./assets/news/news5.jpg",
       "alt": {
         "ko": "클로즈업 경제 CEO 인터뷰 영상 썸네일",
         "en": "Close-up Economy CEO interview video thumbnail"
@@ -354,7 +354,7 @@
     },
     "thumbnail": {
       "type": "brand",
-      "src": "./assets/news/no-image.png",
+      "src": "./assets/news/no-image.jpg",
       "alt": {
         "ko": "DogWoodAI 기본 뉴스 이미지",
         "en": "DogWoodAI default news image"
@@ -616,7 +616,7 @@
     },
     "thumbnail": {
       "type": "brand",
-      "src": "./assets/news/no-image.png",
+      "src": "./assets/news/no-image.jpg",
       "alt": {
         "ko": "DogWoodAI 기본 뉴스 이미지",
         "en": "DogWoodAI default news image"
@@ -687,7 +687,7 @@
       {
         "id": "photo-01",
         "type": "image",
-        "src": "./assets/news/news11.png",
+        "src": "./assets/news/news11.jpg",
         "alt": {
           "ko": "CES 2026 DogWoodAI 부스",
           "en": "DogWoodAI booth at CES 2026"
@@ -748,7 +748,7 @@
       {
         "id": "photo-01",
         "type": "image",
-        "src": "./assets/news/news12.png",
+        "src": "./assets/news/news12.jpg",
         "alt": {
           "ko": "FutureMain MOU 체결 현장",
           "en": "FutureMain MOU signing"
@@ -875,7 +875,7 @@
       {
         "id": "photo-01",
         "type": "image",
-        "src": "./assets/news/news14.png",
+        "src": "./assets/news/news14.jpg",
         "alt": {
           "ko": "BDMT Global VIP Private Investor Event 현장",
           "en": "BDMT Global VIP Private Investor Event"

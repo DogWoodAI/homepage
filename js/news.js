@@ -19,7 +19,7 @@
     return path;
   }
   var DATA_URL = asset("data/news.json");
-  var FALLBACK_IMAGE = asset("assets/news/no-image.png");
+  var FALLBACK_IMAGE = asset("assets/news/no-image.jpg");
 
   function lang(){
     return window.DW && window.DW.getLang ? window.DW.getLang() : "ko";
